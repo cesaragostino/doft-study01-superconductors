@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 
-DEFAULT_GROUPINGS = ["lock_family", "jump_type", "category"]
+DEFAULT_GROUPINGS = ["lock_family", "jump_type", "category", "family_type"]
 EPS = 1e-12
 
 
@@ -131,7 +131,7 @@ def main() -> None:
     parser.add_argument("--output", "-o", required=True, help="Ruta del CSV resumen a generar")
     parser.add_argument(
         "--group_by", nargs='+', default=DEFAULT_GROUPINGS,
-        help="Columnas para agrupar (default: lock_family jump_type category)"
+        help=f"Columnas para agrupar (default: {' '.join(DEFAULT_GROUPINGS)})"
     )
     parser.add_argument("--min_samples", type=int, default=3, help="Mínimo de registros válidos por grupo para ajustar el baseline")
 
