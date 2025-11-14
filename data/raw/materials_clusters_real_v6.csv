@@ -76,6 +76,8 @@ CsC8,single,SC_Binary,0.004,0.0006,90,3.5,rational,0,graphite intercalation comp
 CuMo6S8,single,SC_Binary,10.8,1.7,195,5.8,mixed,0,Chevrel phase
 EuMo6S8,single,SC_Binary,6.5,1.03,200,5.9,mixed,0,Chevrel phase - magnetic
 FeH5,single,SC_HighPressure,46,7.5,550,4.5,mixed,0,High Pressure (130 GPa) - transition metal hydride
+FeSe,sigma,SC_IronBased,8.4,1.5,242,0.01,mixed,1,iron chalcogenide - hole pocket - large gap (old runs have sigma)
+FeSe,pi,SC_IronBased,8.4,0.25,242,0.01,mixed,2,iron chalcogenide - electron pocket - small gap (old runs have pi)
 FeSe,hole-band,SC_IronBased,8.4,1.5,242,0.01,mixed,1,iron chalcogenide - hole pocket - large gap
 FeSe,electron-band,SC_IronBased,8.4,0.25,242,0.01,mixed,2,iron chalcogenide - electron pocket - small gap
 FeSe (monolayer on STO),single,SC_IronBased,55,15,242,0.01,mixed,0,interface-enhanced SC
@@ -191,9 +193,6 @@ SmFeAsO0.9F0.1,single,SC_IronBased,43,7,280,0.2,mixed,0,1111-type
 SmH9,single,SC_HighPressure,110,18,880,5.9,mixed,0,High Pressure (170 GPa) - clathrate predicted
 Sn,single,SC_TypeI,3.72,0.57,200,10.2,integer,0,type-I
 SnMo6S8,single,SC_Binary,12,1.9,190,5.9,mixed,0,Chevrel phase
-Sr2RuO4,_-sheet,SC_Oxide,1.5,0.24,350,1.8,rational,1,multi-band p-wave candidate - _ FS sheet
-Sr2RuO4,_-sheet,SC_Oxide,1.5,0.24,350,1.8,rational,2,multi-band p-wave candidate - _ FS sheet
-Sr2RuO4,_-sheet,SC_Oxide,1.5,0.24,350,1.8,rational,3,multi-band p-wave candidate - _ FS sheet
 SrAlSi,single,SC_Binary,5.1,0.81,300,3.8,mixed,0,AlB2 structure - 2_/kBTc=3.82
 SrC6,single,SC_Binary,1.65,0.26,310,3.9,integer,0,graphite intercalation
 SrH10,single,SC_HighPressure,259,44,1140,7.1,mixed,0,High Pressure (300 GPa) - 2D graphene-like H layers
