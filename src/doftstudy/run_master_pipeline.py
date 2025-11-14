@@ -24,6 +24,7 @@ RUN_CALIBRATION_SCRIPT = SCRIPT_DIR / "run_calibration.py"
 RUN_CLUSTER_SCRIPT = SCRIPT_DIR / "run_cluster_analysis.py"
 RUN_FP_SCRIPT = SCRIPT_DIR / "run_fingerprint_analysis.py"
 RUN_SENSITIVITY_SCRIPT = SCRIPT_DIR / "run_sensitivity.py"
+RUN_BASELINE_SCRIPT = SCRIPT_DIR / "run_baseline_comparison.py"
 
 
 class TeeStream:
@@ -115,10 +116,12 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     out_dir_calib = out_dir_base / "calib"
     out_dir_cluster = out_dir_base / "cluster"
     out_dir_fp = out_dir_base / "fingerprint"
+    out_dir_baseline = out_dir_base / "baseline"
     
     out_dir_calib.mkdir(parents=True, exist_ok=True)
     out_dir_cluster.mkdir(parents=True, exist_ok=True)
     out_dir_fp.mkdir(parents=True, exist_ok=True)
+    out_dir_baseline.mkdir(parents=True, exist_ok=True)
 
     # Paso 1: Calibración
     label_calib = f"calib_{base_tag}"
@@ -167,6 +170,15 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
         "-o", str(out_dir_fp), "-l", label_fp_kappa
     ]
     execute_command(cmd3b, f"Paso 3b: Fingerprint CON Kappa (W={w_val}, P={p_val})")
+    
+    # Paso 4: Comparación Baseline
+    baseline_summary = out_dir_baseline / f"baseline_summary_{base_tag}.csv"
+    cmd4 = [
+        python_cmd, str(RUN_BASELINE_SCRIPT),
+        "--cluster_csv", str(csv_cluster_kappa),
+        "--output", str(baseline_summary)
+    ]
+    execute_command(cmd4, f"Paso 4: Comparación Baseline (W={w_val}, P={p_val})")
     
     print(f"--- Pipeline Robustez (W={w_val}, P={p_val}) ¡COMPLETADO! ---")
 
