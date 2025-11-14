@@ -32,6 +32,7 @@ data/
   processed/  # Derived CSVs (calibration, fingerprints, clustering)
 
 src/          # Python modules implementing the full pipeline
+docs/         # Documentation and run report
 notebooks/    # Optional exploration (not required for main results)
 results/      # Figures and tables corresponding to the main paper
 paper/        # Draft manuscript + bibliography

@@ -191,7 +191,7 @@ def main():
     parser.add_argument(
         '-i', '--input_file',
         type=str,
-        default="materials_clusters_real_v5.csv",
+        default="materials_clusters_real_v6.csv",
         help="Archivo CSV de entrada (default: %(default)s)"
     )
     parser.add_argument(
