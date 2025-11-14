@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this study or its code/data, please cite it as below."
+title: "DOFT Study 01 – Constrained Fingerprints for Superconductors and Superfluid Helium"
+type: software
+authors:
+  - family-names: Agostino
+    given-names: Cesar
+repository-code: "https://github.com/cesaragostino/doft-study01-superconductors"
+version: "v0.1.0"
+date-released: 2025-11-14
+# Add a DOI here once a Zenodo (or similar) record is minted.
+# doi: 10.5281/zenodo.xxxxxxx
+preferred-citation:
+  type: article
+  title: "DOFT Study 01: Constrained Fingerprints for Superconductors and Superfluid Helium"
+  authors:
+    - family-names: Agostino
+      given-names: Cesar
+  year: 2025
+  # Update these fields once the paper or preprint is public.
+  journal: "to be updated"
+  # doi: 10.XXXX/XXXXX
+  # url: "https://arxiv.org/abs/XXXX.XXXXX"
