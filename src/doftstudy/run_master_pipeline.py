@@ -3,6 +3,9 @@ import os
 import sys
 import argparse
 from itertools import product
+from pathlib import Path
+from datetime import datetime
+from contextlib import contextmanager
 
 # -----------------------------------------------------------------
 # --- CONFIGURACIÓN "RUN ALL" ---
@@ -14,16 +17,62 @@ ALL_JITTER_VALUES = [5.0, 10.0]
 DEFAULT_JITTER_N_RUNS = 500
 # -----------------------------------------------------------------
 
-def execute_command(cmd, step_name):
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+DEFAULT_INPUT_FILE = PROJECT_ROOT / "data" / "raw" / "materials_clusters_real_v6.csv"
+RUN_CALIBRATION_SCRIPT = SCRIPT_DIR / "run_calibration.py"
+RUN_CLUSTER_SCRIPT = SCRIPT_DIR / "run_cluster_analysis.py"
+RUN_FP_SCRIPT = SCRIPT_DIR / "run_fingerprint_analysis.py"
+RUN_SENSITIVITY_SCRIPT = SCRIPT_DIR / "run_sensitivity.py"
+
+
+class TeeStream:
+    """Duplica stdout/stderr hacia un archivo de log."""
+
+    def __init__(self, *streams):
+        self._streams = streams
+
+    def write(self, data):
+        for stream in self._streams:
+            stream.write(data)
+            stream.flush()
+
+    def flush(self):
+        for stream in self._streams:
+            stream.flush()
+
+
+@contextmanager
+def tee_output(log_path):
+    """Envía stdout/stderr tanto a consola como a un archivo de log."""
+
+    original_stdout, original_stderr = sys.stdout, sys.stderr
+    log_file = open(log_path, "a", encoding="utf-8")
+    sys.stdout = TeeStream(original_stdout, log_file)
+    sys.stderr = TeeStream(original_stderr, log_file)
+    try:
+        yield
+    finally:
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
+        log_file.close()
+
+def execute_command(cmd, step_name, cwd=SCRIPT_DIR):
     """
     Ejecuta un comando en el shell, comprueba si hay errores
     e imprime información útil.
     """
     print(f"\n[... {step_name} ...]")
     print(" ".join(cmd))
-    
+
     # Ejecuta el comando y captura la salida
-    result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')
+    result = subprocess.run(
+        cmd,
+        capture_output=True,
+        text=True,
+        encoding='utf-8',
+        cwd=str(cwd) if cwd else None,
+    )
     
     # --- ¡CAMBIO v3.1! ---
     # Imprimir stdout y stderr SIEMPRE, para que el log los capture.
@@ -49,7 +98,7 @@ def execute_command(cmd, step_name):
 # -----------------------------------------------------------------
 # FASE 1: PIPELINE DE ROBUSTEZ (Workflow Bifurcado)
 # -----------------------------------------------------------------
-def run_robustness_pipeline(w_val, p_val, input_file, python_cmd):
+def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     """
     Ejecuta el pipeline COMPLETO de 5 pasos (bifurcado con/sin kappa)
     para una combinación de Winsor (w_val) y Prime Max (p_val).
@@ -61,42 +110,42 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd):
     w_tag = f"w{int(w_val)}"
     p_tag = f"p{int(p_val)}"
     base_tag = f"{w_tag}_{p_tag}"
-    out_dir_base = f"results_{base_tag}"
+    out_dir_base = output_root / f"results_{base_tag}"
     
-    out_dir_calib = os.path.join(out_dir_base, "calib")
-    out_dir_cluster = os.path.join(out_dir_base, "cluster")
-    out_dir_fp = os.path.join(out_dir_base, "fingerprint")
+    out_dir_calib = out_dir_base / "calib"
+    out_dir_cluster = out_dir_base / "cluster"
+    out_dir_fp = out_dir_base / "fingerprint"
     
-    os.makedirs(out_dir_calib, exist_ok=True)
-    os.makedirs(out_dir_cluster, exist_ok=True)
-    os.makedirs(out_dir_fp, exist_ok=True)
+    out_dir_calib.mkdir(parents=True, exist_ok=True)
+    out_dir_cluster.mkdir(parents=True, exist_ok=True)
+    out_dir_fp.mkdir(parents=True, exist_ok=True)
 
     # Paso 1: Calibración
     label_calib = f"calib_{base_tag}"
-    csv_calib = os.path.join(out_dir_calib, f"results_{label_calib}.csv")
+    csv_calib = out_dir_calib / f"results_{label_calib}.csv"
     cmd1 = [
-        python_cmd, "run_calibration.py",
-        "-i", input_file, "-o", out_dir_calib, "-l", label_calib,
+        python_cmd, str(RUN_CALIBRATION_SCRIPT),
+        "-i", input_file, "-o", str(out_dir_calib), "-l", label_calib,
         "--winsor_X", str(w_val), "--prime_max_val", str(p_val)
     ]
     execute_command(cmd1, f"Paso 1: Calibración (W={w_val}, P={p_val})")
     
     # Paso 2a: Cluster (SIN Kappa)
     label_cluster_nokappa = f"cluster_nokappa_{base_tag}"
-    csv_cluster_nokappa = os.path.join(out_dir_cluster, f"results_{label_cluster_nokappa}.csv")
+    csv_cluster_nokappa = out_dir_cluster / f"results_{label_cluster_nokappa}.csv"
     cmd2a = [
-        python_cmd, "run_cluster_analysis.py",
-        "-i", input_file, "-o", out_dir_cluster, "-l", label_cluster_nokappa,
+        python_cmd, str(RUN_CLUSTER_SCRIPT),
+        "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_nokappa,
         "--prime_max_val", str(p_val)
     ]
     execute_command(cmd2a, f"Paso 2a: Cluster SIN Kappa (W={w_val}, P={p_val})")
 
     # Paso 2b: Cluster (CON Kappa)
     label_cluster_kappa = f"cluster_kappa_{base_tag}"
-    csv_cluster_kappa = os.path.join(out_dir_cluster, f"results_{label_cluster_kappa}.csv")
+    csv_cluster_kappa = out_dir_cluster / f"results_{label_cluster_kappa}.csv"
     cmd2b = [
-        python_cmd, "run_cluster_analysis.py",
-        "-i", input_file, "-o", out_dir_cluster, "-l", label_cluster_kappa,
+        python_cmd, str(RUN_CLUSTER_SCRIPT),
+        "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_kappa,
         "--estimate_kappa", "--prime_max_val", str(p_val)
     ]
     execute_command(cmd2b, f"Paso 2b: Cluster CON Kappa (W={w_val}, P={p_val})")
@@ -104,18 +153,18 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd):
     # Paso 3a: Fingerprint (SIN Kappa)
     label_fp_nokappa = f"fp_nokappa_{base_tag}"
     cmd3a = [
-        python_cmd, "run_fingerprint_analysis.py",
-        "-i_calib", csv_calib, "-i_cluster", csv_cluster_nokappa,
-        "-o", out_dir_fp, "-l", label_fp_nokappa
+        python_cmd, str(RUN_FP_SCRIPT),
+        "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_nokappa),
+        "-o", str(out_dir_fp), "-l", label_fp_nokappa
     ]
     execute_command(cmd3a, f"Paso 3a: Fingerprint SIN Kappa (W={w_val}, P={p_val})")
 
     # Paso 3b: Fingerprint (CON Kappa)
     label_fp_kappa = f"fp_kappa_{base_tag}"
     cmd3b = [
-        python_cmd, "run_fingerprint_analysis.py",
-        "-i_calib", csv_calib, "-i_cluster", csv_cluster_kappa,
-        "-o", out_dir_fp, "-l", label_fp_kappa
+        python_cmd, str(RUN_FP_SCRIPT),
+        "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_kappa),
+        "-o", str(out_dir_fp), "-l", label_fp_kappa
     ]
     execute_command(cmd3b, f"Paso 3b: Fingerprint CON Kappa (W={w_val}, P={p_val})")
     
@@ -124,7 +173,7 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd):
 # -----------------------------------------------------------------
 # FUNCIÓN AUXILIAR PARA FASE 2
 # -----------------------------------------------------------------
-def run_calibration_only(w_val, p_val, input_file, python_cmd):
+def run_calibration_only(w_val, p_val, input_file, python_cmd, output_root):
     """
     Ejecuta SOLO el Paso 1 (Calibración) para generar el 
     archivo 'doft_config.json' necesario para el jittering.
@@ -135,13 +184,13 @@ def run_calibration_only(w_val, p_val, input_file, python_cmd):
     w_tag = f"w{int(w_val)}"
     p_tag = f"p{int(p_val)}"
     
-    out_dir_calib = os.path.join(f"results_{w_tag}_{p_tag}", "calib")
+    out_dir_calib = output_root / f"results_{w_tag}_{p_tag}" / "calib"
     label_calib = f"calib_{w_tag}_{p_tag}"
-    os.makedirs(out_dir_calib, exist_ok=True)
+    out_dir_calib.mkdir(parents=True, exist_ok=True)
 
     cmd_calib = [
-        python_cmd, "run_calibration.py",
-        "-i", input_file, "-o", out_dir_calib, "-l", label_calib,
+        python_cmd, str(RUN_CALIBRATION_SCRIPT),
+        "-i", input_file, "-o", str(out_dir_calib), "-l", label_calib,
         "--winsor_X", str(w_val), "--prime_max_val", str(p_val)
     ]
     execute_command(cmd_calib, f"Calibración Base (W={w_val}, P={p_val})")
@@ -161,7 +210,7 @@ def run_sensitivity_analysis(j_val, p_val, input_file, n_runs, python_cmd):
     print(f"=====================================================")
     
     cmd_jitter = [
-        python_cmd, "run_sensitivity.py",
+        python_cmd, str(RUN_SENSITIVITY_SCRIPT),
         "-i", input_file,
         "-n", str(n_runs),
         "-j", str(j_val),
@@ -189,10 +238,17 @@ def main():
     
     # --- Argumentos de Configuración General ---
     parser.add_argument(
-        '-i', '--input_file',
+        '-i', '--input_file', '--input_csv',
+        dest='input_file',
         type=str,
-        default="materials_clusters_real_v6.csv",
+        default=str(DEFAULT_INPUT_FILE),
         help="Archivo CSV de entrada (default: %(default)s)"
+    )
+    parser.add_argument(
+        '-o', '--output_root',
+        type=str,
+        default=None,
+        help="Directorio donde se crearán las carpetas 'results_*' (default: carpeta del script)"
     )
     parser.add_argument(
         '--python_cmd',
@@ -236,89 +292,108 @@ def main():
     )
 
     args = parser.parse_args()
-    
-    # --- Lógica principal: Decidir qué listas usar ---
-    
-    if args.run_all:
-        print("============================================")
-        print("     ¡MODO 'RUN ALL' ACTIVADO!     ")
-        print("Se ejecutarán todas las combinaciones predefinidas.")
-        print("============================================")
-        winsor_list   = ALL_WINSOR_VALUES
-        prime_list    = ALL_PRIME_VALUES
-        jitter_list   = ALL_JITTER_VALUES
-        n_runs        = DEFAULT_JITTER_N_RUNS
+
+    # Normalizar rutas
+    input_file_path = Path(args.input_file).expanduser()
+    if not input_file_path.is_absolute():
+        input_file_path = (Path.cwd() / input_file_path).resolve()
+    args.input_file = str(input_file_path)
+
+    if args.output_root:
+        output_root = Path(args.output_root).expanduser()
+        if not output_root.is_absolute():
+            output_root = (Path.cwd() / output_root).resolve()
     else:
-        print("============================================")
-        print("     Modo de ejecución 'Custom'     ")
-        print("Ejecutando con los parámetros provistos (o defaults).")
-        print("============================================")
-        winsor_list   = args.winsor_values
-        prime_list    = args.prime_values
-        jitter_list   = args.jitter_values
-        n_runs        = args.n_runs
+        output_root = SCRIPT_DIR
+    output_root.mkdir(parents=True, exist_ok=True)
 
-    print(f"Comando Python:   {args.python_cmd}")
-    print(f"Archivo de entrada: {args.input_file}")
-    print(f"Valores Winsor:   {winsor_list}")
-    print(f"Valores Prime:    {prime_list}")
-    print(f"Valores Jitter:   {jitter_list}")
-    print(f"Jitter N-Runs:    {n_runs}")
-    print("--------------------------------------------")
+    log_path = output_root / f"run_master_pipeline_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
-    # --- FASE 1: ROBUSTEZ (Workflow Bifurcado) ---
-    if not args.skip_robustness:
-        print("\n\n--- FASE 1: INICIANDO ANÁLISIS DE ROBUSTEZ (Workflow Completo) ---")
-        robustness_jobs = list(product(winsor_list, prime_list))
-        print(f"Se ejecutarán {len(robustness_jobs)} pipelines de robustez (de 5 pasos c/u)...")
-        
-        for w_val, p_val in robustness_jobs:
-            try:
-                run_robustness_pipeline(w_val, p_val, args.input_file, args.python_cmd)
-            except Exception as e:
-                print(f"¡¡ERROR INESPERADO!! El pipeline (W={w_val}, P={p_val}) falló.")
-                print(f"Detalle del error: {e}")
-                
-    else:
-        print("\n--- FASE 1: Saltando Análisis de Robustez (por flag). ---")
+    with tee_output(log_path):
+        print(f"--- Log registrado en: {log_path} ---")
 
-    # --- FASE 2: SENSIBILIDAD (JITTER) ---
-    if not args.skip_sensitivity and jitter_list:
-        print("\n\n--- FASE 2: INICIANDO ANÁLISIS DE SENSIBILIDAD ---")
-        
-        baseline_w = winsor_list[0]
-        baseline_p = prime_list[0]
-        config_path = "doft_config.json"
-        
-        if not os.path.exists(config_path) or args.skip_robustness:
-             try:
-                print("El 'doft_config.json' no existe o se saltó la Fase 1. Generando config base...")
-                run_calibration_only(baseline_w, baseline_p, args.input_file, args.python_cmd)
-             except Exception as e:
-                print("¡¡ERROR FATAL!! No se pudo generar el 'doft_config.json' base.")
-                print(f"Detalle del error: {e}")
-                sys.exit(1)
+        # --- Lógica principal: Decidir qué listas usar ---
+        if args.run_all:
+            print("============================================")
+            print("     ¡MODO 'RUN ALL' ACTIVADO!     ")
+            print("Se ejecutarán todas las combinaciones predefinidas.")
+            print("============================================")
+            winsor_list   = ALL_WINSOR_VALUES
+            prime_list    = ALL_PRIME_VALUES
+            jitter_list   = ALL_JITTER_VALUES
+            n_runs        = DEFAULT_JITTER_N_RUNS
         else:
-            print(f"--- 'doft_config.json' ya existe. Usando como base para Jitter. ---")
-            
-        sensitivity_jobs = list(product(jitter_list, prime_list))
-        print(f"Se ejecutarán {len(sensitivity_jobs)} pipelines de sensibilidad...")
+            print("============================================")
+            print("     Modo de ejecución 'Custom'     ")
+            print("Ejecutando con los parámetros provistos (o defaults).")
+            print("============================================")
+            winsor_list   = args.winsor_values
+            prime_list    = args.prime_values
+            jitter_list   = args.jitter_values
+            n_runs        = args.n_runs
 
-        for j_val, p_val in sensitivity_jobs:
-            try:
-                run_sensitivity_analysis(j_val, p_val, args.input_file, n_runs, args.python_cmd)
-            except Exception as e:
-                print(f"¡¡ERROR INESPERADO!! El pipeline (J={j_val}, P={p_val}) falló.")
-                print(f"Detalle del error: {e}")
+        print(f"Comando Python:   {args.python_cmd}")
+        print(f"Archivo de entrada: {args.input_file}")
+        print(f"Directorio base de resultados: {output_root}")
+        print(f"Valores Winsor:   {winsor_list}")
+        print(f"Valores Prime:    {prime_list}")
+        print(f"Valores Jitter:   {jitter_list}")
+        print(f"Jitter N-Runs:    {n_runs}")
+        print("--------------------------------------------")
+
+        # --- FASE 1: ROBUSTEZ (Workflow Bifurcado) ---
+        if not args.skip_robustness:
+            print("\n\n--- FASE 1: INICIANDO ANÁLISIS DE ROBUSTEZ (Workflow Completo) ---")
+            robustness_jobs = list(product(winsor_list, prime_list))
+            print(f"Se ejecutarán {len(robustness_jobs)} pipelines de robustez (de 5 pasos c/u)...")
+            
+            for w_val, p_val in robustness_jobs:
+                try:
+                    run_robustness_pipeline(w_val, p_val, args.input_file, args.python_cmd, output_root)
+                except Exception as e:
+                    print(f"¡¡ERROR INESPERADO!! El pipeline (W={w_val}, P={p_val}) falló.")
+                    print(f"Detalle del error: {e}")
+                    
+        else:
+            print("\n--- FASE 1: Saltando Análisis de Robustez (por flag). ---")
+
+        # --- FASE 2: SENSIBILIDAD (JITTER) ---
+        if not args.skip_sensitivity and jitter_list:
+            print("\n\n--- FASE 2: INICIANDO ANÁLISIS DE SENSIBILIDAD ---")
+            
+            baseline_w = winsor_list[0]
+            baseline_p = prime_list[0]
+            config_path = SCRIPT_DIR / "doft_config.json"
+            
+            if not config_path.exists() or args.skip_robustness:
+                try:
+                    print("El 'doft_config.json' no existe o se saltó la Fase 1. Generando config base...")
+                    run_calibration_only(baseline_w, baseline_p, args.input_file, args.python_cmd, output_root)
+                except Exception as e:
+                    print("¡¡ERROR FATAL!! No se pudo generar el 'doft_config.json' base.")
+                    print(f"Detalle del error: {e}")
+                    sys.exit(1)
+            else:
+                print(f"--- 'doft_config.json' ya existe. Usando como base para Jitter. ---")
                 
-    elif args.skip_sensitivity:
-        print("\n--- FASE 2: Saltando Análisis de Sensibilidad (por flag). ---")
-    else:
-        print("\n--- FASE 2: No se especificaron --jitter_values, saltando análisis de sensibilidad. ---")
-        
-    print("\n\n============================================")
-    print("   ¡Master Pipeline finalizado!   ")
-    print("============================================")
+            sensitivity_jobs = list(product(jitter_list, prime_list))
+            print(f"Se ejecutarán {len(sensitivity_jobs)} pipelines de sensibilidad...")
+
+            for j_val, p_val in sensitivity_jobs:
+                try:
+                    run_sensitivity_analysis(j_val, p_val, args.input_file, n_runs, args.python_cmd)
+                except Exception as e:
+                    print(f"¡¡ERROR INESPERADO!! El pipeline (J={j_val}, P={p_val}) falló.")
+                    print(f"Detalle del error: {e}")
+                    
+        elif args.skip_sensitivity:
+            print("\n--- FASE 2: Saltando Análisis de Sensibilidad (por flag). ---")
+        else:
+            print("\n--- FASE 2: No se especificaron --jitter_values, saltando análisis de sensibilidad. ---")
+            
+        print("\n\n============================================")
+        print("   ¡Master Pipeline finalizado!   ")
+        print("============================================")
 
 
 if __name__ == "__main__":
