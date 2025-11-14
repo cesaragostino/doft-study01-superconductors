@@ -25,6 +25,7 @@ RUN_CLUSTER_SCRIPT = SCRIPT_DIR / "run_cluster_analysis.py"
 RUN_FP_SCRIPT = SCRIPT_DIR / "run_fingerprint_analysis.py"
 RUN_SENSITIVITY_SCRIPT = SCRIPT_DIR / "run_sensitivity.py"
 RUN_BASELINE_SCRIPT = SCRIPT_DIR / "run_baseline_comparison.py"
+RUN_FIGURES_SCRIPT = SCRIPT_DIR / "generate_figures.py"
 
 
 class TeeStream:
@@ -179,6 +180,14 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
         "--output", str(baseline_summary)
     ]
     execute_command(cmd4, f"Paso 4: Comparación Baseline (W={w_val}, P={p_val})")
+    
+    # Paso 5: Figuras para la corrida actual
+    cmd5 = [
+        python_cmd, str(RUN_FIGURES_SCRIPT),
+        "--base_tag", base_tag,
+        "--results_dir", str(output_root)
+    ]
+    execute_command(cmd5, f"Paso 5: Figuras (W={w_val}, P={p_val})")
     
     print(f"--- Pipeline Robustez (W={w_val}, P={p_val}) ¡COMPLETADO! ---")
 
