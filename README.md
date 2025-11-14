@@ -11,6 +11,19 @@ DOFT-inspired fingerprint model on:
 
 ---
 
+## Top-level Repository Layout
+
+```
+doft-study01-superconductors/
+  README.md        # Main project documentation
+  REFERENCES.md    # Bibliography and external sources
+  GOVERNANCE.md    # Project governance, roles, and contribution rules
+  CITATION.cff     # Citation metadata for GitHub/Zenodo
+  ...              # Additional project files
+```
+
+---
+
 ## Repository Structure
 
 ```
