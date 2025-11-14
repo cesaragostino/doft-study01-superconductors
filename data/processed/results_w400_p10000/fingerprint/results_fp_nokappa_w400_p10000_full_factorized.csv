@@ -1,0 +1,433 @@
+name,sub_network,category,lock_family,jump_desc,d,X,C_AB,R_obs,chosen_lock,prime_value,err_before,R_corr_eta,err_after_eta,R_corr_kappa,err_after_kappa,jump_type,log_residual_eta,exp_a_2,exp_b_3,exp_c_5,exp_d_7,exp_other,p,q
+CaC6,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,26.087,0,1.7659,integer,2,0.132564,1.75845,0.137368,,,,-0.128714,1,0,0,0,,,
+CaC6,single,SC_Binary,integer,gap(Δ)→Debye,2,26.087,0,14.7726,integer,15,0.0153953,14.731,0.0182625,,,,-0.0180961,0,1,1,0,,,
+CaC6,single,SC_Binary,integer,Debye→electronic(E_F),1,26.087,0,146.991,integer,147,6.42023e-05,146.784,0.00147416,,,,-0.00147047,0,1,0,2,,,
+MgCNi3,single,SC_Binary,mixed,thermal@Tc→gap(Δ),3,43.75,0,1.74068,rational,1.75,0.00535555,1.72835,0.0125277,,,,-0.0124486,,,,,,7,4
+MgCNi3,single,SC_Binary,mixed,gap(Δ)→Debye,2,43.75,0,25.1339,rational,25.2,0.00263037,25.0152,0.00738752,,,,-0.00736035,,,,,,126,5
+MgCNi3,single,SC_Binary,mixed,Debye→electronic(E_F),1,43.75,0,165.779,rational,165.375,0.00243596,165.387,7.49989e-05,,,,7.25597e-05,,,,,,1323,8
+Mo3Si,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,240.31,0,1.70919,integer,2,0.170143,1.64269,0.217514,,,,-0.196812,1,0,0,0,,,
+Mo3Si,single,SC_Binary,integer,gap(Δ)→Debye,2,240.31,0,140.599,integer,140,0.00425748,136.952,0.0222584,,,,-0.0220119,2,0,1,1,,,
+Mo3Si,single,SC_Binary,integer,Debye→electronic(E_F),1,240.31,0,205.887,integer,210,0.0199789,203.216,0.0333811,,,,-0.0328381,1,1,1,1,,,
+Nb3Al,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,14.8148,0,1.84199,integer,2,0.085784,1.83757,0.0883946,,,,-0.0847031,1,0,0,0,,,
+Nb3Al,single,SC_Binary,integer,gap(Δ)→Debye,2,14.8148,0,8.04284,integer,8,0.00532702,8.02998,0.00373391,,,,0.0037405,3,0,0,0,,,
+Nb3Al,single,SC_Binary,integer,Debye→electronic(E_F),1,14.8148,0,273.535,integer,270,0.0129236,273.316,0.0121338,,,,0.0122067,1,3,1,0,,,
+Nb3Ge,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,13.913,0,1.96772,integer,2,0.0164034,1.96329,0.0186981,,,,-0.0185255,1,0,0,0,,,
+Nb3Ge,single,SC_Binary,integer,gap(Δ)→Debye,2,13.913,0,7.07063,integer,7,0.00998955,7.06001,0.00850057,,,,0.00853632,0,0,0,1,,,
+Nb3Ge,single,SC_Binary,integer,Debye→electronic(E_F),1,13.913,0,246.596,integer,245,0.00647217,246.411,0.00572559,,,,0.00574266,0,0,1,2,,,
+Nb3Sn,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,13.8889,0,1.99856,integer,2,0.000722572,1.99406,0.00297797,,,,-0.00297442,1,0,0,0,,,
+Nb3Sn,single,SC_Binary,integer,gap(Δ)→Debye,2,13.8889,0,6.94946,integer,7,0.00727217,6.93904,0.00878448,,,,-0.00874671,0,0,0,1,,,
+Nb3Sn,single,SC_Binary,integer,Debye→electronic(E_F),1,13.8889,0,311.001,integer,315,0.0128582,310.768,0.013618,,,,-0.013526,0,2,1,1,,,
+PbMo6S8,single,SC_Binary,mixed,thermal@Tc→gap(Δ),3,14.2857,0,1.82357,rational,1.8,0.0129236,1.81935,0.0106353,,,,0.0106926,,,,,,9,5
+PbMo6S8,single,SC_Binary,mixed,gap(Δ)→Debye,2,14.2857,0,7.83394,rational,7.875,0.00524138,7.82186,0.00679382,,,,-0.00677081,,,,,,63,8
+PbMo6S8,single,SC_Binary,mixed,Debye→electronic(E_F),1,14.2857,0,348.136,rational,347.143,0.00285144,347.867,0.00208206,,,,0.00208342,,,,,,2430,7
+TiN,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,125,0,1.94153,integer,2,0.030118,1.90223,0.0513965,,,,-0.0501203,1,0,0,0,,,
+TiN,single,SC_Binary,integer,gap(Δ)→Debye,2,125,0,64.3824,integer,64,0.00593912,63.5137,0.00765638,,,,-0.00762745,6,0,0,0,,,
+TiN,single,SC_Binary,integer,Debye→electronic(E_F),1,125,0,103.548,integer,105,0.0140224,102.849,0.0209096,,,,-0.0206985,0,1,1,1,,,
+V3Si,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,20.4678,0,1.69657,integer,2,0.178851,1.69094,0.182771,,,,-0.167863,1,0,0,0,,,
+V3Si,single,SC_Binary,integer,gap(Δ)→Debye,2,20.4678,0,12.0643,integer,12,0.00532702,12.0376,0.00312467,,,,0.00312843,2,1,0,0,,,
+V3Si,single,SC_Binary,integer,Debye→electronic(E_F),1,20.4678,0,215.512,integer,216,0.00226215,215.274,0.00337049,,,,-0.00336677,3,3,0,0,,,
+ZrN,single,SC_Binary,integer,thermal@Tc→gap(Δ),3,55.1402,0,1.95216,integer,2,0.0245052,1.93473,0.0337339,,,,-0.0331794,1,0,0,0,,,
+ZrN,single,SC_Binary,integer,gap(Δ)→Debye,2,55.1402,0,28.2457,integer,28,0.00869879,28.0776,0.00276354,,,,0.0027676,2,0,0,1,,,
+ZrN,single,SC_Binary,integer,Debye→electronic(E_F),1,55.1402,0,121.946,integer,120,0.0159561,121.583,0.013019,,,,0.0131054,3,1,1,0,,,
+CeCoIn5,single,SC_HeavyFermion,rational,thermal@Tc→gap(Δ),3,108.696,0,3.68317,rational,3.75,0.0181438,3.61835,0.0363826,,,,-0.0357377,,,,,,15,4
+CeCoIn5,single,SC_HeavyFermion,rational,gap(Δ)→Debye,2,108.696,0,29.5114,rational,29.4,0.00377533,29.1652,0.00805149,,,,-0.00801846,,,,,,147,5
+CeCoIn5,single,SC_HeavyFermion,rational,Debye→electronic(E_F),1,108.696,0,0.464181,rational,0.428571,0.0767143,0.461458,0.0712662,,,,0.0739346,,,,,,3,7
+CeCu2Si2,single,SC_HeavyFermion,rational,thermal@Tc→gap(Δ),3,314.286,0,1.82357,rational,1.8,0.0129236,1.73078,0.0399965,,,,-0.0392145,,,,,,9,5
+CeCu2Si2,single,SC_HeavyFermion,rational,gap(Δ)→Debye,2,314.286,0,172.347,rational,172.8,0.00263037,166.5,0.0378372,,,,-0.0371395,,,,,,864,5
+CeCu2Si2,single,SC_HeavyFermion,rational,Debye→electronic(E_F),1,314.286,0,0.527478,rational,0.5,0.0520933,0.518531,0.0357379,,,,0.0363917,,,,,,1,2
+UBe13,single,SC_HeavyFermion,rational,thermal@Tc→gap(Δ),3,411.765,0,1.77481,rational,1.75,0.0139782,1.65649,0.0564527,,,,-0.0549149,,,,,,7,4
+UBe13,single,SC_HeavyFermion,rational,gap(Δ)→Debye,2,411.765,0,232.005,rational,231.429,0.0024851,221.694,0.0439115,,,,-0.0429751,,,,,,1620,7
+UBe13,single,SC_HeavyFermion,rational,Debye→electronic(E_F),1,411.765,0,0.331558,rational,0.333333,0.00535555,0.32419,0.0282048,,,,-0.0278122,,,,,,1,3
+UPd2Al3,single,SC_HeavyFermion,rational,thermal@Tc→gap(Δ),3,150,0,1.85672,rational,1.875,0.00984374,1.81163,0.0349792,,,,-0.0343817,,,,,,15,8
+UPd2Al3,single,SC_HeavyFermion,rational,gap(Δ)→Debye,2,150,0,80.7875,rational,81,0.00263037,79.4795,0.0191308,,,,-0.01895,,,,,,81,1
+UPd2Al3,single,SC_HeavyFermion,rational,Debye→electronic(E_F),1,150,0,0.386817,rational,0.375,0.03055,0.383686,0.0226379,,,,0.0228985,,,,,,3,8
+UPt3,single,SC_HeavyFermion,rational,thermal@Tc→gap(Δ),3,420,0,1.85672,rational,1.875,0.00984374,1.73046,0.0835242,,,,-0.0802214,,,,,,15,8
+UPt3,single,SC_HeavyFermion,rational,gap(Δ)→Debye,2,420,0,226.205,rational,226.8,0.00263037,215.95,0.0502418,,,,-0.0490217,,,,,,1134,5
+UPt3,single,SC_HeavyFermion,rational,Debye→electronic(E_F),1,420,0,0.552596,rational,0.571429,0.03408,0.54007,0.058063,,,,-0.0564415,,,,,,4,7
+URu2Si2,single,SC_HeavyFermion,rational,thermal@Tc→gap(Δ),3,230.769,0,1.78531,rational,1.8,0.00822799,1.71861,0.0473606,,,,-0.0462708,,,,,,9,5
+URu2Si2,single,SC_HeavyFermion,rational,gap(Δ)→Debye,2,230.769,0,129.26,rational,129.6,0.00263037,126.04,0.0282425,,,,-0.0278535,,,,,,648,5
+URu2Si2,single,SC_HeavyFermion,rational,Debye→electronic(E_F),1,230.769,0,0.386817,rational,0.375,0.03055,0.382,0.0183239,,,,0.0184946,,,,,,3,8
+(La0.5Y0.5)H8,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.48276,0,1.92075,rational,1.875,0.0238177,1.91873,0.022792,,,,0.0230548,,,,,,15,8
+(La0.5Y0.5)H8,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.48276,0,3.37512,rational,3.375,3.62044e-05,3.37276,0.000663994,,,,-0.000663924,,,,,,27,8
+(La0.5Y0.5)H8,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.48276,0,76.5404,rational,76.8,0.00339117,76.5137,0.00374234,,,,-0.00373483,,,,,,384,5
+(LaY)H10,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.42688,0,1.97231,integer,2,0.0140397,1.9709,0.014767,,,,-0.0146569,1,0,0,0,,,
+(LaY)H10,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.42688,0,2.24451,rational,2.25,0.00244386,2.24344,0.00292309,,,,-0.00291981,,,,,,9,4
+(LaY)H10,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.42688,0,72.5282,integer,72,0.00728321,72.5109,0.00704598,,,,0.00707078,3,2,0,0,,,
+(LaY)H4,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.63158,0,1.83229,rational,1.8,0.017624,1.82973,0.0162492,,,,0.0163818,,,,,,9,5
+(LaY)H4,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.63158,0,4.71081,rational,4.66667,0.0093704,4.70642,0.0084466,,,,0.00848178,,,,,,14,3
+(LaY)H4,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.63158,0,79.2504,rational,78.75,0.00631376,79.2134,0.00585065,,,,0.0058672,,,,,,315,4
+(LaY)H6,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.02564,0,1.96384,integer,2,0.0184121,1.96224,0.0192415,,,,-0.0190605,1,0,0,0,,,
+(LaY)H6,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.02564,0,2.55909,rational,2.57143,0.00482271,2.5577,0.00536807,,,,-0.00535375,,,,,,18,7
+(LaY)H6,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.02564,0,71.0481,rational,70.875,0.00243596,71.0288,0.00216532,,,,0.00216767,,,,,,567,8
+AcH10,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,5.76471,0,1.91133,integer,2,0.0463905,1.90955,0.047368,,,,-0.0462796,1,0,0,0,,,
+AcH10,single,SC_HighPressure,integer,gap(Δ)→Debye,2,5.76471,0,3.01607,integer,3,0.00532702,3.01419,0.00470772,,,,0.00471885,0,1,0,0,,,
+AcH10,single,SC_HighPressure,integer,Debye→electronic(E_F),1,5.76471,0,76.9687,integer,75,0.0255785,76.9448,0.0252752,,,,0.0256002,0,1,2,0,,,
+AlH3,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,10,0,1.8535,integer,2,0.07904,1.8505,0.0807899,,,,-0.0776913,1,0,0,0,,,
+AlH3,single,SC_HighPressure,integer,gap(Δ)→Debye,2,10,0,5.3952,integer,5,0.0732503,5.38938,0.0722489,,,,0.0749924,0,0,1,0,,,
+AlH3,single,SC_HighPressure,integer,Debye→electronic(E_F),1,10,0,88.6456,integer,90,0.0152785,88.5978,0.0158268,,,,-0.0157026,1,2,1,0,,,
+B2H6,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,7.04,0,1.85672,rational,1.875,0.00984374,1.85461,0.0109961,,,,-0.0109342,,,,,,15,8
+B2H6,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,7.04,0,3.79163,rational,3.75,0.0109786,3.78875,0.0102265,,,,0.0102803,,,,,,15,4
+B2H6,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,7.04,0,79.1217,rational,78.75,0.00469801,79.0917,0.00431971,,,,0.00432966,,,,,,315,4
+BaH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.64286,0,1.90646,rational,1.875,0.0165,1.90441,0.0154411,,,,0.0155636,,,,,,15,8
+BaH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.64286,0,3.4844,rational,3.5,0.00447711,3.4819,0.00519785,,,,-0.00518485,,,,,,7,2
+BaH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.64286,0,74.8679,integer,75,0.00176499,74.841,0.00212426,,,,-0.00212225,0,1,2,0,,,
+BaH6,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,11.4286,0,1.82357,integer,2,0.0967515,1.82019,0.0987847,,,,-0.0942063,1,0,0,0,,,
+BaH6,single,SC_HighPressure,integer,gap(Δ)→Debye,2,11.4286,0,6.26715,integer,6,0.0426273,6.25942,0.0414448,,,,0.0423281,1,1,0,0,,,
+BaH6,single,SC_HighPressure,integer,Debye→electronic(E_F),1,11.4286,0,139.254,integer,140,0.00535555,139.168,0.00597602,,,,-0.00596059,2,0,1,1,,,
+BH,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,16.6667,0,1.87883,integer,2,0.0644941,1.87376,0.0673744,,,,-0.0652001,1,0,0,0,,,
+BH,single,SC_HighPressure,integer,gap(Δ)→Debye,2,16.6667,0,8.87078,integer,9,0.0145664,8.85483,0.0163949,,,,-0.0162615,0,2,0,0,,,
+BH,single,SC_HighPressure,integer,Debye→electronic(E_F),1,16.6667,0,139.254,integer,140,0.00535555,139.129,0.00626066,,,,-0.00624086,2,0,1,1,,,
+CaH10,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,5.02463,0,1.82928,integer,2,0.0933242,1.8278,0.0942143,,,,-0.0900341,1,0,0,0,,,
+CaH10,single,SC_HighPressure,integer,gap(Δ)→Debye,2,5.02463,0,2.74677,integer,3,0.0921899,2.74529,0.0927826,,,,-0.0887256,0,1,0,0,,,
+CaH10,single,SC_HighPressure,integer,Debye→electronic(E_F),1,5.02463,0,75.0881,integer,75,0.00117274,75.0677,0.000901807,,,,0.00090226,0,1,2,0,,,
+CaH6,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,4.18605,0,1.88911,integer,2,0.0587009,1.88783,0.059419,,,,-0.0577192,1,0,0,0,,,
+CaH6,single,SC_HighPressure,integer,gap(Δ)→Debye,2,4.18605,0,2.21589,integer,2,0.0974264,2.21488,0.0970184,,,,0.102051,1,0,0,0,,,
+CaH6,single,SC_HighPressure,integer,Debye→electronic(E_F),1,4.18605,0,70.9165,integer,70,0.0129236,70.9005,0.0127006,,,,0.0127822,1,0,1,1,,,
+CeH10,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,7.2,0,1.94956,integer,2,0.025873,1.94729,0.0270703,,,,-0.0267085,1,0,0,0,,,
+CeH10,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,7.2,0,3.69314,rational,3.75,0.0153953,3.69027,0.0161851,,,,-0.0160562,,,,,,15,4
+CeH10,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,7.2,0,77.3635,rational,77.1429,0.00285144,77.3334,0.00246382,,,,0.0024664,,,,,,540,7
+CeH9,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,7.65217,0,1.91727,rational,1.875,0.0220461,1.91489,0.0208329,,,,0.0210515,,,,,,15,8
+CeH9,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,7.65217,0,3.99119,integer,4,0.00220838,3.98789,0.00303685,,,,-0.00303209,2,0,0,0,,,
+CeH9,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,7.65217,0,76.4843,rational,76.8,0.00412733,76.4527,0.00454218,,,,-0.00453239,,,,,,384,5
+CH4-H2 (clathrate),single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.13333,0,1.85672,rational,1.875,0.00984374,1.85488,0.0108475,,,,-0.0107887,,,,,,15,8
+CH4-H2 (clathrate),single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.13333,0,3.30331,rational,3.33333,0.00908853,3.30112,0.00975701,,,,-0.00971,,,,,,10,3
+CH4-H2 (clathrate),single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.13333,0,78.2044,rational,78.125,0.00101479,78.1785,0.000684011,,,,0.000684566,,,,,,625,8
+FeH5,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,11.9565,0,1.89204,rational,1.875,0.00900667,1.88838,0.00708455,,,,0.00711066,,,,,,15,8
+FeH5,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,11.9565,0,6.31938,rational,6.25,0.0109786,6.31122,0.00970053,,,,0.00974754,,,,,,25,4
+FeH5,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,11.9565,0,94.9461,rational,94.5,0.00469801,94.8848,0.00405535,,,,0.00406369,,,,,,189,2
+GaH3,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,8.83721,0,1.84863,integer,2,0.0818842,1.84598,0.0834344,,,,-0.0801369,1,0,0,0,,,
+GaH3,single,SC_HighPressure,integer,gap(Δ)→Debye,2,8.83721,0,4.78042,integer,5,0.0459335,4.77586,0.0469322,,,,-0.0458639,0,0,1,0,,,
+GaH3,single,SC_HighPressure,integer,Debye→electronic(E_F),1,8.83721,0,87.0339,integer,90,0.03408,86.9924,0.0345734,,,,-0.0339889,1,2,1,0,,,
+GdH9,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.77551,0,1.89462,rational,1.875,0.0103531,1.89192,0.00894503,,,,0.00898353,,,,,,15,8
+GdH9,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.77551,0,4.63182,rational,4.66667,0.00752405,4.62743,0.00847929,,,,-0.00844412,,,,,,14,3
+GdH9,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.77551,0,78.263,rational,78.4,0.00175013,78.226,0.00222479,,,,-0.00222185,,,,,,392,5
+H3S,single,SC_HighPressure,rational,thermal@Tc→gap(Δ),3,6.40394,0,1.74354,rational,1.75,0.00370742,1.74173,0.00474919,,,,-0.00473692,,,,,,7,4
+H3S,single,SC_HighPressure,rational,gap(Δ)→Debye,2,6.40394,0,3.67296,rational,3.6,0.0198645,3.67042,0.0191866,,,,0.0193723,,,,,,18,5
+H3S,single,SC_HighPressure,rational,Debye→electronic(E_F),1,6.40394,0,71.4124,rational,71.4286,0.000226182,71.3877,0.000571993,,,,-0.000572764,,,,,,500,7
+H6SBr,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,7.56522,0,1.91727,rational,1.875,0.0220461,1.91492,0.0208467,,,,0.0210672,,,,,,15,8
+H6SBr,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,7.56522,0,3.94583,integer,4,0.013728,3.94261,0.0145565,,,,-0.0144514,2,0,0,0,,,
+H6SBr,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,7.56522,0,78.6973,rational,78.75,0.000669568,78.6652,0.00107829,,,,-0.00107741,,,,,,315,4
+H6SCl,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,7.00787,0,1.91886,rational,1.875,0.022856,1.91668,0.021746,,,,0.0219859,,,,,,15,8
+H6SCl,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,7.00787,0,3.65211,rational,3.6,0.0142679,3.64935,0.0135217,,,,0.0136152,,,,,,18,5
+H6SCl,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,7.00787,0,78.2327,rational,78.125,0.00137674,78.2031,0.000998915,,,,0.000999181,,,,,,625,8
+HfH10,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,4.76596,0,1.97524,integer,2,0.0125367,1.97371,0.0133186,,,,-0.0132322,1,0,0,0,,,
+HfH10,single,SC_HighPressure,integer,gap(Δ)→Debye,2,4.76596,0,2.41285,integer,2,0.171106,2.41161,0.170679,,,,0.187147,1,0,0,0,,,
+HfH10,single,SC_HighPressure,integer,Debye→electronic(E_F),1,4.76596,0,71.4921,integer,72,0.00710399,71.4737,0.0073631,,,,-0.00733657,3,2,0,0,,,
+InH3,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,12,0,1.85672,integer,2,0.0771667,1.85312,0.0792635,,,,-0.0762765,1,0,0,0,,,
+InH3,single,SC_HighPressure,integer,gap(Δ)→Debye,2,12,0,6.463,integer,6,0.0716386,6.45463,0.0704345,,,,0.0730382,1,1,0,0,,,
+InH3,single,SC_HighPressure,integer,Debye→electronic(E_F),1,12,0,116.045,integer,120,0.03408,115.97,0.0347501,,,,-0.0341602,3,1,1,0,,,
+InH5,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,14.0741,0,1.84813,rational,1.875,0.0145407,1.84392,0.0168578,,,,-0.0167149,,,,,,15,8
+InH5,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,14.0741,0,7.61532,rational,7.71429,0.0129959,7.60375,0.0145371,,,,-0.0144329,,,,,,54,7
+InH5,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,14.0741,0,137.422,rational,137.2,0.00161492,137.318,0.000856007,,,,0.000859689,,,,,,686,5
+LaBeH8,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.51351,0,1.94454,integer,2,0.0285204,1.94281,0.0294394,,,,-0.0290118,1,0,0,0,,,
+LaBeH8,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.51351,0,2.83538,rational,2.85714,0.00767524,2.83369,0.00827528,,,,-0.00824138,,,,,,20,7
+LaBeH8,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.51351,0,77.3635,rational,77.1429,0.00285144,77.3404,0.00255464,,,,0.00255691,,,,,,540,7
+LaCeH18,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.61798,0,1.95582,integer,2,0.0225902,1.95404,0.0235212,,,,-0.0232482,1,0,0,0,,,
+LaCeH18,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.61798,0,2.87244,rational,2.85714,0.00532702,2.8707,0.00472349,,,,0.00473478,,,,,,20,7
+LaCeH18,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.61798,0,75.4294,rational,75.6,0.00226215,75.4065,0.00256612,,,,-0.0025628,,,,,,378,5
+LaH10,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,4.4,0,2.46016,integer,2,0.187044,2.45841,0.186464,,,,0.206368,1,0,0,0,,,
+LaH10,single,SC_HighPressure,integer,gap(Δ)→Debye,2,4.4,0,1.7885,integer,2,0.118254,1.78765,0.118785,,,,-0.112245,1,0,0,0,,,
+LaH10,single,SC_HighPressure,integer,Debye→electronic(E_F),1,4.4,0,68.5722,integer,70,0.0208226,68.5559,0.021065,,,,-0.0208458,1,0,1,1,,,
+LaH8,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,7.91667,0,1.74068,rational,1.75,0.00535555,1.73845,0.00664583,,,,-0.00662188,,,,,,7,4
+LaH8,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,7.91667,0,4.54804,rational,4.57143,0.00514322,4.54415,0.00600286,,,,-0.00598537,,,,,,32,7
+LaH8,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,7.91667,0,73.2917,rational,73.1429,0.00203074,73.2604,0.00160417,,,,0.00160516,,,,,,512,7
+LaSc2H24,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,3.62538,0,1.9633,integer,2,0.0186919,1.96215,0.0192902,,,,-0.0191064,1,0,0,0,,,
+LaSc2H24,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,3.62538,0,1.84657,rational,1.875,0.0153953,1.84585,0.0157928,,,,-0.0156688,,,,,,15,8
+LaSc2H24,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,3.62538,0,72.5282,integer,72,0.00728321,72.514,0.00708894,,,,0.00711353,3,2,0,0,,,
+LaSr2H18,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.92814,0,1.94567,integer,2,0.0279248,1.9438,0.0289123,,,,-0.0285024,1,0,0,0,,,
+LaSr2H18,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.92814,0,3.04684,integer,3,0.0153742,3.04489,0.0147438,,,,0.0148525,0,1,0,0,,,
+LaSr2H18,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.92814,0,76.1913,rational,75.6,0.00776048,76.1669,0.00744292,,,,0.0074707,,,,,,378,5
+LaSr3H24,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.88757,0,1.92264,rational,1.875,0.0247795,1.92081,0.023849,,,,0.0241383,,,,,,15,8
+LaSr3H24,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.88757,0,3.06223,integer,3,0.0203221,3.06028,0.0196991,,,,0.0198941,0,1,0,0,,,
+LaSr3H24,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.88757,0,75.8084,rational,75.6,0.00274917,75.7843,0.00243219,,,,0.00243486,,,,,,378,5
+LaSrH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.125,0,1.95826,integer,2,0.0213136,1.95632,0.0223274,,,,-0.022082,1,0,0,0,,,
+LaSrH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.125,0,3.12777,rational,3.125,0.000886514,3.1257,0.000225545,,,,0.000223975,,,,,,25,8
+LaSrH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.125,0,75.7846,rational,75.6,0.00243596,75.7596,0.0021061,,,,0.00210889,,,,,,378,5
+LaSrH21,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.0237,0,1.92492,rational,1.875,0.0259336,1.92335,0.0251407,,,,0.0254598,,,,,,15,8
+LaSrH21,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.0237,0,2.60982,rational,2.625,0.00581613,2.60841,0.00636183,,,,-0.00634006,,,,,,21,8
+LaSrH21,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.0237,0,75.5388,rational,75.6,0.000809592,75.5184,0.00108101,,,,-0.00107995,,,,,,378,5
+LaThH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.66667,0,1.93409,rational,1.875,0.03055,1.93231,0.0296597,,,,0.0301075,,,,,,15,8
+LaThH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.66667,0,2.92989,integer,3,0.0239281,2.9281,0.0245547,,,,-0.0242585,0,1,0,0,,,
+LaThH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.66667,0,75.0881,integer,75,0.00117274,75.0651,0.000867177,,,,0.000867624,0,1,2,0,,,
+LaYH20,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.42688,0,1.97231,integer,2,0.0140397,1.9709,0.014767,,,,-0.0146569,1,0,0,0,,,
+LaYH20,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.42688,0,2.24451,rational,2.25,0.00244386,2.24344,0.00292309,,,,-0.00291981,,,,,,9,4
+LaYH20,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.42688,0,72.5282,integer,72,0.00728321,72.5109,0.00704598,,,,0.00707078,3,2,0,0,,,
+Li2MgH16,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,3.06554,0,1.96271,integer,2,0.0189997,1.96174,0.0195057,,,,-0.0193153,1,0,0,0,,,
+Li2MgH16,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,3.06554,0,1.56189,rational,1.6,0.0243988,1.56137,0.0247379,,,,-0.02444,,,,,,8,5
+Li2MgH16,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,3.06554,0,68.0265,rational,67.5,0.00773942,68.0152,0.00757523,,,,0.00760361,,,,,,135,2
+LuH3,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,54.8387,0,1.8717,integer,2,0.0685493,1.85508,0.0781217,,,,-0.0752194,1,0,0,0,,,
+LuH3,single,SC_HighPressure,integer,gap(Δ)→Debye,2,54.8387,0,29.2989,integer,30,0.0239281,29.1255,0.030025,,,,-0.0295833,1,1,1,0,,,
+LuH3,single,SC_HighPressure,integer,Debye→electronic(E_F),1,54.8387,0,90.447,integer,90,0.0049419,90.1793,0.0019882,,,,0.00199024,1,2,1,0,,,
+MgH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.89796,0,1.94198,integer,2,0.0298764,1.94044,0.0306938,,,,-0.0302324,1,0,0,0,,,
+MgH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.89796,0,2.52215,rational,2.5,0.00878074,2.52081,0.00825643,,,,0.00828955,,,,,,5,2
+MgH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.89796,0,71.5612,rational,71.4286,0.00185329,71.5423,0.00158937,,,,0.00159053,,,,,,500,7
+MgH6,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.35424,0,1.96977,integer,2,0.0153467,1.96838,0.016063,,,,-0.0159363,1,0,0,0,,,
+MgH6,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.35424,0,2.21053,rational,2.25,0.0178539,2.20949,0.0183325,,,,-0.0181685,,,,,,9,4
+MgH6,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.35424,0,73.7575,rational,73.5,0.00349158,73.7402,0.00325735,,,,0.0032627,,,,,,147,2
+MoH11,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.41892,0,1.88181,rational,1.875,0.00362084,1.87986,0.00258426,,,,0.00258865,,,,,,15,8
+MoH11,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.41892,0,3.41103,rational,3.42857,0.00514322,3.40866,0.00584011,,,,-0.00582401,,,,,,24,7
+MoH11,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.41892,0,76.9563,rational,76.8,0.00203074,76.9296,0.0016849,,,,0.00168608,,,,,,384,5
+NdH9,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,7.5,0,1.93409,rational,1.875,0.03055,1.93174,0.0293714,,,,0.0298125,,,,,,15,8
+NdH9,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,7.5,0,3.8778,rational,3.85714,0.00532702,3.87466,0.00452115,,,,0.00453194,,,,,,27,7
+NdH9,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,7.5,0,77.3635,rational,77.1429,0.00285144,77.3321,0.00244766,,,,0.00244959,,,,,,540,7
+PrH10,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.88889,0,1.89111,rational,1.875,0.00851705,1.889,0.00740996,,,,0.00743893,,,,,,15,8
+PrH10,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.88889,0,3.64278,rational,3.6,0.0117443,3.64007,0.0110089,,,,0.0110691,,,,,,18,5
+PrH10,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.88889,0,76.1157,rational,75.6,0.00677464,76.0874,0.00640524,,,,0.0064264,,,,,,378,5
+PrH9,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.05556,0,1.93409,rational,1.875,0.03055,1.93156,0.029284,,,,0.0297193,,,,,,15,8
+PrH9,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.05556,0,4.16504,rational,4.16667,0.000389493,4.16142,0.00126009,,,,-0.00126079,,,,,,25,6
+PrH9,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.05556,0,76.0296,rational,75.6,0.00565045,75.9965,0.00521797,,,,0.005231,,,,,,378,5
+ScH12,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,6,0,1.92303,integer,2,0.040023,1.92117,0.0410343,,,,-0.0402128,1,0,0,0,,,
+ScH12,single,SC_HighPressure,integer,gap(Δ)→Debye,2,6,0,3.12007,integer,3,0.0384828,3.11805,0.0378597,,,,0.0385955,0,1,0,0,,,
+ScH12,single,SC_HighPressure,integer,Debye→electronic(E_F),1,6,0,75.1531,integer,75,0.00203677,75.1287,0.00171351,,,,0.00171453,0,1,2,0,,,
+ScH3,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,38.9189,0,1.81909,integer,2,0.0994529,1.80762,0.106425,,,,-0.101136,1,0,0,0,,,
+ScH3,single,SC_HighPressure,integer,gap(Δ)→Debye,2,38.9189,0,21.3948,integer,21,0.0184512,21.3049,0.0143105,,,,0.0144147,0,1,0,1,,,
+ScH3,single,SC_HighPressure,integer,Debye→electronic(E_F),1,38.9189,0,88.6456,integer,90,0.0152785,88.4594,0.0174155,,,,-0.017266,1,2,1,0,,,
+ScH6,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,9.65909,0,1.84617,integer,2,0.0833219,1.84329,0.0850187,,,,-0.0815952,1,0,0,0,,,
+ScH6,single,SC_HighPressure,integer,gap(Δ)→Debye,2,9.65909,0,5.23195,integer,5,0.0443338,5.2265,0.0433364,,,,0.0443039,0,0,1,0,,,
+ScH6,single,SC_HighPressure,integer,Debye→electronic(E_F),1,9.65909,0,81.9142,integer,81,0.011161,81.8715,0.0106453,,,,0.0107018,0,4,0,0,,,
+ScZrH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.98765,0,1.93409,rational,1.875,0.03055,1.93221,0.0296093,,,,0.0300558,,,,,,15,8
+ScZrH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.98765,0,3.09586,rational,3.125,0.00941363,3.09386,0.0100664,,,,-0.0100148,,,,,,25,8
+ScZrH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.98765,0,74.1732,rational,74.6667,0.00665278,74.1492,0.00697818,,,,-0.00695493,,,,,,224,3
+SH3 (Cmca),single,SC_HighPressure,rational,thermal@Tc→gap(Δ),3,4.87603,0,1.96605,rational,2,0.0172657,1.9645,0.0180694,,,,-0.0179094,,,,,,2,1
+SH3 (Cmca),single,SC_HighPressure,rational,gap(Δ)→Debye,2,4.87603,0,2.48011,rational,2.5,0.00801958,2.47881,0.00855039,,,,-0.00851213,,,,,,5,2
+SH3 (Cmca),single,SC_HighPressure,rational,Debye→electronic(E_F),1,4.87603,0,71.7907,rational,72,0.00291594,71.7718,0.00317993,,,,-0.00317448,,,,,,72,1
+Si2H6,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.09524,0,1.87883,rational,1.875,0.00203677,1.87636,0.000727054,,,,0.00072507,,,,,,15,8
+Si2H6,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.09524,0,4.30867,rational,4.28571,0.00532702,4.3049,0.00445713,,,,0.00446768,,,,,,30,7
+Si2H6,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.09524,0,79.1838,rational,78.75,0.00547803,79.1492,0.00504334,,,,0.0050564,,,,,,315,4
+SmH9,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8,0,1.89892,rational,1.875,0.0125972,1.89646,0.0113166,,,,0.0113803,,,,,,15,8
+SmH9,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8,0,4.21292,rational,4.2,0.0030664,4.20928,0.0022048,,,,0.00220709,,,,,,21,5
+SmH9,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8,0,77.803,rational,78.125,0.00413841,77.7694,0.00457213,,,,-0.00456207,,,,,,625,8
+SrH10,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.40154,0,1.97142,integer,2,0.0144951,1.97002,0.0152186,,,,-0.0151035,1,0,0,0,,,
+SrH10,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.40154,0,2.23267,rational,2.25,0.00776078,2.23161,0.00823979,,,,-0.00820692,,,,,,9,4
+SrH10,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.40154,0,72.2738,integer,72,0.00378773,72.2566,0.00355102,,,,0.00355755,3,2,0,0,,,
+SrH22,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.7619,0,1.87883,rational,1.875,0.00203677,1.87616,0.000619042,,,,0.000618475,,,,,,15,8
+SrH22,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.7619,0,4.6635,rational,4.66667,0.000679461,4.65909,0.00162674,,,,-0.00162561,,,,,,14,3
+SrH22,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.7619,0,78.2044,rational,78.125,0.00101479,78.1674,0.00054218,,,,0.000542573,,,,,,625,8
+SrH6,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,9.17647,0,1.84307,integer,2,0.0851457,1.84033,0.0867603,,,,-0.0832023,1,0,0,0,,,
+SrH6,single,SC_HighPressure,integer,gap(Δ)→Debye,2,9.17647,0,4.9789,integer,5,0.00423715,4.97397,0.00523281,,,,-0.0052196,0,0,1,0,,,
+SrH6,single,SC_HighPressure,integer,Debye→electronic(E_F),1,9.17647,0,84.8022,integer,84,0.00946022,84.7603,0.00896942,,,,0.00901047,2,1,0,1,,,
+TaH6,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.36735,0,1.89462,rational,1.875,0.0103531,1.89205,0.00901061,,,,0.00905224,,,,,,15,8
+TaH6,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.36735,0,4.41638,rational,4.375,0.0093704,4.41239,0.00847491,,,,0.00850997,,,,,,35,8
+TaH6,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.36735,0,83.4959,rational,83.3333,0.00194728,83.4582,0.00149638,,,,0.00149768,,,,,,250,3
+TbH9,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.94737,0,1.83229,rational,1.8,0.017624,1.82964,0.0161988,,,,0.0163326,,,,,,9,5
+TbH9,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.94737,0,4.88316,rational,4.8,0.0170291,4.87844,0.0160788,,,,0.0162096,,,,,,24,5
+TbH9,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.94737,0,77.8185,rational,78.125,0.00393822,77.781,0.00442324,,,,-0.00441292,,,,,,625,8
+Th4H15,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,8.67347,0,1.89462,rational,1.875,0.0103531,1.89195,0.00896143,,,,0.00899938,,,,,,15,8
+Th4H15,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,8.67347,0,4.57796,rational,4.57143,0.00142634,4.57367,0.000490605,,,,0.00048988,,,,,,32,7
+Th4H15,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,8.67347,0,75.0881,integer,75,0.00117274,75.0529,0.000704969,,,,0.000705085,0,1,2,0,,,
+ThH10,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,5.90062,0,1.9461,integer,2,0.0276968,1.94424,0.0286795,,,,-0.028276,1,0,0,0,,,
+ThH10,single,SC_HighPressure,integer,gap(Δ)→Debye,2,5.90062,0,3.03202,integer,3,0.0105621,3.03009,0.00993157,,,,0.00998003,0,1,0,0,,,
+ThH10,single,SC_HighPressure,integer,Debye→electronic(E_F),1,5.90062,0,79.3993,integer,80,0.00756512,79.374,0.00788608,,,,-0.00785578,4,0,1,0,,,
+ThH9,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.30137,0,1.90759,rational,1.875,0.0170854,1.90565,0.0160816,,,,0.0162145,,,,,,15,8
+ThH9,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.30137,0,3.30331,rational,3.33333,0.00908853,3.30106,0.00977534,,,,-0.00972818,,,,,,10,3
+ThH9,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.30137,0,75.6816,rational,75.6,0.00107873,75.6559,0.000738902,,,,0.000739145,,,,,,378,5
+UH7,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,12.6316,0,1.83229,rational,1.8,0.017624,1.82855,0.0156108,,,,0.0157366,,,,,,9,5
+UH7,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,12.6316,0,6.89387,rational,6.85714,0.00532702,6.88447,0.00396901,,,,0.00397771,,,,,,48,7
+UH7,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,12.6316,0,101.54,rational,101.25,0.00285144,101.47,0.00217121,,,,0.00217048,,,,,,405,4
+VH8,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,6.81481,0,1.89111,rational,1.875,0.00851705,1.88902,0.00742188,,,,0.00744952,,,,,,15,8
+VH8,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,6.81481,0,3.60361,rational,3.6,0.00100235,3.60096,0.000266974,,,,0.000266631,,,,,,18,5
+VH8,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,6.81481,0,78.2044,rational,78.125,0.00101479,78.1756,0.000647244,,,,0.00064747,,,,,,625,8
+Y3LuH24,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.0636,0,1.96826,integer,2,0.0161272,1.96696,0.0167962,,,,-0.016658,1,0,0,0,,,
+Y3LuH24,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.0636,0,2.06457,integer,2,0.031275,2.06366,0.0308499,,,,0.0313339,1,0,0,0,,,
+Y3LuH24,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.0636,0,72.6544,rational,73.1429,0.00672338,72.6384,0.00694421,,,,-0.00692135,,,,,,512,7
+YCaH18,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.3125,0,1.93409,rational,1.875,0.03055,1.93242,0.0297154,,,,0.0301644,,,,,,15,8
+YCaH18,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.3125,0,2.74677,rational,2.8,0.0193773,2.7452,0.0199621,,,,-0.0197655,,,,,,14,5
+YCaH18,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.3125,0,76.2258,rational,76.8,0.00753346,76.2039,0.00782241,,,,-0.007792,,,,,,384,5
+YH10,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,3.77049,0,1.90238,integer,2,0.0513147,1.90122,0.0519568,,,,-0.0506514,1,0,0,0,,,
+YH10,single,SC_HighPressure,integer,gap(Δ)→Debye,2,3.77049,0,1.98199,integer,2,0.00908853,1.98118,0.00949938,,,,-0.00945455,1,0,0,0,,,
+YH10,single,SC_HighPressure,integer,Debye→electronic(E_F),1,3.77049,0,70.6362,integer,70,0.00900667,70.6218,0.00880498,,,,0.00884364,1,0,1,1,,,
+YH4,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,9.09091,0,1.84617,integer,2,0.0833219,1.84346,0.0849188,,,,-0.0815029,1,0,0,0,,,
+YH4,single,SC_HighPressure,integer,gap(Δ)→Debye,2,9.09091,0,4.92419,integer,5,0.0153953,4.91936,0.0163927,,,,-0.0162595,0,0,1,0,,,
+YH4,single,SC_HighPressure,integer,Debye→electronic(E_F),1,9.09091,0,79.7811,integer,80,0.00274423,79.7419,0.00323645,,,,-0.00323147,4,0,1,0,,,
+YH6,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,4.6875,0,1.96862,integer,2,0.0159382,1.96713,0.0167099,,,,-0.0165716,1,0,0,0,,,
+YH6,single,SC_HighPressure,integer,gap(Δ)→Debye,2,4.6875,0,2.38111,integer,2,0.160054,2.3799,0.159629,,,,0.173911,1,0,0,0,,,
+YH6,single,SC_HighPressure,integer,Debye→electronic(E_F),1,4.6875,0,66.3115,integer,64,0.0348587,66.2948,0.0346145,,,,0.0352284,6,0,0,0,,,
+YH9,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,4.52675,0,1.95796,integer,2,0.0214693,1.95653,0.0222185,,,,-0.0219747,1,0,0,0,,,
+YH9,single,SC_HighPressure,integer,gap(Δ)→Debye,2,4.52675,0,2.31197,integer,2,0.134936,2.31084,0.134513,,,,0.144464,1,0,0,0,,,
+YH9,single,SC_HighPressure,integer,Debye→electronic(E_F),1,4.52675,0,68.5722,integer,70,0.0208226,68.5554,0.021072,,,,-0.0208531,1,0,1,1,,,
+YHfH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.89286,0,1.93409,rational,1.875,0.03055,1.93224,0.0296242,,,,0.0300713,,,,,,15,8
+YHfH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.89286,0,3.04684,integer,3,0.0153742,3.0449,0.0147475,,,,0.0148558,0,1,0,0,,,
+YHfH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.89286,0,75.0191,integer,75,0.000254696,74.9952,6.3355e-05,,,,-6.4002e-05,0,1,2,0,,,
+YLu3H24,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.02778,0,1.97438,integer,2,0.0129763,1.97309,0.0136373,,,,-0.0135463,1,0,0,0,,,
+YLu3H24,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.02778,0,2.04002,integer,2,0.0196183,2.03913,0.0191919,,,,0.0193761,1,0,0,0,,,
+YLu3H24,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.02778,0,73.0284,rational,73.1429,0.00156684,73.0126,0.00178461,,,,-0.00178303,,,,,,512,7
+YLuH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,4.10909,0,1.98332,integer,2,0.00841134,1.982,0.00908267,,,,-0.00904074,1,0,0,0,,,
+YLuH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,4.10909,0,2.07183,rational,2.14286,0.0342839,2.07091,0.0347428,,,,-0.0341533,,,,,,15,7
+YLuH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,4.10909,0,71.8864,integer,72,0.00158033,71.8705,0.0018025,,,,-0.00180023,3,2,0,0,,,
+YThH12,single,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.77143,0,1.98935,integer,2,0.00535555,1.98749,0.00629586,,,,-0.00627464,1,0,0,0,,,
+YThH12,single,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.77143,0,2.90117,rational,2.85714,0.0151753,2.89936,0.0145614,,,,0.0146689,,,,,,20,7
+YThH12,single,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.77143,0,74.6825,rational,74.6667,0.000212576,74.6593,9.89323e-05,,,,-9.9112e-05,,,,,,224,3
+ZrH10,single,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,4.90909,0,1.95167,integer,2,0.024764,1.95012,0.0255791,,,,-0.0252563,1,0,0,0,,,
+ZrH10,single,SC_HighPressure,integer,gap(Δ)→Debye,2,4.90909,0,2.51533,integer,3,0.192687,2.514,0.193319,,,,-0.176737,0,1,0,0,,,
+ZrH10,single,SC_HighPressure,integer,Debye→electronic(E_F),1,4.90909,0,71.991,integer,72,0.000125126,71.9719,0.000390167,,,,-0.000390354,3,2,0,0,,,
+Ba(Fe0.8Co0.2)2As2,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,9.88142,0,1.83471,rational,1.8,0.0189166,1.83177,0.0173445,,,,0.017496,,,,,,9,5
+Ba(Fe0.8Co0.2)2As2,single,SC_IronBased,mixed,gap(Δ)→Debye,2,9.88142,0,5.38583,rational,5.4,0.00263037,5.38009,0.00370089,,,,-0.00369385,,,,,,27,5
+Ba(Fe0.8Co0.2)2As2,single,SC_IronBased,mixed,Debye→electronic(E_F),1,9.88142,0,9.28361,rational,9.33333,0.00535555,9.27866,0.00589198,,,,-0.00587472,,,,,,28,3
+Ba(Fe0.9Co0.1)2As2,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,11.3636,0,1.84617,rational,1.875,0.0156143,1.84278,0.0174863,,,,-0.0173334,,,,,,15,8
+Ba(Fe0.9Co0.1)2As2,single,SC_IronBased,mixed,gap(Δ)→Debye,2,11.3636,0,6.15524,rational,6.125,0.00491257,6.14769,0.00369053,,,,0.00369765,,,,,,49,8
+Ba(Fe0.9Co0.1)2As2,single,SC_IronBased,mixed,Debye→electronic(E_F),1,11.3636,0,9.28361,rational,9.33333,0.00535555,9.27792,0.00597249,,,,-0.00595448,,,,,,28,3
+Ba0.6K0.4Fe2As2,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,6.57895,0,1.83229,rational,1.8,0.017624,1.83034,0.0165765,,,,0.0167151,,,,,,9,5
+Ba0.6K0.4Fe2As2,single,SC_IronBased,mixed,gap(Δ)→Debye,2,6.57895,0,3.59056,rational,3.6,0.00263037,3.58801,0.00334286,,,,-0.00333611,,,,,,18,5
+Ba0.6K0.4Fe2As2,single,SC_IronBased,mixed,Debye→electronic(E_F),1,6.57895,0,9.28361,rational,9.33333,0.00535555,9.28032,0.00571263,,,,-0.00569584,,,,,,28,3
+FeSe (monolayer on STO),single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,4.4,0,3.16487,rational,3.2,0.0111004,3.16261,0.0118212,,,,-0.0117532,,,,,,16,5
+FeSe (monolayer on STO),single,SC_IronBased,mixed,gap(Δ)→Debye,2,4.4,0,1.39026,rational,1.4,0.00700364,1.3896,0.00748212,,,,-0.0074563,,,,,,7,5
+FeSe (monolayer on STO),single,SC_IronBased,mixed,Debye→electronic(E_F),1,4.4,0,0.479526,rational,0.5,0.0426973,0.479412,0.042945,,,,-0.0420477,,,,,,1,2
+FeSe0.5Te0.5,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,16.5517,0,1.76069,rational,1.75,0.00606895,1.75597,0.00339822,,,,0.00340562,,,,,,7,4
+FeSe0.5Te0.5,single,SC_IronBased,mixed,gap(Δ)→Debye,2,16.5517,0,9.40073,rational,9.375,0.00273672,9.38393,0.00095187,,,,0.00095208,,,,,,75,8
+FeSe0.5Te0.5,single,SC_IronBased,mixed,Debye→electronic(E_F),1,16.5517,0,0.483522,rational,0.5,0.03408,0.48309,0.0350045,,,,-0.0344051,,,,,,1,2
+FeSe0.7Te0.3,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,12.25,0,1.74068,rational,1.75,0.00535555,1.73723,0.00735349,,,,-0.0073239,,,,,,7,4
+FeSe0.7Te0.3,single,SC_IronBased,mixed,gap(Δ)→Debye,2,12.25,0,7.03749,integer,7,0.00532702,7.02818,0.00401008,,,,0.00401763,0,0,0,1,,,
+FeSe0.7Te0.3,single,SC_IronBased,mixed,Debye→electronic(E_F),1,12.25,0,0.473654,rational,0.5,0.0556233,0.473341,0.0563217,,,,-0.054792,,,,,,1,2
+FeSe1-xSx (x=0.17),single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,25,0,2.08881,rational,2.14286,0.025873,2.08036,0.0300423,,,,-0.0296004,,,,,,15,7
+FeSe1-xSx (x=0.17),single,SC_IronBased,mixed,gap(Δ)→Debye,2,25,0,11.9685,integer,12,0.00263037,11.9362,0.00534323,,,,-0.00533085,2,1,0,0,,,
+FeSe1-xSx (x=0.17),single,SC_IronBased,mixed,Debye→electronic(E_F),1,25,0,0.464181,rational,0.428571,0.0767143,0.463554,0.0754669,,,,0.0784665,,,,,,3,7
+LaO0.9F0.1FeAs,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,10.7692,0,1.82994,rational,1.8,0.0163629,1.82675,0.0146449,,,,0.0147518,,,,,,9,5
+LaO0.9F0.1FeAs,single,SC_IronBased,mixed,gap(Δ)→Debye,2,10.7692,0,5.88501,rational,5.83333,0.00878074,5.87817,0.0076272,,,,0.00765747,,,,,,35,6
+LaO0.9F0.1FeAs,single,SC_IronBased,mixed,Debye→electronic(E_F),1,10.7692,0,8.28894,rational,8.33333,0.00535555,8.28412,0.0059402,,,,-0.00592271,,,,,,25,3
+LiFeAs,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,15,0,1.80515,rational,1.8,0.00285144,1.80076,0.000423869,,,,0.000422133,,,,,,9,5
+LiFeAs,single,SC_IronBased,mixed,gap(Δ)→Debye,2,15,0,8.30957,rational,8.33333,0.00285959,8.29612,0.00448592,,,,-0.0044752,,,,,,25,3
+LiFeAs,single,SC_IronBased,mixed,Debye→electronic(E_F),1,15,0,6.44695,rational,6.42857,0.00285144,6.44174,0.00204356,,,,0.00204657,,,,,,45,7
+NdFeAsO0.9F0.1,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,5.38462,0,1.78531,rational,1.8,0.00822799,1.78375,0.00910774,,,,-0.00906878,,,,,,9,5
+NdFeAsO0.9F0.1,single,SC_IronBased,mixed,gap(Δ)→Debye,2,5.38462,0,3.01607,integer,3,0.00532702,3.01431,0.00474858,,,,0.00475866,0,1,0,0,,,
+NdFeAsO0.9F0.1,single,SC_IronBased,mixed,Debye→electronic(E_F),1,5.38462,0,8.28894,rational,8.33333,0.00535555,8.28653,0.00564779,,,,-0.00563183,,,,,,25,3
+PrFeAsO0.9F0.1,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,5.38462,0,1.78531,rational,1.8,0.00822799,1.78375,0.00910774,,,,-0.00906878,,,,,,9,5
+PrFeAsO0.9F0.1,single,SC_IronBased,mixed,gap(Δ)→Debye,2,5.38462,0,3.01607,integer,3,0.00532702,3.01431,0.00474858,,,,0.00475866,0,1,0,0,,,
+PrFeAsO0.9F0.1,single,SC_IronBased,mixed,Debye→electronic(E_F),1,5.38462,0,8.28894,rational,8.33333,0.00535555,8.28653,0.00564779,,,,-0.00563183,,,,,,25,3
+SmFeAsO0.9F0.1,single,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,6.51163,0,1.88911,rational,1.875,0.00746787,1.88712,0.00642036,,,,0.0064432,,,,,,15,8
+SmFeAsO0.9F0.1,single,SC_IronBased,mixed,gap(Δ)→Debye,2,6.51163,0,3.44693,rational,3.42857,0.00532702,3.44451,0.00462742,,,,0.00463839,,,,,,24,7
+SmFeAsO0.9F0.1,single,SC_IronBased,mixed,Debye→electronic(E_F),1,6.51163,0,8.28894,rational,8.33333,0.00535555,8.28603,0.00570898,,,,-0.00569217,,,,,,25,3
+(TMTSF)2PF6 (under P),single,SC_Molecular,rational,thermal@Tc→gap(Δ),3,181.818,0,2.10991,rational,2.14286,0.0156143,2.0478,0.0464183,,,,-0.0453753,,,,,,15,7
+(TMTSF)2PF6 (under P),single,SC_Molecular,rational,gap(Δ)→Debye,2,181.818,0,86.1733,rational,86.4,0.00263037,84.4822,0.0227009,,,,-0.0224468,,,,,,432,5
+(TMTSF)2PF6 (under P),single,SC_Molecular,rational,Debye→electronic(E_F),1,181.818,0,5.80226,rational,5.83333,0.00535555,5.74532,0.0153184,,,,-0.0152024,,,,,,35,6
+Cs3C60,single,SC_Molecular,rational,thermal@Tc→gap(Δ),3,3.0303,0,1.75826,rational,1.75,0.00469801,1.7574,0.00420945,,,,0.00421966,,,,,,7,4
+Cs3C60,single,SC_Molecular,rational,gap(Δ)→Debye,2,3.0303,0,1.72347,rational,1.71429,0.00532702,1.7229,0.00500157,,,,0.00500992,,,,,,12,7
+Cs3C60,single,SC_Molecular,rational,Debye→electronic(E_F),1,3.0303,0,406.158,rational,405,0.00285144,406.092,0.00268833,,,,0.00269267,,,,,,405,1
+K3C60,single,SC_Molecular,rational,thermal@Tc→gap(Δ),3,6.66667,0,1.93409,rational,1.875,0.03055,1.932,0.0295025,,,,0.0299471,,,,,,15,8
+K3C60,single,SC_Molecular,rational,gap(Δ)→Debye,2,6.66667,0,3.44693,rational,3.42857,0.00532702,3.44445,0.00461075,,,,0.00462098,,,,,,24,7
+K3C60,single,SC_Molecular,rational,Debye→electronic(E_F),1,6.66667,0,338.465,rational,337.5,0.00285144,338.343,0.00249254,,,,0.00249466,,,,,,675,2
+Rb3C60,single,SC_Molecular,rational,thermal@Tc→gap(Δ),3,3.92857,0,1.74068,rational,1.75,0.00535555,1.73957,0.00599542,,,,-0.00597783,,,,,,7,4
+Rb3C60,single,SC_Molecular,rational,gap(Δ)→Debye,2,3.92857,0,2.25692,rational,2.25,0.0030664,2.25596,0.00264348,,,,0.00264539,,,,,,9,4
+Rb3C60,single,SC_Molecular,rational,Debye→electronic(E_F),1,3.92857,0,369.235,rational,370.286,0.00284655,369.156,0.00305922,,,,-0.00305636,,,,,,2592,7
+Ba0.6K0.4BiO3,single,SC_Oxide,mixed,thermal@Tc→gap(Δ),3,10,0,1.74068,rational,1.75,0.00535555,1.73786,0.00698592,,,,-0.00696132,,,,,,7,4
+Ba0.6K0.4BiO3,single,SC_Oxide,mixed,gap(Δ)→Debye,2,10,0,5.74489,rational,5.71429,0.00532702,5.73869,0.00425223,,,,0.00426091,,,,,,40,7
+Ba0.6K0.4BiO3,single,SC_Oxide,mixed,Debye→electronic(E_F),1,10,0,193.409,rational,192.857,0.00285144,193.304,0.002313,,,,0.0023151,,,,,,1350,7
+BaPb0.75Bi0.25O3,single,SC_Oxide,mixed,thermal@Tc→gap(Δ),3,23.3333,0,1.74068,rational,1.75,0.00535555,1.7341,0.009168,,,,-0.00912724,,,,,,7,4
+BaPb0.75Bi0.25O3,single,SC_Oxide,mixed,gap(Δ)→Debye,2,23.3333,0,13.4047,rational,13.3333,0.00532702,13.371,0.00281556,,,,0.00282352,,,,,,40,3
+BaPb0.75Bi0.25O3,single,SC_Oxide,mixed,Debye→electronic(E_F),1,23.3333,0,207.224,rational,208.286,0.00512575,206.963,0.00639308,,,,-0.0063721,,,,,,1458,7
+Bi2Sr2CaCu2O8 (Bi-2212),single,SC_Oxide,mixed,thermal@Tc→gap(Δ),3,4.44444,0,2.83666,rational,2.85714,0.00722077,2.83462,0.00794607,,,,-0.00791324,,,,,,20,7
+Bi2Sr2CaCu2O8 (Bi-2212),single,SC_Oxide,mixed,gap(Δ)→Debye,2,4.44444,0,1.56679,rational,1.6,0.0211976,1.56604,0.0216877,,,,-0.0214535,,,,,,8,5
+Bi2Sr2CaCu2O8 (Bi-2212),single,SC_Oxide,mixed,Debye→electronic(E_F),1,4.44444,0,43.5169,rational,43.75,0.00535555,43.5065,0.00559675,,,,-0.00558126,,,,,,175,4
+La2-xSrxCuO4 (LSCO x~0.15),single,SC_Oxide,mixed,thermal@Tc→gap(Δ),3,9.47368,0,2.13767,rational,2.14286,0.00242448,2.1344,0.00396441,,,,-0.00395581,,,,,,15,7
+La2-xSrxCuO4 (LSCO x~0.15),single,SC_Oxide,mixed,gap(Δ)→Debye,2,9.47368,0,4.43177,rational,4.375,0.0128101,4.42724,0.0117996,,,,0.0118698,,,,,,35,8
+La2-xSrxCuO4 (LSCO x~0.15),single,SC_Oxide,mixed,Debye→electronic(E_F),1,9.47368,0,48.3522,rational,48.6,0.00512575,48.3274,0.00563992,,,,-0.00562484,,,,,,243,5
+SrTiO3-doped,single,SC_Oxide,mixed,thermal@Tc→gap(Δ),3,1142.86,0,1.65779,rational,1.66667,0.00535555,1.35104,0.23362,,,,-0.209953,,,,,,5,3
+SrTiO3-doped,single,SC_Oxide,mixed,gap(Δ)→Debye,2,1142.86,0,689.387,rational,691.2,0.00263037,604.346,0.143716,,,,-0.134282,,,,,,3456,5
+SrTiO3-doped,single,SC_Oxide,mixed,Debye→electronic(E_F),1,1142.86,0,130.551,rational,130.667,0.0008873,122.499,0.0666786,,,,-0.0645492,,,,,,392,3
+YBa2Cu3O7 (YBCO),single,SC_Oxide,mixed,thermal@Tc→gap(Δ),3,4.56522,0,2.52272,rational,2.5,0.00900667,2.52086,0.00827365,,,,0.00830938,,,,,,5,2
+YBa2Cu3O7 (YBCO),single,SC_Oxide,mixed,gap(Δ)→Debye,2,4.56522,0,1.80964,rational,1.8,0.00532702,1.80875,0.00483664,,,,0.00484933,,,,,,9,5
+YBa2Cu3O7 (YBCO),single,SC_Oxide,mixed,Debye→electronic(E_F),1,4.56522,0,41.4447,rational,41.6667,0.00535555,41.4345,0.00560331,,,,-0.00558838,,,,,,125,3
+Al,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,356.667,0,1.74068,integer,2,0.148978,1.64016,0.219394,,,,-0.198353,1,0,0,0,,,
+Al,single,SC_TypeI,integer,gap(Δ)→Debye,2,356.667,0,204.901,integer,200,0.023919,197.013,0.0151625,,,,-0.0150477,3,0,2,0,,,
+Al,single,SC_TypeI,integer,Debye→electronic(E_F),1,356.667,0,317.226,integer,315,0.00701806,311.12,0.0124709,,,,-0.0123939,0,2,1,1,,,
+Cd,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,401.923,0,1.74068,integer,2,0.148978,1.6274,0.22895,,,,-0.206164,1,0,0,0,,,
+Cd,single,SC_TypeI,integer,gap(Δ)→Debye,2,401.923,0,230.9,integer,225,0.0255536,220.883,0.0186376,,,,-0.0184673,0,2,2,0,,,
+Cd,single,SC_TypeI,integer,Debye→electronic(E_F),1,401.923,0,414.209,integer,420,0.0139806,405.224,0.0364628,,,,-0.0358147,2,1,1,1,,,
+Hg,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,23.1325,0,2.06924,integer,2,0.0334613,2.06149,0.0298277,,,,0.0302818,1,0,0,0,,,
+Hg,single,SC_TypeI,integer,gap(Δ)→Debye,2,23.1325,0,11.1792,integer,12,0.0734179,11.1513,0.0761048,,,,-0.0733506,2,1,0,0,,,
+Hg,single,SC_TypeI,integer,Debye→electronic(E_F),1,23.1325,0,1075.84,integer,1080,0.00387091,1074.49,0.00512575,,,,-0.00511491,3,3,1,0,,,
+In,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,37.8299,0,1.80363,integer,2,0.108872,1.79259,0.115706,,,,-0.109486,1,0,0,0,,,
+In,single,SC_TypeI,integer,gap(Δ)→Debye,2,37.8299,0,20.9743,integer,21,0.00122703,20.8886,0.00533207,,,,-0.00531888,0,1,0,1,,,
+In,single,SC_TypeI,integer,Debye→electronic(E_F),1,37.8299,0,850.998,integer,840,0.0129236,849.261,0.0109043,,,,0.0109647,3,1,1,1,,,
+La,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,28.9796,0,1.75252,integer,2,0.141214,1.7443,0.146594,,,,-0.136794,1,0,0,0,,,
+La,single,SC_TypeI,integer,gap(Δ)→Debye,2,28.9796,0,16.536,integer,16,0.032412,16.4842,0.0293759,,,,0.0298136,4,0,0,0,,,
+La,single,SC_TypeI,integer,Debye→electronic(E_F),1,28.9796,0,629.259,integer,630,0.00117745,628.275,0.00274574,,,,-0.00274185,1,2,1,1,,,
+Pb,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,14.5833,0,2.17585,integer,2,0.0808178,2.17071,0.0786423,,,,0.0819071,1,0,0,0,,,
+Pb,single,SC_TypeI,integer,gap(Δ)→Debye,2,14.5833,0,6.70237,integer,7,0.0444066,6.69182,0.0460532,,,,-0.0450243,0,0,0,1,,,
+Pb,single,SC_TypeI,integer,Debye→electronic(E_F),1,14.5833,0,1046.62,integer,1050,0.0032323,1045.79,0.00402252,,,,-0.00401758,1,1,2,1,,,
+Sn,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,53.7634,0,1.77811,integer,2,0.124789,1.76263,0.134666,,,,-0.12634,1,0,0,0,,,
+Sn,single,SC_TypeI,integer,gap(Δ)→Debye,2,53.7634,0,30.2363,integer,30,0.0078137,30.0608,0.00202234,,,,0.00202462,1,1,1,0,,,
+Sn,single,SC_TypeI,integer,Debye→electronic(E_F),1,53.7634,0,591.83,integer,588,0.00647217,590.113,0.00358101,,,,0.0035871,2,1,0,2,,,
+Tl,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,40.1674,0,1.74796,integer,2,0.14419,1.73659,0.15168,,,,-0.141224,1,0,0,0,,,
+Tl,single,SC_TypeI,integer,gap(Δ)→Debye,2,40.1674,0,22.9796,integer,24,0.0444066,22.8799,0.0489544,,,,-0.047795,3,1,0,0,,,
+Tl,single,SC_TypeI,integer,Debye→electronic(E_F),1,40.1674,0,1063.75,integer,1050,0.0129236,1061.44,0.0107792,,,,0.0108363,1,1,2,1,,,
+Zn,single,SC_TypeI,integer,thermal@Tc→gap(Δ),3,384.706,0,1.77481,integer,2,0.126882,1.66426,0.201734,,,,-0.183767,1,0,0,0,,,
+Zn,single,SC_TypeI,integer,gap(Δ)→Debye,2,384.706,0,216.759,integer,216,0.00350193,207.758,0.0396696,,,,-0.0389045,3,3,0,0,,,
+Zn,single,SC_TypeI,integer,Debye→electronic(E_F),1,384.706,0,336.07,integer,336,0.000207349,329.092,0.0209906,,,,-0.0207738,4,1,0,1,,,
+Hf,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,1861.54,0,1.78531,integer,2,0.120253,1.24723,0.603558,,,,-0.472222,1,0,0,0,,,
+Hf,single,SC_TypeII,integer,gap(Δ)→Debye,2,1861.54,0,1042.7,integer,1050,0.00700364,833.188,0.26022,,,,-0.231286,1,1,2,1,,,
+Hf,single,SC_TypeII,integer,Debye→electronic(E_F),1,1861.54,0,369.235,integer,375,0.0156143,332.139,0.129044,,,,-0.121372,0,1,3,0,,,
+Mo,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,489.13,0,1.7659,integer,2,0.132564,1.62606,0.229969,,,,-0.206987,1,0,0,0,,,
+Mo,single,SC_TypeII,integer,gap(Δ)→Debye,2,489.13,0,276.986,integer,280,0.0108825,262.362,0.0672274,,,,-0.0650644,3,0,1,1,,,
+Mo,single,SC_TypeII,integer,Debye→electronic(E_F),1,489.13,0,170.2,integer,168,0.0129236,165.707,0.0138395,,,,-0.0137428,3,1,0,1,,,
+Nb,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,29.7297,0,1.94454,integer,2,0.0285204,1.93518,0.0334951,,,,-0.0329468,1,0,0,0,,,
+Nb,single,SC_TypeII,integer,gap(Δ)→Debye,2,29.7297,0,15.2888,integer,15,0.0188907,15.2398,0.0157323,,,,0.0158602,0,1,1,0,,,
+Nb,single,SC_TypeII,integer,Debye→electronic(E_F),1,29.7297,0,224.495,integer,224,0.00220352,224.134,0.000600001,,,,0.000598035,5,0,0,1,,,
+NbN,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,22.4768,0,1.76762,integer,2,0.131463,1.76119,0.135595,,,,-0.127157,1,0,0,0,,,
+NbN,single,SC_TypeII,integer,gap(Δ)→Debye,2,22.4768,0,12.7158,integer,12,0.0562937,12.685,0.0539986,,,,0.0555135,2,1,0,0,,,
+NbN,single,SC_TypeII,integer,Debye→electronic(E_F),1,22.4768,0,170.072,integer,168,0.0121815,169.865,0.0109818,,,,0.01104,3,1,0,1,,,
+Re,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,244.706,0,1.91133,integer,2,0.0463905,1.83561,0.0895582,,,,-0.0857703,1,0,0,0,,,
+Re,single,SC_TypeII,integer,gap(Δ)→Debye,2,244.706,0,128.029,integer,128,0.000226131,124.647,0.0268973,,,,-0.0265445,7,0,0,0,,,
+Re,single,SC_TypeII,integer,Debye→electronic(E_F),1,244.706,0,312.429,integer,315,0.00822799,308.303,0.0217213,,,,-0.0214896,0,2,1,1,,,
+Ta,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,54.8098,0,1.81726,integer,2,0.100557,1.80114,0.11041,,,,-0.104727,1,0,0,0,,,
+Ta,single,SC_TypeII,integer,gap(Δ)→Debye,2,54.8098,0,30.1607,integer,30,0.00532702,29.9822,0.000592534,,,,-0.000593509,1,1,1,0,,,
+Ta,single,SC_TypeII,integer,Debye→electronic(E_F),1,54.8098,0,331.558,integer,336,0.0133984,330.577,0.0164049,,,,-0.0162715,4,1,0,1,,,
+Ti,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,1050,0,1.74068,integer,2,0.148978,1.44476,0.384314,,,,-0.325204,1,0,0,0,,,
+Ti,single,SC_TypeII,integer,gap(Δ)→Debye,2,1050,0,603.213,integer,600,0.00532702,534.848,0.121813,,,,-0.114947,3,1,2,0,,,
+Ti,single,SC_TypeII,integer,Debye→electronic(E_F),1,1050,0,245.905,integer,245,0.00368136,231.97,0.0561689,,,,-0.0546502,0,0,1,2,,,
+V,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,70.3704,0,1.82664,integer,2,0.0949082,1.80583,0.107527,,,,-0.102127,1,0,0,0,,,
+V,single,SC_TypeII,integer,gap(Δ)→Debye,2,70.3704,0,38.5245,integer,40,0.038299,38.2319,0.0462459,,,,-0.0452092,3,0,1,0,,,
+V,single,SC_TypeII,integer,Debye→electronic(E_F),1,70.3704,0,161.852,integer,162,0.000911388,161.238,0.00472715,,,,-0.0047148,1,4,0,0,,,
+Zr,single,SC_TypeII,integer,thermal@Tc→gap(Δ),3,477.049,0,1.71214,integer,2,0.168127,1.5799,0.265902,,,,-0.235786,1,0,0,0,,,
+Zr,single,SC_TypeII,integer,gap(Δ)→Debye,2,477.049,0,278.627,integer,280,0.00492734,264.28,0.0594817,,,,-0.0577805,3,0,1,1,,,
+Zr,single,SC_TypeII,integer,Debye→electronic(E_F),1,477.049,0,330.988,integer,336,0.0151426,322.466,0.0419689,,,,-0.0411135,4,1,0,1,,,
+2H-NbSe2,sigma,SC_Binary,integer,thermal@Tc→gap(Δ),3,27.7778,0,1.8535,integer,2,0.07904,1.84516,0.0839148,1.84516,0.0839148,intra,-0.0805812,1,0,0,0,,,
+2H-NbSe2,sigma,SC_Binary,integer,gap(Δ)→Debye,2,27.7778,0,14.9867,integer,15,0.000889688,14.9417,0.00389965,14.9417,0.00389965,intra,-0.00389424,0,1,1,0,,,
+2H-NbSe2,sigma,SC_Binary,integer,Debye→electronic(E_F),1,27.7778,0,307.52,integer,315,0.0243245,307.059,0.0258624,307.059,0.0258624,intra,-0.0255327,0,2,1,1,,,
+2H-NbSe2,pi,SC_Binary,integer,thermal@Tc→gap(Δ),3,27.7778,0,0.999278,integer,1,0.000722572,0.994784,0.00524356,0.994784,0.00524356,intra,-0.00522965,0,0,0,0,,,
+2H-NbSe2,pi,SC_Binary,integer,gap(Δ)→Debye,2,27.7778,0,27.7978,integer,28,0.00727217,27.7145,0.0103013,27.7145,0.0103013,intra,-0.0102488,2,0,0,1,,,
+2H-NbSe2,pi,SC_Binary,integer,Debye→electronic(E_F),1,27.7778,0,307.52,integer,315,0.0243245,307.059,0.0258624,307.059,0.0258624,intra,-0.0255327,0,2,1,1,,,
+2H-NbSe2,sigma-vs-pi,SC_Binary,rational,gap(sigma) / gap(pi),,,,1.85484,rational,1.875,0.0108696,1.85484,0.0108696,1.85484,0.0108696,inter,-0.0108102,,,,,,15,8
+2H-NbSe2,sigma-vs-pi,SC_Binary,rational,Debye(sigma) / Debye(pi),,,,1,rational,1,0,1,0,1,0,inter,0,,,,,,1,1
+MgB2,pi,SC_Binary,mixed,thermal@Tc→gap(Δ),3,19.2308,1.58974,0.80339,rational,0.8,0.00421927,0.800888,0.00110913,0.800888,0.00110913,intra,0.00110938,,,,,,4,5
+MgB2,pi,SC_Binary,mixed,gap(Δ)→Debye,2,19.2308,1.58974,23.937,integer,24,0.00263037,23.8874,0.00471588,23.8874,0.00471588,intra,-0.00470271,3,1,0,0,,,
+MgB2,pi,SC_Binary,mixed,Debye→electronic(E_F),1,19.2308,1.58974,92.8361,rational,92.5714,0.00285144,92.7398,0.00181546,92.7398,0.00181546,intra,0.00181748,,,,,,648,7
+MgB2,sigma,SC_Binary,integer,thermal@Tc→gap(Δ),3,20.8205,1.58974,2.11262,integer,2,0.0533071,2.1055,0.050105,2.1055,0.050105,intra,0.0514058,1,0,0,0,,,
+MgB2,sigma,SC_Binary,integer,gap(Δ)→Debye,2,20.8205,1.58974,9.85532,integer,10,0.0146808,9.83317,0.0169662,9.83317,0.0169662,intra,-0.0168237,1,0,1,0,,,
+MgB2,sigma,SC_Binary,integer,Debye→electronic(E_F),1,20.8205,1.58974,85.7477,integer,84,0.0203816,85.6513,0.0192796,85.6513,0.0192796,intra,0.0194676,2,1,0,1,,,
+MgB2,sigma-vs-pi,SC_Binary,rational,gap(sigma) / gap(pi),,,,2.62963,rational,2.625,0.00176056,2.62963,0.00176056,2.62963,0.00176056,inter,0.00176226,,,,,,21,8
+MgB2,sigma-vs-pi,SC_Binary,rational,Debye(sigma) / Debye(pi),,,,1.08267,rational,1.125,0.039101,1.08267,0.039101,1.08267,0.039101,inter,-0.0383528,,,,,,9,8
+LaH10,H1-optic-sigma,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,3.8,2,0.835525,integer,1,0.196852,0.835011,0.197589,0.835011,0.197589,intra,-0.18031,0,0,0,0,,,
+LaH10,H1-optic-sigma,SC_HighPressure,integer,gap(Δ)→Debye,2,3.8,2,4.54804,integer,5,0.0993754,4.54617,0.0998265,4.54617,0.0998265,intra,-0.0951528,0,0,1,0,,,
+LaH10,H1-optic-sigma,SC_HighPressure,integer,Debye→electronic(E_F),1,3.8,2,79.3993,integer,80,0.00756512,79.3831,0.0077718,79.3831,0.0077718,intra,-0.00774114,4,0,1,0,,,
+LaH10,H2-optic-pi,SC_HighPressure,mixed,thermal@Tc→gap(Δ),3,5.8,2,1.62463,rational,1.6,0.0151619,1.62311,0.0142362,1.62311,0.0142362,intra,0.0143404,,,,,,8,5
+LaH10,H2-optic-pi,SC_HighPressure,mixed,gap(Δ)→Debye,2,5.8,2,3.57004,rational,3.57143,0.000389493,3.5678,0.00101617,3.5678,0.00101617,intra,-0.00101692,,,,,,25,7
+LaH10,H2-optic-pi,SC_HighPressure,mixed,Debye→electronic(E_F),1,5.8,2,52.0203,rational,52.5,0.0092223,52.004,0.0095383,52.004,0.0095383,intra,-0.00949253,,,,,,105,2
+LaH10,La-acous-sigma,SC_HighPressure,integer,thermal@Tc→gap(Δ),3,1.28,2,0.371345,integer,1,1.69292,0.371268,1.69347,0.371268,1.69347,intra,-0.990831,0,0,0,0,,,
+LaH10,La-acous-sigma,SC_HighPressure,integer,gap(Δ)→Debye,2,1.28,2,3.44693,integer,3,0.129661,3.44646,0.129541,3.44646,0.129541,intra,0.138735,0,1,0,0,,,
+LaH10,La-acous-sigma,SC_HighPressure,integer,Debye→electronic(E_F),1,1.28,2,235.717,integer,240,0.0181711,235.7,0.0182414,235.7,0.0182414,intra,-0.0180791,4,1,1,0,,,
+LaH10,H1-optic-sigma-vs-H2-optic-pi,SC_HighPressure,rational,gap(H1-optic-sigma) / gap(H2-optic-pi),,,,0.514286,rational,0.5,0.0277778,0.514286,0.0277778,0.514286,0.0277778,inter,0.0281714,,,,,,1,2
+LaH10,H1-optic-sigma-vs-H2-optic-pi,SC_HighPressure,rational,Debye(H1-optic-sigma) / Debye(H2-optic-pi),,,,0.655172,rational,0.666667,0.0175439,0.655172,0.0175439,0.655172,0.0175439,inter,-0.0173929,,,,,,2,3
+FeSe,pi,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,28.8095,0,0.345373,rational,0.333333,0.0348587,0.343762,0.0303357,0.343762,0.0303357,intra,0.0308076,,,,,,1,3
+FeSe,pi,SC_IronBased,mixed,gap(Δ)→Debye,2,28.8095,0,83.4158,rational,83.3333,0.000988454,83.1564,0.0021278,83.1564,0.0021278,intra,-0.00212506,,,,,,250,3
+FeSe,pi,SC_IronBased,mixed,Debye→electronic(E_F),1,28.8095,0,0.479526,rational,0.5,0.0426973,0.47878,0.0443211,0.47878,0.0443211,intra,-0.0433669,,,,,,1,2
+FeSe,sigma,SC_IronBased,mixed,thermal@Tc→gap(Δ),3,28.8095,0,2.07224,rational,2.14286,0.03408,2.06257,0.038926,2.06257,0.038926,intra,-0.0381886,,,,,,15,7
+FeSe,sigma,SC_IronBased,mixed,gap(Δ)→Debye,2,28.8095,0,13.9026,integer,14,0.00700364,13.8594,0.0101448,13.8594,0.0101448,intra,-0.0100936,1,0,0,1,,,
+FeSe,sigma,SC_IronBased,mixed,Debye→electronic(E_F),1,28.8095,0,0.479526,rational,0.5,0.0426973,0.47878,0.0443211,0.47878,0.0443211,intra,-0.0433669,,,,,,1,2
+FeSe,sigma-vs-pi,SC_IronBased,rational,gap(sigma) / gap(pi),,,,6,rational,6,0,6,0,6,0,inter,0,,,,,,6,1
+FeSe,sigma-vs-pi,SC_IronBased,rational,Debye(sigma) / Debye(pi),,,,1,rational,1,0,1,0,1,0,inter,0,,,,,,1,1
+Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,thermal@Tc→gap(Δ),3,1820,195,1.764,rational,1.75,0.00793547,1.2442,0.406525,1.2442,0.406525,intra,-0.341123,,,,,,7,4
+Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,gap(Δ)→Debye,2,1820,195,1031.75,rational,1029,0.00266258,829.064,0.241159,829.064,0.241159,intra,-0.216045,,,,,,1029,1
+Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,Debye→electronic(E_F),1,1820,195,0.999774,rational,1,0.000226182,0.901573,0.109173,0.901573,0.109173,intra,-0.103614,,,,,,1,1
+Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,thermal@Tc→gap(Δ),3,1625,195,1.764,rational,1.75,0.00793575,1.29989,0.346264,1.29989,0.346264,intra,-0.297336,,,,,,7,4
+Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,gap(Δ)→Debye,2,1625,195,921.203,rational,921.6,0.000431483,759.625,0.213231,759.625,0.213231,intra,-0.193286,,,,,,4608,5
+Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,Debye→electronic(E_F),1,1625,195,0.999774,rational,1,0.000226182,0.912094,0.0963778,0.912094,0.0963778,intra,-0.0920122,,,,,,1,1
+Helium-3 (He-3) B-phase,0-bar-vs-10-bar,Superfluid,rational,gap(0-bar) / gap(10-bar),,,,0.892857,rational,0.875,0.0199997,0.892857,0.0199997,0.892857,0.0199997,inter,0.0202025,,,,,,7,8
+Helium-3 (He-3) B-phase,0-bar-vs-10-bar,Superfluid,rational,Debye(0-bar) / Debye(10-bar),,,,1,rational,1,0,1,0,1,0,inter,0,,,,,,1,1
+Helium-4 (He-4),1-bar,Superfluid,rational,thermal@Tc→gap(Δ),3,3.95994,0.0354076,3.96093,rational,4,0.00986331,3.95839,0.0105112,3.95839,0.0105112,intra,-0.010457,,,,,,4,1
+Helium-4 (He-4),1-bar,Superfluid,rational,gap(Δ)→Debye,2,3.95994,0.0354076,0.99975,rational,1,0.000250228,0.999323,0.000677944,0.999323,0.000677944,intra,-0.000677229,,,,,,1,1
+Helium-4 (He-4),1-bar,Superfluid,rational,Debye→electronic(E_F),1,3.95994,0.0354076,0.996212,rational,1,0.00380287,0.995999,0.00401745,0.995999,0.00401745,intra,-0.00400903,,,,,,1,1
+Helium-4 (He-4),10-bar,Superfluid,rational,thermal@Tc→gap(Δ),3,3.99535,0.0354076,3.99411,rational,4,0.00147387,3.99153,0.00212211,3.99153,0.00212211,intra,-0.00211975,,,,,,4,1
+Helium-4 (He-4),10-bar,Superfluid,rational,gap(Δ)→Debye,2,3.99535,0.0354076,1.00031,rational,1,0.000309265,0.999878,0.000122036,0.999878,0.000122036,intra,-0.000122007,,,,,,1,1
+Helium-4 (He-4),10-bar,Superfluid,rational,Debye→electronic(E_F),1,3.99535,0.0354076,0.999691,rational,1,0.000309361,0.999475,0.000525099,0.999475,0.000525099,intra,-0.000525138,,,,,,1,1
+Helium-4 (He-4),1-bar-vs-10-bar,Superfluid,rational,gap(1-bar) / gap(10-bar),,,,1.00405,rational,1,0.00403769,1.00405,0.00403769,1.00405,0.00403769,inter,0.00404182,,,,,,1,1
+Helium-4 (He-4),1-bar-vs-10-bar,Superfluid,rational,Debye(1-bar) / Debye(10-bar),,,,1.00349,rational,1,0.00348028,1.00349,0.00348028,1.00349,0.00348028,inter,0.00348392,,,,,,1,1

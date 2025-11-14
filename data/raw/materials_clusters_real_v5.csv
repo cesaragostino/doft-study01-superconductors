@@ -1,0 +1,141 @@
+name,sub_network,category,Tc_K,Gap_meV,ThetaD_K,EF_eV,lock_family,sub_order,notes
+2H-NbSe2,sigma,SC_Binary,7.2,1.15,200,5.3,integer,1,multi-gap (Gamma pocket)
+2H-NbSe2,pi,SC_Binary,7.2,0.62,200,5.3,integer,2,multi-gap (2-gap) - smaller gap component
+CaC6,single,SC_Binary,11.5,1.75,300,3.8,integer,0,Graphite Intercalation
+MgB2,pi,SC_Binary,39,2.7,750,6,mixed,2,secondary band (acoustic phonon proxy)
+MgB2,sigma,SC_Binary,39,7.1,812,6,integer,1,main band (E2g phonon proxy)
+MgCNi3,single,SC_Binary,8,1.2,350,5,mixed,0,Intermetallic Perovskite
+Mo3Si,single,SC_Binary,1.29,0.19,310,5.5,integer,0,A15 (Homogeneous)
+Nb3Al,single,SC_Binary,18.9,3,280,6.6,integer,0,A15 (Homogeneous)
+Nb3Ge,single,SC_Binary,23,3.9,320,6.8,integer,0,A15 (Homogeneous)
+Nb3Sn,single,SC_Binary,18,3.1,250,6.7,integer,0,A15 (Homogeneous)
+PbMo6S8,single,SC_Binary,14,2.2,200,6,mixed,0,Chevrel phase
+TiN,single,SC_Binary,5.2,0.87,650,5.8,integer,0,NaCl structure - optimized thin film
+V3Si,single,SC_Binary,17.1,2.5,350,6.5,integer,0,A15 (Homogeneous)
+ZrN,single,SC_Binary,10.7,1.8,590,6.2,integer,0,NaCl structure - hard superconductor
+CeCoIn5,single,SC_HeavyFermion,2.3,0.73,250,0.01,rational,0,2$\Delta$/k$_B$T$_c$ = 7.7 (strong coupling)
+CeCu2Si2,single,SC_HeavyFermion,0.7,0.11,220,0.01,rational,0,First unconventional SC
+UBe13,single,SC_HeavyFermion,0.85,0.13,350,0.01,rational,0,p-wave candidate
+UPd2Al3,single,SC_HeavyFermion,2,0.32,300,0.01,rational,0,Coexists with AFM
+UPt3,single,SC_HeavyFermion,0.5,0.08,210,0.01,rational,0,Multiple SC phases
+URu2Si2,single,SC_HeavyFermion,1.3,0.2,300,0.01,rational,0,Hidden Order phase
+(La0.5Y0.5)H8,single,SC_HighPressure,145,24,940,6.2,mixed,0,Ternary octahydride (140 GPa)
+(LaY)H10,single,SC_HighPressure,253,43,1120,7,mixed,0,Ternary decahydride (183 GPa)
+(LaY)H4,single,SC_HighPressure,95,15,820,5.6,mixed,0,Ternary tetrahydride (110 GPa)
+(LaY)H6,single,SC_HighPressure,195,33,980,6,mixed,0,Ternary hexahydride (170 GPa)
+AcH10,single,SC_HighPressure,170,28,980,6.5,integer,0,High Pressure (180 GPa) - actinide clathrate
+AlH3,single,SC_HighPressure,72,11.5,720,5.5,integer,0,High Pressure (180 GPa) - disputed
+B2H6,single,SC_HighPressure,125,20,880,6,mixed,0,High Pressure (250 GPa) - diborane
+BaH12,single,SC_HighPressure,140,23,930,6,mixed,0,High Pressure (180 GPa)
+BaH6,single,SC_HighPressure,35,5.5,400,4.8,integer,0,High Pressure (100 GPa) - P4/mmm structure
+BH,single,SC_HighPressure,21,3.4,350,4.2,integer,0,High Pressure (200 GPa) - simple boron hydride
+CaH10,single,SC_HighPressure,203,32,1020,6.6,integer,0,High Pressure (250 GPa) - predicted clathrate
+CaH6,single,SC_HighPressure,215,35,900,5.5,integer,0,High Pressure (172 GPa) - sodalite Im-3m
+CeH10,single,SC_HighPressure,125,21,900,6,mixed,0,High Pressure (180 GPa) - predicted
+CeH9,single,SC_HighPressure,115,19,880,5.8,mixed,0,High Pressure (170 GPa) - clathrate
+CH4-H2 (clathrate),single,SC_HighPressure,150,24,920,6.2,mixed,0,High Pressure (100 GPa) - CH_ intercalation
+FeH5,single,SC_HighPressure,46,7.5,550,4.5,mixed,0,High Pressure (130 GPa) - transition metal hydride
+GaH3,single,SC_HighPressure,86,13.7,760,5.7,integer,0,High Pressure (160 GPa) - stable above 160 GPa
+GdH9,single,SC_HighPressure,98,16,860,5.8,mixed,0,High Pressure (165 GPa) - clathrate predicted
+H3S,single,SC_HighPressure,203,30.5,1300,8,rational,0,High Pressure (155 GPa)
+H6SBr,single,SC_HighPressure,115,19,870,5.9,mixed,0,High Pressure (85 GPa) - below 1 Mbar
+H6SCl,single,SC_HighPressure,127,21,890,6,mixed,0,High Pressure (90 GPa) - below 1 Mbar
+HfH10,single,SC_HighPressure,235,40,1120,6.9,integer,0,High Pressure (250 GPa) - pentagraphene-like H
+InH3,single,SC_HighPressure,40,6.4,480,4.8,integer,0,High Pressure (200 GPa) - R-3 structure
+InH5,single,SC_HighPressure,27,4.3,380,4.5,mixed,0,High Pressure (150 GPa) - P2_/m structure
+LaBeH8,single,SC_HighPressure,185,31,1020,6.8,mixed,0,H-alloy backbone (150 GPa) - synthesized
+LaCeH18,single,SC_HighPressure,178,30,1000,6.5,mixed,0,Ternary (165 GPa) - cage hydride
+LaH10,H1-optic-sigma,SC_HighPressure,250,18,950,6.5,integer,2,H1 site optical modes @ 170 GPa - lambda=0.40 (18%)
+LaH10,H2-optic-pi,SC_HighPressure,250,35,1450,6.5,mixed,3,H2 site optical modes @ 170 GPa - lambda=1.76 (80%)
+LaH10,La-acous-sigma,SC_HighPressure,250,8,320,6.5,integer,1,La acoustic modes 170 GPa - lambda=0.044 (2%)
+LaH10,single,SC_HighPressure,250,53,1100,6.5,integer,0,Total weighted average @ 170 GPa - lambda=2.20
+LaH8,single,SC_HighPressure,120,18,950,6,mixed,0,High Pressure (300 GPa) - C2/m structure
+LaSc2H24,single,SC_HighPressure,331,56,1200,7.5,mixed,0,Ternary clathrate H24+H30 cages (250 GPa) - predicted
+LaSr2H18,single,SC_HighPressure,167,28,990,6.5,mixed,0,Ternary (180 GPa) - distorted H__ cages
+LaSr3H24,single,SC_HighPressure,169,28,995,6.5,mixed,0,Ternary (180 GPa) - distorted H__ cages
+LaSrH12,single,SC_HighPressure,160,27,980,6.4,mixed,0,Ternary (30-200 GPa) - distorted H__ cages
+LaSrH21,single,SC_HighPressure,211,35,1060,6.9,mixed,0,Ternary (200 GPa) - H__ rings
+LaThH12,single,SC_HighPressure,180,30,1020,6.6,mixed,0,Ternary Pm-3m (200 GPa) - predicted
+LaYH20,single,SC_HighPressure,253,43,1120,7,mixed,0,Ternary hydride (183 GPa)
+Li2MgH16,single,SC_HighPressure,473,80,1450,8.5,mixed,0,Double-cage ternary (250 GPa) - predicted
+LuH3,single,SC_HighPressure,12.4,2,680,5.3,integer,0,High Pressure (122 GPa) - cubic Pm-3n
+MgH12,single,SC_HighPressure,245,41,1200,7.4,mixed,0,High Pressure (300 GPa) - H__ cages predicted
+MgH6,single,SC_HighPressure,271,46,1180,7.5,mixed,0,High Pressure (300 GPa) - predicted
+MoH11,single,SC_HighPressure,148,24,950,6.3,mixed,0,High Pressure (220 GPa) - highest V-group Tc
+NdH9,single,SC_HighPressure,120,20,900,6,mixed,0,High Pressure (175 GPa) - clathrate predicted
+PrH10,single,SC_HighPressure,135,22,930,6.1,mixed,0,High Pressure (185 GPa) - clathrate predicted
+PrH9,single,SC_HighPressure,108,18,870,5.7,mixed,0,High Pressure (165 GPa) - clathrate
+ScH12,single,SC_HighPressure,175,29,1050,6.8,integer,0,High Pressure (250 GPa) - P6_/mmc predicted
+ScH3,single,SC_HighPressure,18.5,2.9,720,5.5,integer,0,High Pressure (131 GPa) - cubic Pm-3n
+ScH6,single,SC_HighPressure,88,14,850,6,integer,0,High Pressure (200 GPa) - Im-3m clathrate
+ScZrH12,single,SC_HighPressure,162,27,970,6.2,mixed,0,Ternary Pm-3m (200 GPa) - predicted
+SH3 (Cmca),single,SC_HighPressure,242,41,1180,7.3,rational,0,High Pressure (450 GPa) - solid hydrogen analog
+Si2H6,single,SC_HighPressure,105,17,850,5.8,mixed,0,High Pressure (275 GPa) - disilane
+SmH9,single,SC_HighPressure,110,18,880,5.9,mixed,0,High Pressure (170 GPa) - clathrate predicted
+SrH10,single,SC_HighPressure,259,44,1140,7.1,mixed,0,High Pressure (300 GPa) - 2D graphene-like H layers
+SrH22,single,SC_HighPressure,105,17,920,6.2,mixed,0,High Pressure (146 GPa) - highest H content found
+SrH6,single,SC_HighPressure,85,13.5,780,5.7,integer,0,High Pressure (200 GPa) - H_ units
+TaH6,single,SC_HighPressure,98,16,820,5.9,mixed,0,High Pressure (180 GPa) - transition metal
+TbH9,single,SC_HighPressure,95,15,850,5.7,mixed,0,High Pressure (165 GPa) - clathrate predicted
+Th4H15,single,SC_HighPressure,98,16,850,5.5,mixed,0,High Pressure (140 GPa)
+ThH10,single,SC_HighPressure,161,27,950,6.5,integer,0,High Pressure (170 GPa) - Fm-3m clathrate
+ThH9,single,SC_HighPressure,146,24,920,6,mixed,0,High Pressure (160 GPa) - clathrate
+UH7,single,SC_HighPressure,38,6,480,4.2,mixed,0,High Pressure (120 GPa) - actinide hydride
+VH8,single,SC_HighPressure,135,22,920,6.2,mixed,0,High Pressure (200 GPa) - transition metal
+Y3LuH24,single,SC_HighPressure,283,48,1150,7.2,mixed,0,Ternary clathrate (120 GPa) - predicted
+YCaH18,single,SC_HighPressure,192,32,1020,6.7,mixed,0,Ternary (170 GPa) - cage hydride
+YH10,single,SC_HighPressure,305,50,1150,7,integer,0,High Pressure (250 GPa) - predicted fcc
+YH4,single,SC_HighPressure,88,14,800,5.5,integer,0,High Pressure (155 GPa) - I4/mmm
+YH6,single,SC_HighPressure,224,38,1050,6,integer,0,High Pressure (166 GPa) - sodalite Im-3m
+YH9,single,SC_HighPressure,243,41,1100,6.5,integer,0,High Pressure (200 GPa) - P63/mmc
+YHfH12,single,SC_HighPressure,168,28,990,6.4,mixed,0,Ternary Pm-3m (200 GPa) - predicted
+YLu3H24,single,SC_HighPressure,288,49,1160,7.3,mixed,0,Ternary clathrate (110 GPa) - predicted
+YLuH12,single,SC_HighPressure,275,47,1130,7,mixed,0,Ternary clathrate (140 GPa) - predicted
+YThH12,single,SC_HighPressure,175,30,1010,6.5,mixed,0,Ternary Pm-3m (200 GPa) - predicted
+ZrH10,single,SC_HighPressure,220,37,1080,6.7,integer,0,High Pressure (250 GPa) - pentagraphene-like H
+Ba(Fe0.8Co0.2)2As2,single,SC_IronBased,25.3,4,250,0.2,mixed,0,"122-type, Co-doped (electron)"
+Ba(Fe0.9Co0.1)2As2,single,SC_IronBased,22,3.5,250,0.2,mixed,0,"122-type, Co-doped (electron)"
+Ba0.6K0.4Fe2As2,single,SC_IronBased,38,6,250,0.2,mixed,0,"122-type, K-doped (hole)"
+FeSe,pi,SC_IronBased,8.4,0.25,242,0.01,mixed,2,iron chalcogenide (small gap)
+FeSe,sigma,SC_IronBased,8.4,1.5,242,0.01,mixed,1,iron chalcogenide (large gap)
+FeSe (monolayer on STO),single,SC_IronBased,55,15,242,0.01,mixed,0,interface-enhanced SC
+FeSe0.5Te0.5,single,SC_IronBased,14.5,2.2,240,0.01,mixed,0,optimal Te doping
+FeSe0.7Te0.3,single,SC_IronBased,20,3,245,0.01,mixed,0,high Tc composition
+FeSe1-xSx (x=0.17),single,SC_IronBased,10,1.8,250,0.01,mixed,0,nematic end point
+LaO0.9F0.1FeAs,single,SC_IronBased,26,4.1,280,0.2,mixed,0,1111-type
+LiFeAs,single,SC_IronBased,18,2.8,270,0.15,mixed,0,111-type
+NdFeAsO0.9F0.1,single,SC_IronBased,52,8,280,0.2,mixed,0,1111-type
+PrFeAsO0.9F0.1,single,SC_IronBased,52,8,280,0.2,mixed,0,1111-type
+SmFeAsO0.9F0.1,single,SC_IronBased,43,7,280,0.2,mixed,0,1111-type
+(TMTSF)2PF6 (under P),single,SC_Molecular,1.1,0.2,200,0.1,rational,0,organic SC under pressure
+Cs3C60,single,SC_Molecular,33,5,100,3.5,rational,0,molecular SC
+K3C60,single,SC_Molecular,18,3,120,3.5,rational,0,molecular SC
+Rb3C60,single,SC_Molecular,28,4.2,110,3.5,rational,0,molecular SC
+Ba0.6K0.4BiO3,single,SC_Oxide,30,4.5,300,5,mixed,0,oxide (high Tc)
+BaPb0.75Bi0.25O3,single,SC_Oxide,12,1.8,280,5,mixed,0,oxide
+Bi2Sr2CaCu2O8 (Bi-2212),single,SC_Oxide,90,22,400,1.5,mixed,0,cuprate high-Tc
+La2-xSrxCuO4 (LSCO x~0.15),single,SC_Oxide,38,7,360,1.5,mixed,0,cuprate high-Tc
+SrTiO3-doped,single,SC_Oxide,0.35,0.05,400,4.5,mixed,0,oxide mixed locking
+YBa2Cu3O7 (YBCO),single,SC_Oxide,92,20,420,1.5,mixed,0,cuprate high-Tc
+Al,single,SC_TypeI,1.2,0.18,428,11.7,integer,0,clean type-I
+Cd,single,SC_TypeI,0.52,0.078,209,7.46,integer,0,Type I (low Tc)
+Hg,single,SC_TypeI,4.15,0.74,96,8.9,integer,0,type-I
+In,single,SC_TypeI,3.41,0.53,129,9.46,integer,0,type-I
+La,single,SC_TypeI,4.9,0.74,142,7.7,integer,0,Lanthanum (dhcp)
+Pb,single,SC_TypeI,7.2,1.35,105,9.47,integer,0,locking integers
+Sn,single,SC_TypeI,3.72,0.57,200,10.2,integer,0,type-I
+Tl,single,SC_TypeI,2.39,0.36,96,8.8,integer,0,type-I
+Zn,single,SC_TypeI,0.85,0.13,327,9.47,integer,0,Type I (low Tc)
+Hf,single,SC_TypeII,0.13,0.02,242,7.7,integer,0,Type II (d-metal)
+Mo,single,SC_TypeII,0.92,0.14,450,6.6,integer,0,high X
+Nb,single,SC_TypeII,9.25,1.55,275,5.32,integer,0,type-II
+NbN,single,SC_TypeII,16.15,2.46,363,5.32,integer,0,versiones diferentes
+Re,single,SC_TypeII,1.7,0.28,416,11.2,integer,0,Type II (d-metal)
+Ta,single,SC_TypeII,4.47,0.7,245,7,integer,0,type-II
+Ti,single,SC_TypeII,0.4,0.06,420,8.9,integer,0,Type II (d-metal)
+V,single,SC_TypeII,5.4,0.85,380,5.3,integer,0,type-II
+Zr,single,SC_TypeII,0.61,0.09,291,8.3,integer,0,Type II (d-metal)
+Helium-3 (He-3) B-phase,0-bar,Superfluid,0.0025,0.000380024,4.55,0.000392,rational,1,BCS proxy for p-wave gap; EF from Fermi liquid; ThetaD_K=T_F proxy
+Helium-3 (He-3) B-phase,10-bar,Superfluid,0.0028,0.000425627,4.55,0.000392,rational,2,Pressure-shifted Tc; BCS proxy; ThetaD_K=T_F proxy
+Helium-4 (He-4),1-bar,Superfluid,2.1768,0.743,8.62,0.00074,rational,1,Roton gap anchor (~0.743 meV); ThetaD_K=roton(K) proxy; Tc=lambda point
+Helium-4 (He-4),10-bar,Superfluid,2.15,0.74,8.59,0.00074,rational,2,Roton gap weak P-dependence; ThetaD_K=roton(K) proxy
