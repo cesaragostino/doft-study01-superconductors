@@ -4,13 +4,14 @@ import re
 import numpy as np
 import pandas as pd
 import argparse
-import sys # <-- ¡AÑADIDO! Necesario para sys.executable
+import sys  # <-- ¡AÑADIDO! Necesario para sys.executable
+from pathlib import Path
 from tqdm import tqdm
 
 # Definir la constante que faltaba
 CONFIG_FILE = "doft_config.json"
 
-def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10000):
+def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10000, output_dir=None):
     """
     Ejecuta el script de análisis de clústeres N veces con jitter
     y reporta las estadísticas de C_AB y kappa.
@@ -105,6 +106,7 @@ def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10
     # --- Reporte de Resultados ---
     print("\n--- Resultados del Análisis de Sensibilidad (Jitter) ---")
     
+    summary_rows = []
     for name in TARGET_MATERIALS:
         kappas = np.array(kappa_results[name])
         c_abs = np.array(c_ab_results[name])
@@ -118,6 +120,15 @@ def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10
             print(f"    Media:   {k_mean:.4g}")
             print(f"    StdDev:  {k_std:.4g}")
             print(f"    95% CI:  [{k_low:.4g}, {k_high:.4g}]")
+            summary_rows.append({
+                "material": name,
+                "metric": "kappa",
+                "n": len(kappas),
+                "mean": k_mean,
+                "std": k_std,
+                "ci_low": k_low,
+                "ci_high": k_high,
+            })
         else:
             print("  Kappa (κ): No se pudieron calcular estadísticas (N=0).")
             
@@ -128,8 +139,26 @@ def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10
             print(f"    Media:   {c_mean:.4f}")
             print(f"    StdDev:  {c_std:.4f}")
             print(f"    95% CI:  [{c_low:.4f}, {c_high:.4f}]")
+            summary_rows.append({
+                "material": name,
+                "metric": "C_AB",
+                "n": len(c_abs),
+                "mean": c_mean,
+                "std": c_std,
+                "ci_low": c_low,
+                "ci_high": c_high,
+            })
         else:
             print("  C_AB: No se pudieron calcular estadísticas (N=0).")
+
+    if output_dir and summary_rows:
+        output_path = Path(output_dir)
+        output_path.mkdir(parents=True, exist_ok=True)
+        tag_j = str(jitter_percent).replace(".", "p").replace("-", "neg")
+        p_tag = str(int(prime_max_val))
+        summary_file = output_path / f"sensitivity_j{tag_j}_p{p_tag}.csv"
+        pd.DataFrame(summary_rows).to_csv(summary_file, index=False)
+        print(f"\n--- Resumen de sensibilidad guardado en: {summary_file} ---")
 
     print("\n--- Limpiando archivos temporales ---")
     try:
@@ -147,6 +176,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--n_runs", dest="n_runs", type=int, default=500, help="Número de simulaciones de Monte Carlo (default: 500)")
     parser.add_argument("-j", "--jitter", dest="jitter_percent", type=float, default=5.0, help="Porcentaje de jitter +/- aleatorio (e.g., 5.0 para +/- 5%)")
     parser.add_argument("--prime_max_val", dest="prime_max_val", type=int, default=10000, help="Valor máximo para la generación de 'prime values' (default: 10000)")
+    parser.add_argument("--output_dir", dest="output_dir", type=str, default=None, help="Directorio donde guardar el resumen CSV (opcional)")
     
     args = parser.parse_args()
     
@@ -155,4 +185,4 @@ if __name__ == "__main__":
         print("Por favor, ejecuta 'run_calibration.py' (sin jitter) primero para generar este archivo.")
         exit()
 
-    run_sensitivity_analysis(args.input_csv, args.n_runs, args.jitter_percent, args.prime_max_val)
+    run_sensitivity_analysis(args.input_csv, args.n_runs, args.jitter_percent, args.prime_max_val, args.output_dir)

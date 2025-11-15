@@ -1,0 +1,22 @@
+--- Log registrado en: /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy/run_master_pipeline_20251114_232200.log ---
+============================================
+     Modo de ejecución 'Custom'     
+Ejecutando con los parámetros provistos (o defaults).
+============================================
+Comando Python:   python3
+Archivo de entrada: /Users/cagostino/Documents/GitHub/doft-study01-superconductors/data/raw/materials_clusters_real_v6.csv
+Directorio base de resultados: /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy
+Valores Winsor:   [600.0]
+Valores Prime:    [10000]
+Valores Jitter:   []
+Jitter N-Runs:    500
+--------------------------------------------
+
+--- FASE 1: Saltando Análisis de Robustez (por flag). ---
+
+--- FASE 2: Saltando Análisis de Sensibilidad (por flag). ---
+
+
+============================================
+   ¡Master Pipeline finalizado!   
+============================================

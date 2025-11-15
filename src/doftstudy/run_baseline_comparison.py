@@ -94,7 +94,7 @@ def build_summary(df: pd.DataFrame, groupings: List[str], min_samples: int) -> p
 
     for grouping in groupings:
         if grouping not in df.columns:
-            print(f"ADVERTENCIA: La columna '{grouping}' no existe en el CSV. Se omite esa agrupación.")
+            print(f"ADVERTENCIA: La columna '{grouping}' no existe en el CSV (se omite; esto es esperado si ese campo no fue exportado).")
             continue
 
         for group_value, df_group in df.groupby(grouping):

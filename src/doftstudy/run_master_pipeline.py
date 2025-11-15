@@ -27,6 +27,12 @@ RUN_SENSITIVITY_SCRIPT = SCRIPT_DIR / "run_sensitivity.py"
 RUN_BASELINE_SCRIPT = SCRIPT_DIR / "run_baseline_comparison.py"
 RUN_FIGURES_SCRIPT = SCRIPT_DIR / "generate_figures.py"
 
+def sanitize_tag(value):
+    value_str = str(value)
+    if value_str.endswith(".0"):
+        value_str = value_str[:-2]
+    return value_str.replace(".", "p").replace("-", "neg")
+
 
 class TeeStream:
     """Duplica stdout/stderr hacia un archivo de log."""
@@ -254,7 +260,7 @@ def run_calibration_only(w_val, p_val, input_file, python_cmd, output_root):
 # -----------------------------------------------------------------
 # FASE 2: PIPELINE DE SENSIBILIDAD (JITTER)
 # -----------------------------------------------------------------
-def run_sensitivity_analysis(j_val, p_val, input_file, n_runs, python_cmd):
+def run_sensitivity_analysis(j_val, p_val, input_file, n_runs, python_cmd, summary_dir):
     """
     Ejecuta el script de sensibilidad 'run_sensitivity.py'
     para una combinación de Jitter (j_val) y Prime Max (p_val).
@@ -268,7 +274,8 @@ def run_sensitivity_analysis(j_val, p_val, input_file, n_runs, python_cmd):
         "-i", input_file,
         "-n", str(n_runs),
         "-j", str(j_val),
-        "--prime_max_val", str(p_val)
+        "--prime_max_val", str(p_val),
+        "--output_dir", str(summary_dir)
     ]
     execute_command(cmd_jitter, f"Paso S: Jittering (J={j_val}, P={p_val})")
     print(f"--- Pipeline Sensibilidad (J={j_val}, P={p_val}) ¡COMPLETADO! ---")
@@ -432,10 +439,19 @@ def main():
                 
             sensitivity_jobs = list(product(jitter_list, prime_list))
             print(f"Se ejecutarán {len(sensitivity_jobs)} pipelines de sensibilidad...")
+            sensitivity_dir = output_root / "sensitivity"
+            sensitivity_dir.mkdir(parents=True, exist_ok=True)
 
             for j_val, p_val in sensitivity_jobs:
+                j_tag = str(j_val).replace(".", "p").replace("-", "neg")
+                p_tag = str(int(p_val))
+                tag = f"j{j_tag}_p{p_tag}"
+                summary_file = sensitivity_dir / f"sensitivity_{tag}.csv"
+                if summary_file.exists():
+                    print(f"--- Resultados de sensibilidad para {tag} detectados. Saltando. ---")
+                    continue
                 try:
-                    run_sensitivity_analysis(j_val, p_val, args.input_file, n_runs, args.python_cmd)
+                    run_sensitivity_analysis(j_val, p_val, args.input_file, n_runs, args.python_cmd, sensitivity_dir)
                 except Exception as e:
                     print(f"¡¡ERROR INESPERADO!! El pipeline (J={j_val}, P={p_val}) falló.")
                     print(f"Detalle del error: {e}")
