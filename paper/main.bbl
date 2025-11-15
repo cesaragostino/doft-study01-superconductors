@@ -50,30 +50,6 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{\citenamefont {Bardeen}\ \emph {et~al.}(1957)\citenamefont
-  {Bardeen}, \citenamefont {Cooper},\ and\ \citenamefont
-  {Schrieffer}}]{BCS1957}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
-  {Bardeen}}, \bibinfo {author} {\bibfnamefont {L.~N.}\ \bibnamefont
-  {Cooper}},\ and\ \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
-  {Schrieffer}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
-  {Physical Review}\ }\textbf {\bibinfo {volume} {108}},\ \bibinfo {pages}
-  {1175} (\bibinfo {year} {1957})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Tinkham}(1996)}]{Tinkham1996}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Tinkham}},\ }\href@noop {} {\emph {\bibinfo {title} {Introduction to
-  Superconductivity}}},\ Vol.~\bibinfo {volume} {2}\ (\bibinfo  {publisher}
-  {McGraw-Hill},\ \bibinfo {year} {1996})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Efron}\ and\ \citenamefont
-  {Tibshirani}(1993)}]{Efron1993}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
-  {Efron}}\ and\ \bibinfo {author} {\bibfnamefont {R.~J.}\ \bibnamefont
-  {Tibshirani}},\ }\href@noop {} {\emph {\bibinfo {title} {An Introduction to
-  the Bootstrap}}}\ (\bibinfo  {publisher} {Chapman and Hall},\ \bibinfo {year}
-  {1993})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Mori}(1965)}]{Mori1965}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
@@ -86,4 +62,28 @@
   {Zwanzig}},\ }\href@noop {} {\emph {\bibinfo {title} {Nonequilibrium
   Statistical Mechanics}}}\ (\bibinfo  {publisher} {Oxford University Press},\
   \bibinfo {year} {2001})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Efron}\ and\ \citenamefont
+  {Tibshirani}(1993)}]{Efron1993}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Efron}}\ and\ \bibinfo {author} {\bibfnamefont {R.~J.}\ \bibnamefont
+  {Tibshirani}},\ }\href@noop {} {\emph {\bibinfo {title} {An Introduction to
+  the Bootstrap}}}\ (\bibinfo  {publisher} {Chapman and Hall},\ \bibinfo {year}
+  {1993})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tinkham}(1996)}]{Tinkham1996}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Tinkham}},\ }\href@noop {} {\emph {\bibinfo {title} {Introduction to
+  Superconductivity}}},\ Vol.~\bibinfo {volume} {2}\ (\bibinfo  {publisher}
+  {McGraw-Hill},\ \bibinfo {year} {1996})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bardeen}\ \emph {et~al.}(1957)\citenamefont
+  {Bardeen}, \citenamefont {Cooper},\ and\ \citenamefont
+  {Schrieffer}}]{BCS1957}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Bardeen}}, \bibinfo {author} {\bibfnamefont {L.~N.}\ \bibnamefont
+  {Cooper}},\ and\ \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
+  {Schrieffer}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review}\ }\textbf {\bibinfo {volume} {108}},\ \bibinfo {pages}
+  {1175} (\bibinfo {year} {1957})}\BibitemShut {NoStop}%
 \end{thebibliography}%

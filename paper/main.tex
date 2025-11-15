@@ -115,8 +115,8 @@ relative to the same discrete lattice of ratios.
 
 %Optionally: a brief paragraph connecting to delays/memory literature.
 Delayed and memoryful dynamics are ubiquitous in climate models,
-physiological control and nonequilibrium statistical mechanics\cite{BCS1957,
-Tinkham1996,Efron1993,Mori1965,Zwanzig2001}.  The\DOFT{} program borrows 
+physiological control and nonequilibrium statistical mechanics~\cite{Mori1965,
+Zwanzig2001,Efron1993,Tinkham1996,BCS1957}.  The \DOFT{} program borrows 
 mathematical tools from that literature but applies them in a different 
 regime: as organizing principles rather than detailed time-domain predictions.
 
@@ -328,11 +328,14 @@ fingerprints.
 
 \subsection{Effect of the coupling parameter \texorpdfstring{$\kappa$}{kappa}}
 
-Finally, we compare the baseline $\kappa=0$ run to a run with small but
-nonzero $\kappa$, using the same $w=800$ and $p=7919$.
-Figure~\ref{fig:kappa} shows the difference in post-correction error
-($\Delta\mathrm{error} = \mathrm{err\_after\_kappa}-\mathrm{err\_after\_eta}$)
-for all jumps in the cluster core and for the most affected cases.
+Finally, we compare the baseline $\kappa = 0$ run to a run with small but
+nonzero $\kappa$, using the same $w = 800$ and $p = 7919$.
+Figure~\ref{fig:kappa_hist} shows the distribution of the difference in
+post-correction error
+$\Delta \mathrm{err} = \mathrm{err}_\kappa - \mathrm{err}_\eta$
+across all cluster-core jumps, while
+Figure~\ref{fig:kappa_top} highlights the ten jumps with the
+largest $|\Delta \mathrm{err}|$.
 
 %\begin{figure*}[t]
 %  \centering
