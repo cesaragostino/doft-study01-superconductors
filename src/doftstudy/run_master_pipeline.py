@@ -6,6 +6,7 @@ from itertools import product
 from pathlib import Path
 from datetime import datetime
 from contextlib import contextmanager
+import pandas as pd
 
 # -----------------------------------------------------------------
 # --- CONFIGURACIÓN "RUN ALL" ---
@@ -26,12 +27,29 @@ RUN_FP_SCRIPT = SCRIPT_DIR / "run_fingerprint_analysis.py"
 RUN_SENSITIVITY_SCRIPT = SCRIPT_DIR / "run_sensitivity.py"
 RUN_BASELINE_SCRIPT = SCRIPT_DIR / "run_baseline_comparison.py"
 RUN_FIGURES_SCRIPT = SCRIPT_DIR / "generate_figures.py"
+RUN_DIGEST_SCRIPT = SCRIPT_DIR / "generate_digest.py"
 
 def sanitize_tag(value):
     value_str = str(value)
     if value_str.endswith(".0"):
         value_str = value_str[:-2]
     return value_str.replace(".", "p").replace("-", "neg")
+
+def infer_digest_label(input_path):
+    stem = Path(input_path).stem.lower()
+    for token in ["v6", "v5", "v4"]:
+        if token in stem:
+            return token
+    return stem
+
+
+def sensitivity_summary_complete(path: Path) -> bool:
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            header = f.readline().strip().split(",")
+        return "prime_max_val" in header and "winsor" in header
+    except Exception:
+        return False
 
 
 class TeeStream:
@@ -130,11 +148,13 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     out_dir_cluster.mkdir(parents=True, exist_ok=True)
     out_dir_fp.mkdir(parents=True, exist_ok=True)
     out_dir_baseline.mkdir(parents=True, exist_ok=True)
+    out_dir_figures.mkdir(parents=True, exist_ok=True)
 
     # Rutas de salida esperadas
     label_calib = f"calib_{base_tag}"
     csv_calib = out_dir_calib / f"results_{label_calib}.csv"
     summary_calib = out_dir_calib / f"summary_{label_calib}.csv"
+    meta_calib = out_dir_calib / f"calibration_metadata_{label_calib}.json"
     label_cluster_nokappa = f"cluster_nokappa_{base_tag}"
     csv_cluster_nokappa = out_dir_cluster / f"results_{label_cluster_nokappa}.csv"
     label_cluster_kappa = f"cluster_kappa_{base_tag}"
@@ -155,6 +175,7 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     existing_outputs = [
         csv_calib,
         summary_calib,
+        meta_calib,
         csv_cluster_nokappa,
         csv_cluster_kappa,
         fp_nokappa_csv,
@@ -167,64 +188,85 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
         return
 
     # Paso 1: Calibración
-    cmd1 = [
-        python_cmd, str(RUN_CALIBRATION_SCRIPT),
-        "-i", input_file, "-o", str(out_dir_calib), "-l", label_calib,
-        "--winsor_X", str(w_val), "--prime_max_val", str(p_val)
-    ]
-    execute_command(cmd1, f"Paso 1: Calibración (W={w_val}, P={p_val})")
+    if csv_calib.exists() and summary_calib.exists() and meta_calib.exists():
+        print(f"--- Calibración detectada para {base_tag}. Saltando Paso 1. ---")
+    else:
+        cmd1 = [
+            python_cmd, str(RUN_CALIBRATION_SCRIPT),
+            "-i", input_file, "-o", str(out_dir_calib), "-l", label_calib,
+            "--winsor_X", str(w_val), "--prime_max_val", str(p_val)
+        ]
+        execute_command(cmd1, f"Paso 1: Calibración (W={w_val}, P={p_val})")
     
     # Paso 2a: Cluster (SIN Kappa)
-    cmd2a = [
-        python_cmd, str(RUN_CLUSTER_SCRIPT),
-        "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_nokappa,
-        "--prime_max_val", str(p_val)
-    ]
-    execute_command(cmd2a, f"Paso 2a: Cluster SIN Kappa (W={w_val}, P={p_val})")
+    if csv_cluster_nokappa.exists():
+        print(f"--- Cluster sin κ detectado para {base_tag}. Saltando Paso 2a. ---")
+    else:
+        cmd2a = [
+            python_cmd, str(RUN_CLUSTER_SCRIPT),
+            "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_nokappa,
+            "--prime_max_val", str(p_val)
+        ]
+        execute_command(cmd2a, f"Paso 2a: Cluster SIN Kappa (W={w_val}, P={p_val})")
 
     # Paso 2b: Cluster (CON Kappa)
-    cmd2b = [
-        python_cmd, str(RUN_CLUSTER_SCRIPT),
-        "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_kappa,
-        "--estimate_kappa", "--prime_max_val", str(p_val)
-    ]
-    execute_command(cmd2b, f"Paso 2b: Cluster CON Kappa (W={w_val}, P={p_val})")
+    if csv_cluster_kappa.exists():
+        print(f"--- Cluster con κ detectado para {base_tag}. Saltando Paso 2b. ---")
+    else:
+        cmd2b = [
+            python_cmd, str(RUN_CLUSTER_SCRIPT),
+            "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_kappa,
+            "--estimate_kappa", "--prime_max_val", str(p_val)
+        ]
+        execute_command(cmd2b, f"Paso 2b: Cluster CON Kappa (W={w_val}, P={p_val})")
 
     # Paso 3a: Fingerprint (SIN Kappa)
-    cmd3a = [
-        python_cmd, str(RUN_FP_SCRIPT),
-        "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_nokappa),
-        "-o", str(out_dir_fp), "-l", label_fp_nokappa
-    ]
-    execute_command(cmd3a, f"Paso 3a: Fingerprint SIN Kappa (W={w_val}, P={p_val})")
+    if fp_nokappa_csv.exists():
+        print(f"--- Fingerprint sin κ detectado para {base_tag}. Saltando Paso 3a. ---")
+    else:
+        cmd3a = [
+            python_cmd, str(RUN_FP_SCRIPT),
+            "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_nokappa),
+            "-o", str(out_dir_fp), "-l", label_fp_nokappa
+        ]
+        execute_command(cmd3a, f"Paso 3a: Fingerprint SIN Kappa (W={w_val}, P={p_val})")
 
     # Paso 3b: Fingerprint (CON Kappa)
-    cmd3b = [
-        python_cmd, str(RUN_FP_SCRIPT),
-        "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_kappa),
-        "-o", str(out_dir_fp), "-l", label_fp_kappa
-    ]
-    execute_command(cmd3b, f"Paso 3b: Fingerprint CON Kappa (W={w_val}, P={p_val})")
+    if fp_kappa_csv.exists():
+        print(f"--- Fingerprint con κ detectado para {base_tag}. Saltando Paso 3b. ---")
+    else:
+        cmd3b = [
+            python_cmd, str(RUN_FP_SCRIPT),
+            "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_kappa),
+            "-o", str(out_dir_fp), "-l", label_fp_kappa
+        ]
+        execute_command(cmd3b, f"Paso 3b: Fingerprint CON Kappa (W={w_val}, P={p_val})")
     
     # Paso 4: Comparación Baseline
     if csv_cluster_kappa.exists():
-        cmd4 = [
-            python_cmd, str(RUN_BASELINE_SCRIPT),
-            "--cluster_csv", str(csv_cluster_kappa),
-            "--output", str(baseline_summary)
-        ]
-        execute_command(cmd4, f"Paso 4: Comparación Baseline (W={w_val}, P={p_val})")
+        if baseline_summary.exists():
+            print(f"--- Resumen baseline detectado para {base_tag}. Saltando Paso 4. ---")
+        else:
+            cmd4 = [
+                python_cmd, str(RUN_BASELINE_SCRIPT),
+                "--cluster_csv", str(csv_cluster_kappa),
+                "--output", str(baseline_summary)
+            ]
+            execute_command(cmd4, f"Paso 4: Comparación Baseline (W={w_val}, P={p_val})")
     else:
         print("--- Resultados de cluster (κ) ausentes; saltando comparación baseline. ---")
     
     # Paso 5: Figuras para la corrida actual
     if fp_kappa_csv.exists():
-        cmd5 = [
-            python_cmd, str(RUN_FIGURES_SCRIPT),
-            "--base_tag", base_tag,
-            "--results_dir", str(output_root)
-        ]
-        execute_command(cmd5, f"Paso 5: Figuras (W={w_val}, P={p_val})")
+        if all(path.exists() for path in figure_targets):
+            print(f"--- Figuras detectadas para {base_tag}. Saltando Paso 5. ---")
+        else:
+            cmd5 = [
+                python_cmd, str(RUN_FIGURES_SCRIPT),
+                "--base_tag", base_tag,
+                "--results_dir", str(output_root)
+            ]
+            execute_command(cmd5, f"Paso 5: Figuras (W={w_val}, P={p_val})")
     else:
         print("--- Fingerprint con κ ausente; saltando generación de figuras. ---")
     
@@ -260,7 +302,7 @@ def run_calibration_only(w_val, p_val, input_file, python_cmd, output_root):
 # -----------------------------------------------------------------
 # FASE 2: PIPELINE DE SENSIBILIDAD (JITTER)
 # -----------------------------------------------------------------
-def run_sensitivity_analysis(j_val, p_val, input_file, n_runs, python_cmd, summary_dir):
+def run_sensitivity_analysis(j_val, p_val, input_file, n_runs, python_cmd, summary_dir, winsor_value):
     """
     Ejecuta el script de sensibilidad 'run_sensitivity.py'
     para una combinación de Jitter (j_val) y Prime Max (p_val).
@@ -277,6 +319,8 @@ def run_sensitivity_analysis(j_val, p_val, input_file, n_runs, python_cmd, summa
         "--prime_max_val", str(p_val),
         "--output_dir", str(summary_dir)
     ]
+    if winsor_value is not None:
+        cmd_jitter.extend(["--winsor", str(winsor_value)])
     execute_command(cmd_jitter, f"Paso S: Jittering (J={j_val}, P={p_val})")
     print(f"--- Pipeline Sensibilidad (J={j_val}, P={p_val}) ¡COMPLETADO! ---")
 
@@ -316,6 +360,12 @@ def main():
         type=str,
         default="python3",
         help="Comando para ejecutar Python (ej. 'python3' en Mac, 'python' en Win)\n(default: %(default)s)"
+    )
+    parser.add_argument(
+        '--digest_fingerprint_tag',
+        type=str,
+        default=None,
+        help="Etiqueta base (wXXX_pYYY) a usar para el digest/tablas (default: primer combo)"
     )
     
     # --- Argumentos para corridas CUSTOM (se ignoran con --run_all) ---
@@ -401,6 +451,8 @@ def main():
         print(f"Valores Jitter:   {jitter_list}")
         print(f"Jitter N-Runs:    {n_runs}")
         print("--------------------------------------------")
+        fingerprint_tag = args.digest_fingerprint_tag or f"w{sanitize_tag(winsor_list[0])}_p{sanitize_tag(prime_list[0])}"
+        digest_label = infer_digest_label(args.input_file)
 
         # --- FASE 1: ROBUSTEZ (Workflow Bifurcado) ---
         if not args.skip_robustness:
@@ -448,10 +500,16 @@ def main():
                 tag = f"j{j_tag}_p{p_tag}"
                 summary_file = sensitivity_dir / f"sensitivity_{tag}.csv"
                 if summary_file.exists():
-                    print(f"--- Resultados de sensibilidad para {tag} detectados. Saltando. ---")
-                    continue
+                    if sensitivity_summary_complete(summary_file):
+                        print(f"--- Resultados de sensibilidad para {tag} detectados. Saltando. ---")
+                        continue
+                    elif upgrade_sensitivity_summary(summary_file, baseline_w, p_val, j_val):
+                        print(f"--- Resumen de sensibilidad para {tag} actualizado. ---")
+                        continue
+                    else:
+                        print(f"--- Resumen de sensibilidad obsoleto para {tag}. Regenerando. ---")
                 try:
-                    run_sensitivity_analysis(j_val, p_val, args.input_file, n_runs, args.python_cmd, sensitivity_dir)
+                    run_sensitivity_analysis(j_val, p_val, args.input_file, n_runs, args.python_cmd, sensitivity_dir, baseline_w)
                 except Exception as e:
                     print(f"¡¡ERROR INESPERADO!! El pipeline (J={j_val}, P={p_val}) falló.")
                     print(f"Detalle del error: {e}")
@@ -460,6 +518,27 @@ def main():
             print("\n--- FASE 2: Saltando Análisis de Sensibilidad (por flag). ---")
         else:
             print("\n--- FASE 2: No se especificaron --jitter_values, saltando análisis de sensibilidad. ---")
+
+        digest_dir = output_root / "digest"
+        digest_targets = [
+            digest_dir / f"eta_gamma_summary_{digest_label}.csv",
+            digest_dir / f"integer_fingerprint_summary_{digest_label}.csv",
+            digest_dir / f"rational_q_summary_{digest_label}.csv",
+            digest_dir / f"kappa_impact_{digest_label}.csv",
+        ]
+        result_dirs = [d for d in output_root.iterdir() if d.is_dir() and d.name.startswith("results_w")]
+        if not result_dirs:
+            print("\n--- No se encontraron resultados 'results_w*'. Saltando digest. ---")
+        elif digest_dir.exists() and all(path.exists() for path in digest_targets):
+            print("\n--- Digest detectado previamente. Saltando generación resumida. ---")
+        else:
+            cmd_digest = [
+                args.python_cmd, str(RUN_DIGEST_SCRIPT),
+                "--output_root", str(output_root),
+                "--fingerprint_tag", fingerprint_tag,
+                "--label", digest_label
+            ]
+            execute_command(cmd_digest, "Digest resumido (archivos maestros)")
             
         print("\n\n============================================")
         print("   ¡Master Pipeline finalizado!   ")
@@ -468,3 +547,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+def upgrade_sensitivity_summary(path: Path, winsor_value: float, prime_val: int, jitter_val: float) -> bool:
+    try:
+        df = pd.read_csv(path)
+    except Exception:
+        return False
+    changed = False
+    if "prime_max_val" not in df.columns:
+        df["prime_max_val"] = prime_val
+        changed = True
+    if winsor_value is not None and "winsor" not in df.columns:
+        df["winsor"] = winsor_value
+        changed = True
+    if "jitter_percent" not in df.columns:
+        df["jitter_percent"] = jitter_val
+        changed = True
+    if changed:
+        df.to_csv(path, index=False)
+    return "prime_max_val" in df.columns and "winsor" in df.columns

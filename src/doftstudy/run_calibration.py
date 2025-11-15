@@ -272,12 +272,14 @@ def calibrate_and_run(df, outdir, run_label, fit_categories, winsor_X_cap, prime
         
         CALIBRATED_GAMMA = np.mean(bootstrap_gammas)
         CALIBRATED_ETA = np.mean(bootstrap_etas)
+        gamma_ci_low = np.percentile(bootstrap_gammas, 2.5)
+        gamma_ci_high = np.percentile(bootstrap_gammas, 97.5)
         eta_ci_low = np.percentile(bootstrap_etas, 2.5)
         eta_ci_high = np.percentile(bootstrap_etas, 97.5)
         
         print("--- Resultados del Bootstrap ---")
         print(f"Gamma (g): Media={CALIBRATED_GAMMA:.2e}, StdDev={np.std(bootstrap_gammas):.2e}")
-        print(f"           95% CI=[{np.percentile(bootstrap_gammas, 2.5):.2e}, {np.percentile(bootstrap_gammas, 97.5):.2e}]")
+        print(f"           95% CI=[{gamma_ci_low:.2e}, {gamma_ci_high:.2e}]")
         print(f"Eta (e):   Media={CALIBRATED_ETA:.2e}, StdDev={np.std(bootstrap_etas):.2e}")
         print(f"           95% CI=[{eta_ci_low:.2e}, {eta_ci_high:.2e}]")
 
@@ -324,6 +326,27 @@ def calibrate_and_run(df, outdir, run_label, fit_categories, winsor_X_cap, prime
     }
     with open(CONFIG_FILE, 'w') as f:
         json.dump(config_data, f, indent=4)
+
+    meta_payload = {
+        "winsor_X_cap": winsor_X_cap,
+        "prime_max_val": prime_max_val,
+        "fit_families": fit_categories,
+        "gamma": {
+            "mean": CALIBRATED_GAMMA,
+            "ci_low": gamma_ci_low,
+            "ci_high": gamma_ci_high,
+            "std": float(np.std(bootstrap_gammas)),
+        },
+        "eta": {
+            "mean": CALIBRATED_ETA,
+            "ci_low": eta_ci_low,
+            "ci_high": eta_ci_high,
+            "std": float(np.std(bootstrap_etas)),
+        }
+    }
+    meta_path = os.path.join(outdir, f"calibration_metadata_{run_label}.json")
+    with open(meta_path, "w") as f:
+        json.dump(meta_payload, f, indent=4)
 
     print("\n--- 4. Aplicando corrección final a todos los materiales 'single'... ---")
     

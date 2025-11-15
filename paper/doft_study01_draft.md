@@ -201,18 +201,19 @@ We interpret these patterns as the prime-space signature of each macroscopic fam
 
 Table 1 summarizes the comparison between the DOFT-inspired model and the two-parameter power-law baseline for several groupings (by `category` and by `lock_family`). For each group we report the mean absolute relative error (MARE) for the baseline (`baseline_mare`) and for DOFT (`doft_mare`), along with the difference ΔMARE = baseline − DOFT and the number of parameters.
 
-**Table 1 – Mean absolute relative error (MARE) for the power-law baseline vs DOFT-inspired model.**  
-*(Illustrative numbers based on `baseline_test.csv`; to be updated with final values.)*
+**Table 1 – Mean absolute relative error (MARE) for the power-law baseline vs DOFT-inspired model (w = 800, p = 7919).**
 
-| Grouping | Group value        | Baseline MARE | DOFT MARE | ΔMARE (baseline−DOFT) | Baseline params | DOFT params |
-|----------|--------------------|---------------|-----------|-----------------------|-----------------|-------------|
-| category | SC_HighPressure    | ~0.4          | ~0.2–0.3  | > 0                   | 2               | 0           |
-| category | SC_Binary          | ~0.6          | ~0.02     | > 0                   | 2               | 0           |
-| category | Superfluid         | ~2            | ~0.003    | > 0                   | 2               | 0           |
-| category | SC_IronBased       | ~3            | ~0.03     | > 0                   | 2               | 0           |
-| lock_family | integer         | ~0.7          | ~0.16     | > 0                   | 2               | 0           |
-| lock_family | rational        | ~2            | ~0.003    | > 0                   | 2               | 0           |
-| lock_family | mixed           | >4            | ~0.02     | > 0                   | 2               | 0           |
+| Grouping    | Group value     | Baseline MARE | DOFT MARE | ΔMARE (baseline − DOFT) | Baseline params | DOFT params |
+|-------------|-----------------|---------------|----------:|-------------------------:|----------------:|------------:|
+| category    | SC_HighPressure | 0.420         | 0.241     | 0.179                    | 2               | 0           |
+| category    | SC_Binary       | 0.634         | 0.042     | 0.591                    | 2               | 0           |
+| category    | SC_TypeI        | 1.158         | 0.009     | 1.149                    | 2               | 0           |
+| category    | SC_IronBased    | 1.336         | 0.013     | 1.323                    | 2               | 0           |
+| category    | Superfluid      | 1.970         | 0.003     | 1.967                    | 2               | 0           |
+| jump_type   | intra           | 3.343         | 0.036     | 3.307                    | 2               | 0           |
+| lock_family | integer         | 0.673         | 0.178     | 0.495                    | 2               | 0           |
+| lock_family | rational        | 1.970         | 0.003     | 1.967                    | 2               | 0           |
+| lock_family | mixed           | 2.746         | 0.011     | 2.734                    | 2               | 0           |
 
 In all cases considered, ΔMARE is positive: the baseline error exceeds the DOFT error, sometimes by more than an order of magnitude, despite the baseline having two free parameters per group and the DOFT-inspired model having none at that level (the exponents and \(\eta\) are fixed globally). This indicates that the constrained locking grammar is not simply rephrasing a generic power-law fit: it provides a *more efficient* parametrization of the data, with fewer degrees of freedom and lower error.
 

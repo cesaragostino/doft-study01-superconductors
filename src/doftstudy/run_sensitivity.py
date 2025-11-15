@@ -11,7 +11,7 @@ from tqdm import tqdm
 # Definir la constante que faltaba
 CONFIG_FILE = "doft_config.json"
 
-def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10000, output_dir=None):
+def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10000, output_dir=None, winsor_value=None):
     """
     Ejecuta el script de análisis de clústeres N veces con jitter
     y reporta las estadísticas de C_AB y kappa.
@@ -128,6 +128,9 @@ def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10
                 "std": k_std,
                 "ci_low": k_low,
                 "ci_high": k_high,
+                "prime_max_val": prime_max_val,
+                "jitter_percent": jitter_percent,
+                "winsor": winsor_value,
             })
         else:
             print("  Kappa (κ): No se pudieron calcular estadísticas (N=0).")
@@ -147,6 +150,9 @@ def run_sensitivity_analysis(input_csv, n_runs, jitter_percent, prime_max_val=10
                 "std": c_std,
                 "ci_low": c_low,
                 "ci_high": c_high,
+                "prime_max_val": prime_max_val,
+                "jitter_percent": jitter_percent,
+                "winsor": winsor_value,
             })
         else:
             print("  C_AB: No se pudieron calcular estadísticas (N=0).")
@@ -177,6 +183,7 @@ if __name__ == "__main__":
     parser.add_argument("-j", "--jitter", dest="jitter_percent", type=float, default=5.0, help="Porcentaje de jitter +/- aleatorio (e.g., 5.0 para +/- 5%)")
     parser.add_argument("--prime_max_val", dest="prime_max_val", type=int, default=10000, help="Valor máximo para la generación de 'prime values' (default: 10000)")
     parser.add_argument("--output_dir", dest="output_dir", type=str, default=None, help="Directorio donde guardar el resumen CSV (opcional)")
+    parser.add_argument("--winsor", dest="winsor_value", type=float, default=None, help="Valor de Winsor usado como baseline (opcional)")
     
     args = parser.parse_args()
     
@@ -185,4 +192,4 @@ if __name__ == "__main__":
         print("Por favor, ejecuta 'run_calibration.py' (sin jitter) primero para generar este archivo.")
         exit()
 
-    run_sensitivity_analysis(args.input_csv, args.n_runs, args.jitter_percent, args.prime_max_val, args.output_dir)
+    run_sensitivity_analysis(args.input_csv, args.n_runs, args.jitter_percent, args.prime_max_val, args.output_dir, args.winsor_value)

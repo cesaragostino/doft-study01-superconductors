@@ -1,0 +1,32 @@
+--- Log registrado en: /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy/run_master_pipeline_20251115_004156.log ---
+============================================
+     Modo de ejecución 'Custom'     
+Ejecutando con los parámetros provistos (o defaults).
+============================================
+Comando Python:   python3
+Archivo de entrada: /Users/cagostino/Documents/GitHub/doft-study01-superconductors/data/raw/materials_clusters_real_v6.csv
+Directorio base de resultados: /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy
+Valores Winsor:   [600.0]
+Valores Prime:    [10000]
+Valores Jitter:   []
+Jitter N-Runs:    500
+--------------------------------------------
+
+--- FASE 1: Saltando Análisis de Robustez (por flag). ---
+
+--- FASE 2: Saltando Análisis de Sensibilidad (por flag). ---
+
+[... Digest resumido (archivos maestros) ...]
+python3 /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy/generate_digest.py --output_root /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy --fingerprint_tag w600_p10000 --label v6
+--- Salida Estándar (stdout): ---
+ADVERTENCIA: No se encontraron directorios results_w*_p* en /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy.
+--- Archivo 'eta_gamma_summary_v6.csv' generado con 0 filas. ---
+ADVERTENCIA: No existe el directorio /Users/cagostino/Documents/GitHub/doft-study01-superconductors/src/doftstudy/results_w600_p10000. Se intentará usar el primero disponible.
+ADVERTENCIA: No se pudo determinar un directorio base para fingerprint/kappa.
+
+[¡OK! Digest resumido (archivos maestros)]
+
+
+============================================
+   ¡Master Pipeline finalizado!   
+============================================
