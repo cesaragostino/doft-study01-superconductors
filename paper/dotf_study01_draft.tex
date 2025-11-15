@@ -1,0 +1,497 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+\section{DOFT Study 01: Constrained Fingerprints for Superconductors and Superfluid Helium}
+
+\textbf{Author:} Cesar Agostino  
+\textbf{Draft:} v0.1 (work in progress)
+
+
+\subsection{Abstract}
+
+We study whether a tightly constrained, DOFT-inspired parametrization can describe superconductors and superfluid helium using a small number of universal parameters, without per-material exponents or heavy model tuning. The goal is not to prove Delayed-Oscillator Field Theory (DOFT) as a fundamental theory, but to test whether its resonance grammar and memory-based correction law produce robust fingerprints across families: type-I and type-II superconductors, high-pressure superconductors, unconventional materials, and He-4.
+
+From a practical standpoint, the question is:
+
+\emph{Can we use one global set of exponents, a linear correction law with shared parameters, and a modest number of family-specific coefficients, to reproduce the observed frequency ratios and drifts in these systems at the 1–10\% level?}
+
+We show that:
+
+\begin{itemize}
+\item The DOFT-inspired fingerprint (locking $+$ thermal-memory correction) consistently reduces error against a simple power-law baseline for most metallic and many unconventional superconductors.
+\item A small set of exponents, fixed by prime-locking rules, is sufficient to describe both metals and superfluid He-4 under different locking families (integer vs rational).
+\item The correction law with a single global propagation parameter $\eta$ (and negligible curvature $\Gamma \approx 0$ in metals) is enough to eliminate systematic drift with layer distance in the metallic family.
+\item Superfluid He-4 can be incorporated into the same structure by switching from integer to rational locking while reusing the metallic $\eta$.
+\end{itemize}
+
+These results do not prove DOFT as a fundamental theory, but support the idea that:
+
+\begin{enumerate}
+\item The same small set of ratios (built from primes 2, 3, 5, 7) and their rational combinations appears repeatedly in superconducting and superfluid systems.
+\item A single thermal-memory propagation parameter $\eta$ extracted from metals can be transferred to He-4, eliminating drift once locking is classified correctly.
+\item Effective fingerprints are built from a limited set of exponents and global correction parameters, instead of ad-hoc fits per family or per material.
+\end{enumerate}
+
+Overall, the data are consistent with the idea that a small DOFT-inspired parameter set captures the main structure of superconducting and superfluid systems without per-material tuning of exponents.
+
+
+\subsection{1. Introduction}
+
+Superconductors and superfluids display a wide range of critical temperatures, gaps, Debye scales, and effective Fermi frequencies, but also share recurring patterns when organized in families. Type-I and type-II elemental metals, high-pressure superconductors, iron-based compounds, cuprates, and helium all exhibit transitions that can be described by a few characteristic frequencies: thermal ($\omega_{\text{th}}$), gap ($\omega_\Delta$), Debye ($\omega_D$), Fermi ($\omega_F$), and, in the case of helium, roton and superfluid anchors.
+
+Traditional condensed-matter approaches treat each family with tailored theoretical models: BCS for conventional superconductors, Eliashberg extensions for strong coupling, various spin-fluctuation or multiband theories for iron-based and cuprates, and separate superfluid models for helium. These frameworks are successful locally, but do not provide a single, compact parametrization that spans families.
+
+The DOFT (Delayed-Oscillator Field Theory) framework proposes such a unified language. It treats physical systems as hierarchies of coupled oscillators with memory and delay, and suggests that:
+
+\begin{itemize}
+\item Frequency ratios between adjacent layers tend to lock into products of small primes (2, 3, 5, 7) for rigid families, and rational ratios $p/q$ with small denominators for softer families.
+\item Deviations from these ideal ratios follow a universal correction law driven by thermal noise and memory propagation.
+\end{itemize}
+
+Previous DOFT work introduced the idea of a \emph{Mother Frequency} $\omega_\ast$ and showed that coarse-grained resonance ratios connect helium, nuclear, QCD, and electroweak scales via prime products like $\{4, 28, 210, 1050\}$. Here we take a much more modest approach: we focus on low-energy condensed-matter systems and test whether DOFT-inspired fingerprints work as a \emph{practical, constrained parametrization} of known data.
+
+In this work we take a deliberately conservative stance: we do \emph{not} attempt to prove DOFT as a fundamental theory. Instead, we ask a narrower question:
+
+\begin{quote}
+Given a DOFT-inspired locking grammar and a minimal correction law, can we describe a heterogeneous collection of superconductors and superfluid helium using a small set of global parameters, with exponents that are fixed by the locking rules and \emph{not} adjusted per material? A universal correction law with a handful of parameters should be enough to remove systematic drift, without per-material tuning of exponents.
+\end{quote}
+
+To answer this, we construct fingerprints for each material based on dimensionless ratios built from thermal, gap, Debye, Fermi, and nuclear anchors, classify them into families by locking type (integer vs rational), and apply a constrained correction law with shared parameters $(\eta, \Gamma)$ and local coefficients $\beta_\ell$ encoded by primes. We then compare the performance of this DOFT-based fingerprint against a baseline power-law fit using the same number of effective parameters. Overall, the data are consistent with the idea that a small DOFT-inspired parameter set captures the main structure of superconducting and superfluid systems without per-material tuning of exponents.
+
+
+\subsection{2. Data and Fingerprint Construction}
+
+\subsubsection{2.1 Source Data}
+
+The analysis is based on aggregated data for superconductors and superfluids, collected from experimental literature and organized into a CSV dataset. For each entry we include:
+
+\begin{itemize}
+\item A material identifier and category (type-I, type-II, high-pressure, iron-based, oxide, etc.).
+\item Critical temperature $T_c$ (K).
+\item Gap $\Delta$ (meV) when available.
+\item Debye temperature $\Theta_D$ (K).
+\item Fermi energy $E_F$ (eV) or an appropriate electronic scale.
+\item Additional anchors (e.g. roton energy for He-4, superfluid transition for He-3).
+\end{itemize}
+
+For helium, we use:
+
+\begin{itemize}
+\item He-4: superfluid transition at $T_c \approx 2.1768$ K, roton minimum at $\sim 8.6$ K, atomic electronic resonance at 19.82 eV, nuclear binding at 28.296 MeV, and QCD scale at $\sim 220$ MeV.
+\item He-3: superfluid transitions at mK scales, with large Debye-like ratios $X = \Theta_D / T_c$.
+\end{itemize}
+
+The CSV files \texttt{materials\_clusters\_real\_v5.csv}, \texttt{results\_calib\_w800\_p7919.csv}, and \texttt{results\_cluster\_kappa\_w800\_p7919.csv} encode the raw data, calibrated fingerprints, and DOFT-fit results respectively. A set of auxiliary files such as \texttt{fingerprint\_fp\_kappa\_w800\_p7919\_log\_residual.csv} and \texttt{fingerprint\_fp\_kappa\_w800\_p7919\_bootstrap\_CIs.csv} provide residuals and bootstrap confidence intervals for the fitted parameters.
+
+
+\subsubsection{2.2 Layer Anchors and Ratios}
+
+We construct fingerprints from adjacent-layer frequency ratios. For metals and superconductors, the main anchors are:
+
+\begin{itemize}
+\item Thermal frequency $\omega_{\text{th}} = k_B T_c / \hbar$.
+\item Gap frequency $\omega_\Delta = \Delta / \hbar$.
+\item Debye frequency $\omega_D = k_B \Theta_D / \hbar$.
+\item Fermi frequency $\omega_F = E_F / \hbar$.
+\end{itemize}
+
+From these we define ratios:
+
+\begin{align}
+R_{\text{th}\to\Delta} &= \frac{\omega_\Delta}{\omega_{\text{th}}}, \\
+R_{\Delta\to D} &= \frac{\omega_D}{\omega_\Delta}, \\
+R_{D\to F} &= \frac{\omega_F}{\omega_D}.
+\end{align}
+
+For helium we use:
+
+\begin{itemize}
+\item Superfluid transition: $\omega_{\text{sf}} = k_B T_{\text{sf}} / \hbar$.
+\item Roton frequency: $\omega_{\text{roton}}$ from the roton minimum energy.
+\item Electronic, nuclear, and QCD scales as in previous DOFT work.
+\end{itemize}
+
+Ratios such as $R_{\text{th}\to\text{roton}}$, $R_{\text{roton}\to e}$, $R_{e\to n}$, and $R_{n\to \text{QCD}}$ form a ladder analogous to the superconductor chain, with the key difference that helium belongs to a softer, rational-locking family (see below).
+
+
+\subsubsection{2.3 Locking Families and Prime Grammar}
+
+DOFT proposes that frequency ratios between adjacent layers prefer a discrete set of locking values:
+
+\begin{itemize}
+\item Rigid families (metals, $\sigma$-dominated systems): integer products of primes $2, 3, 5, 7$.
+\item Soft/hybrid families (superfluids, $\pi$-dominated systems, molecular states): rational ratios $p/q$ with small denominators $q \leq 8$.
+\end{itemize}
+
+We encode this by assigning each material to a \emph{locking family}:
+
+\begin{itemize}
+\item \texttt{integer} for metallic and rigid superconductors.
+\item \texttt{rational} for helium and other bosonic/soft systems.
+\item \texttt{mixed} for systems like MgB$_2$ with $\sigma$ and $\pi$ sub-bands.
+\end{itemize}
+
+For each ratio $R$ we select a \emph{locking value} $L^\ast$:
+
+\begin{itemize}
+\item For integer families: $L^\ast \in \{2^a 3^b 5^c 7^d\}$ within a reasonable range.
+\item For rational families: $L^\ast = p/q$ with $q \leq 8$ and similar bounds on $p$.
+\end{itemize}
+
+The error for each ratio is:
+
+\[
+\varepsilon = \frac{R - L^\ast}{R}.
+\]
+
+The logarithm of the absolute error $|\varepsilon|$ is one of the key observables in the fingerprints, as it reveals systematic drift with layer distance if uncorrected.
+
+
+\subsubsection{2.4 Thermal-Memory Proxy and Distances}
+
+The main control variable in the correction law is:
+
+\[
+X = \frac{\Theta_D}{T_c},
+\]
+
+which captures the ratio between lattice and critical temperature. Higher $X$ corresponds to stronger thermal noise relative to the coherence scale, and is therefore associated with greater decoherence and larger frequency drift.
+
+We define a \emph{layer distance} $d$ as the number of jumps between the inner and outer anchors:
+
+\begin{itemize}
+\item $d=1$ for transitions such as $\omega_{\text{th}} \to \omega_\Delta$.
+\item $d=2$ for $\omega_{\text{th}} \to \omega_D$ (via gap).
+\item $d=3$ for $\omega_{\text{th}} \to \omega_F$ (thermal to Fermi).
+\end{itemize}
+
+In helium, $d$ can be larger when connecting thermal to nuclear or QCD frequencies through roton and electronic scales. The correction law will use $d$ as a measure of how far a given ratio is from the inner resonance anchor.
+
+
+\subsubsection{2.5 Fingerprint Definition}
+
+For each material we build a fingerprint vector:
+
+\[
+\text{FP} = \left( X, d, \varepsilon_{\text{th}\to\Delta}, \varepsilon_{\Delta\to D}, \varepsilon_{D\to F}, \ldots \right),
+\]
+
+augmented by:
+
+\begin{itemize}
+\item Family and sub-family labels (e.g. type-I vs type-II, high pressure vs oxide, superfluid He-4 vs He-3).
+\item Binary indicators for presence/absence of certain anchors (gap known, Fermi energy available, etc.).
+\end{itemize}
+
+The fingerprint dataset thus encodes, for each material, the observed ratios, locking errors, thermal proxy $X$, layer distances, and categorical metadata. This is the basis for the statistical calibration described in Section 3.
+
+
+\subsection{3. DOFT-Inspired Correction Law}
+
+\subsubsection{3.1 Original DOFT Law}
+
+The original DOFT thermal-memory correction law proposes that deviations from ideal locking follow:
+
+\[
+\frac{\Delta \omega_\ell}{\omega_\ell} \approx -\beta_\ell X - \Gamma X^2 - \Eta d_\ell X,
+\]
+
+where:
+
+\begin{itemize}
+\item $\beta_\ell$ is a layer-dependent linear noise coefficient.
+\item $\Gamma$ is a global anharmonic curvature parameter.
+\item $\Eta$ is a global memory propagation parameter.
+\item $d_\ell$ is the distance of layer $\ell$ from the innermost resonance.
+\end{itemize}
+
+In previous work, heuristic estimates suggested $\Gamma \sim 10^{-7}$ and $\Eta \sim 10^{-8}$, but these were based on a small set of metals and did not use systematic residual analysis or bootstrap uncertainty estimates.
+
+The practical question here is whether a simplified version of this law, with minimal free parameters, can eliminate systematic drift across a broad dataset of superconductors and helium when locking is imposed by the prime grammar.
+
+
+\subsubsection{3.2 Constrained Metals-Only Fit}
+
+To avoid overfitting and disentangle the roles of $\Gamma$ and $\Eta$, we first fit the correction law on metallic systems only (type-I and type-II superconductors), enforcing physically meaningful constraints:
+
+\begin{itemize}
+\item $\Gamma \ge 0$ (thermal curvature should not invert the potential).
+\item $\Eta \ge 0$ (memory propagation should not reverse the direction of drift).
+\end{itemize}
+
+We use a linearized form of the law:
+
+\[
+\varepsilon_{\text{corr}} \approx \varepsilon_{\text{obs}} + \beta_\ell X + \Gamma X^2 + \Eta d X,
+\]
+
+and fit $\Gamma$ and $\Eta$ by minimizing the drift of errors as a function of $d$ and $X$ using constrained least squares (\texttt{lsq\_linear} in \texttt{scipy.optimize}). The per-layer $\beta_\ell$ terms are absorbed as local corrections that remove first-order dependence on $X$ within each layer jump.
+
+Bootstrap resampling ($N=500$) and leave-one-out analysis are used to quantify uncertainties and identify influential materials. The results are summarized in a CSV file (\texttt{fingerprint\_fp\_kappa\_w800\_p7919\_bootstrap\_CIs.csv}) and show:
+
+\begin{itemize}
+\item $\Gamma \approx 1.6 \times 10^{-16}$ with confidence intervals consistent with zero.
+\item $\Eta \approx 1.8 \times 10^{-5}$ with positive, robust values across resamples.
+\end{itemize}
+
+This indicates that curvature is statistically negligible across metallic systems once local $\beta_\ell$ terms are included, and that a positive memory propagation term is needed to eliminate drift with $d$.
+
+
+\subsubsection{3.3 Final Reference Parameters}
+
+From the constrained metals-only fit we adopt:
+
+\[
+\Gamma_{\text{ref}} = 1.6 \times 10^{-16}, \quad \Eta_{\text{ref}} = 1.8 \times 10^{-5}.
+\]
+
+In practice we set $\Gamma_{\text{ref}} \approx 0$ and use only $\Eta_{\text{ref}}$ as the global parameter for cross-family applications. Metals thus serve as a reference to calibrate the diffusive memory propagation; once $\Eta$ is fixed, we test whether the same value works for helium and other families under appropriate locking classification.
+
+
+\subsubsection{3.4 Practical Correction Formula}
+
+For each ratio and material we define a corrected ratio:
+
+\[
+R_{\text{corr}} = R_{\text{obs}} \left( 1 - \Eta_{\text{ref}} d X \right),
+\]
+
+with a clamp to avoid unphysical scaling at extreme $X$ (e.g. He-3):
+
+\[
+1 - \Eta_{\text{ref}} d X \ge s_{\min} \approx 0.2.
+\]
+
+We then recompute the locking error:
+
+\[
+\varepsilon_{\text{corr}} = \frac{R_{\text{corr}} - L^\ast}{R_{\text{corr}}}.
+\]
+
+The key test is whether:
+
+\begin{itemize}
+\item The slope of $\varepsilon_{\text{corr}}$ vs $d$ becomes approximately zero within each family.
+\item The residuals become symmetric and bounded at the $\sim 1$--$10\%$ level.
+\item The same $\Eta_{\text{ref}}$ works across families (metals $+$ helium) without retuning.
+\end{itemize}
+
+
+\subsection{4. Baseline Model and Comparison}
+
+\subsubsection{4.1 Power-Law Baseline}
+
+To evaluate whether the DOFT-based fingerprint provides genuine explanatory power, we compare it against a simple baseline model: a power-law fit of the form
+
+\[
+R_{\text{obs}} \approx A X^\alpha,
+\]
+
+with two parameters $(A, \alpha)$ fitted per family (category or sub-family) using least squares. This baseline has the same number of free parameters as the DOFT correction ($\Eta_{\text{ref}}$ plus local $\beta_\ell$ implicitly absorbed in the layer-wise corrections), but lacks the prime-locking structure and does not distinguish between integer and rational families.
+
+We compute the mean absolute relative error (MARE) for both models:
+
+\begin{align}
+\text{MARE}_{\text{baseline}} &= \frac{1}{N} \sum_i \left| \frac{R_{\text{obs},i} - R_{\text{fit},i}}{R_{\text{obs},i}} \right|, \\
+\text{MARE}_{\text{DOFT}} &= \frac{1}{N} \sum_i \left| \varepsilon_{\text{corr},i} \right|.
+\end{align}
+
+Their difference:
+
+\[
+\Delta \text{MARE} = \text{MARE}_{\text{baseline}} - \text{MARE}_{\text{DOFT}}
+\]
+
+is positive if DOFT outperforms the baseline.
+
+
+\subsubsection{4.2 Metrics and Aggregation}
+
+For each group (category, family, or combined groups) we compute:
+
+\begin{itemize}
+\item $\text{baseline\_mare}$ for the power-law model.
+\item $\text{doft\_mare}$ using the DOFT-based fingerprint.
+\item $\Delta \text{MARE}$ and its bootstrap confidence intervals.
+\item Drift slopes before and after correction.
+\end{itemize}
+
+The CSV \texttt{results\_calib\_w800\_p7919.csv} contains per-group metrics, while \texttt{results\_cluster\_kappa\_w800\_p7919.csv} adds clustering information and mixing coefficients $\kappa$ for compounds.
+
+Overall, the DOFT fingerprint provides significant error reductions for metals and many unconventional superconductors, and yields robust behavior when extended to helium under rational locking.
+
+
+\subsection{5. Results: Metals and Superconductors}
+
+\subsubsection{5.1 Metals-Only Reference Fit}
+
+For the metals-only subset (type-I and type-II superconductors), the constrained fit yields:
+
+\begin{itemize}
+\item $\Gamma_{\text{ref}} \approx 0$ with uncertainties spanning many orders of magnitude downwards, effectively zero in practice.
+\item $\Eta_{\text{ref}} \approx 1.8 \times 10^{-5}$ with narrow confidence intervals and consistently positive values across all bootstrap resamples.
+\end{itemize}
+
+The leave-one-out analysis indicates:
+
+\begin{itemize}
+\item Molybdenum (Mo) is a strong influencer, increasing estimated $\Eta$ when included and reducing it when excluded, consistent with its role as a high-$X$ outlier.
+\item Aluminum (Al) and Gallium (Ga) act as ``stiff'' stabilizers, reducing $\Eta$ when present, consistent with their high coherence and clean integer locking.
+\item Lead (Pb) and Niobium (Nb) play intermediate roles, balancing the drift structure.
+\end{itemize}
+
+These patterns support the interpretation of $\Eta$ as a diffusive phase-memory propagation parameter: stiff, highly coherent metals exhibit lower effective propagation, while disordered or extreme-$X$ systems induce stronger drift and thus larger $\Eta$.
+
+
+\subsubsection{5.2 Metals vs Baseline}
+
+When comparing DOFT vs the power-law baseline across metallic families, we observe:
+
+\begin{itemize}
+\item DOFT consistently reduces MARE for individual ratios and combined fingerprints.
+\item The drift of $\varepsilon$ vs $d$ is significantly reduced or eliminated after applying the DOFT correction, while the baseline fit leaves residual slope.
+\item The improvement is particularly evident when combining multiple ratios into a single fingerprint and enforcing prime-locking across all.
+\end{itemize}
+
+In quantitative terms, groups such as \texttt{SC\_TypeI} and \texttt{SC\_TypeII} show positive $\Delta \text{MARE}$ with confidence intervals well above zero, indicating that the DOFT structure is not merely re-expressing the power-law dependence but capturing additional constraints related to locking and memory propagation.
+
+
+\subsubsection{5.3 High-Pressure and Unconventional Superconductors}
+
+For high-pressure superconductors and unconventional families (iron-based, oxides, etc.), the situation is more heterogeneous:
+
+\begin{itemize}
+\item Many groups still benefit from DOFT correction, with positive $\Delta \text{MARE}$ and reduced drift.
+\item Some groups show comparable performance between DOFT and baseline, reflecting either limited data or strong local effects not fully captured by the simple fingerprint.
+\item In a few cases, particularly in highly mixed or disordered systems, the baseline slightly outperforms DOFT; these groups likely require more sophisticated modeling or additional anchors.
+\end{itemize}
+
+However, even in these marginal cases, the DOFT fingerprint remains competitive with the baseline while using the same global parameters $(\Eta_{\text{ref}})$ and locking rules, without per-material exponent tuning. This supports the interpretation of DOFT as a constrained, physically motivated parametrization, not simply a flexible fit.
+
+
+\subsection{6. Results: Helium and Rational Locking}
+
+\subsubsection{6.1 He-4 Hierarchy and Ratios}
+
+For He-4 we consider the ladder:
+
+\begin{itemize}
+\item Thermal (superfluid transition) at 2.1768 K.
+\item Roton minimum at $\sim 8.6$ K.
+\item Atomic electronic resonance at 19.82 eV.
+\item Nuclear binding at 28.296 MeV.
+\item QCD scale at 220 MeV.
+\end{itemize}
+
+The corresponding frequency ratios approximate:
+
+\begin{itemize}
+\item Thermal $\to$ roton: close to $4 = 2^2$.
+\item Roton $\to$ electronic: close to $\sim 2.646 \times 10^4$, matching a prime product.
+\item Electronic $\to$ nuclear and nuclear $\to$ QCD: intermediate ratios consistent with small prime products.
+\end{itemize}
+
+In DOFT, helium belongs to a rational-locking family: layers prefer rational ratios $p/q$ with small denominators when combined with bosonic coherence and large $X$. The fitted $\Eta_{\text{ref}}$ from metals is applied without modification, using the same correction formula but with $d$ spanning more layers.
+
+
+\subsubsection{6.2 Transfer of $\Eta$ from Metals to Helium}
+
+When applying the metallic $\Eta_{\text{ref}}$ to the helium ladder:
+
+\begin{itemize}
+\item The systematic drift in locking errors across transitions (thermal $\to$ roton $\to$ electronic $\to$ nuclear $\to$ QCD) is significantly reduced.
+\item A single $\Eta_{\text{ref}}$ flattens the error vs $d$ even though helium lies in a much higher $X$ regime than metals and uses rational instead of integer locking.
+\item The remaining residuals fall within the same 1--10\% band seen in metals.
+\end{itemize}
+
+This suggests that the memory propagation mechanism encoded by $\Eta$ is transversal across families: it does not depend strongly on whether the locking is integer or rational, but primarily on the distance $d$ and the thermal proxy $X$.
+
+
+\subsubsection{6.3 He-3 and Extreme $X$}
+
+He-3, with its extremely low superfluid transition temperature and large $X$, provides a stress test for the correction law. Using the same $\Eta_{\text{ref}}$ and the clamp $s_{\min}$:
+
+\begin{itemize}
+\item The correction remains bounded and does not produce unphysical scaling.
+\item A fraction of the drift is corrected, but residuals remain larger due to extreme $X$ and additional complexity in He-3 pairing.
+\end{itemize}
+
+This behavior is consistent with the idea that the same memory propagation mechanism operates, but the simplistic fingerprint (limited anchors and a single $X$) is not enough to fully capture the structure in such an extreme regime. He-3 thus acts as a boundary case where the DOFT-inspired law still applies qualitatively but requires richer modeling for quantitative precision.
+
+
+\subsection{7. Discussion}
+
+\subsubsection{7.1 Role of Prime-Locking vs Baseline Fits}
+
+A central question is whether the observed improvement of DOFT over a power-law baseline is truly due to prime-locking and memory propagation, or simply reflects a more flexible fit. Several points support the former:
+
+\begin{itemize}
+\item The number of free parameters is comparable between DOFT and the baseline model.
+\item DOFT uses exponents fixed by the prime grammar (products and rationals), not adjusted per material or per ratio.
+\item The same $\Eta_{\text{ref}}$ is used across families, with no retuning when moving from metals to helium.
+\item Drift is specifically reduced as a function of layer distance $d$, consistent with the interpretation of $\Eta$ as a memory propagation parameter.
+\end{itemize}
+
+Thus, DOFT is not simply a reparameterization of local power laws; it imposes global constraints on ratios and their corrections, which appear to match the data structure better than the unconstrained baseline.
+
+
+\subsubsection{7.2 Interpretation of $\Eta$ as Diffusive Memory}
+
+The fitted $\Eta_{\text{ref}} \approx 1.8 \times 10^{-5}$ can be interpreted as the fraction of phase desynchronization transmitted between adjacent layers per unit of $X$. This magnitude is comparable to known phonon-electron relaxation ratios in metals, reinforcing the idea that $\Eta$ encodes diffusive propagation of decoherence rather than purely phenomenological curvature.
+
+Metals with high coherence (Al, Ga) effectively reduce the inferred $\Eta$, while outliers (Mo) increase it, consistent with their roles as stabilizers vs amplifiers of drift. He-4, once appropriately classified as rational-locking, accepts the same $\Eta$, suggesting that the mechanism is not restricted to fermionic metals but extends to bosonic superfluids.
+
+
+\subsubsection{7.3 Universality and Limits}
+
+The present study is limited in several ways:
+
+\begin{itemize}
+\item The dataset, while broad, is not exhaustive and is biased towards well-characterized superconductors and helium.
+\item The fingerprint uses a limited set of anchors; additional scales (e.g. pseudogap, spin-gap) could refine the analysis.
+\item The correction law is applied in a simple linearized form, without exploring possible higher-order memory effects or multiple interacting $\Eta$-like parameters.
+\end{itemize}
+
+Nevertheless, the fact that a single $\Eta_{\text{ref}}$ and a fixed locking grammar can describe metals and helium at the 1--10\% level, outperforming a simple baseline, is a nontrivial indication of underlying universality. DOFT, in this sense, acts as a compressed code for resonance structure, rather than a detailed microscopic theory.
+
+
+\subsection{8. Conclusions}
+
+We have tested whether a DOFT-inspired fingerprint, built from prime-locking and a minimal thermal-memory correction law, can describe superconductors and superfluid helium with a small number of global parameters and no per-material exponent tuning.
+
+Our main conclusions are:
+
+\begin{itemize}
+\item A constrained metals-only fit yields an effectively zero curvature parameter $\Gamma_{\text{ref}}$ and a positive, robust memory propagation parameter $\Eta_{\text{ref}} \approx 1.8 \times 10^{-5}$.
+\item This $\Eta_{\text{ref}}$ eliminates drift with layer distance in metallic systems when combined with prime-locking and per-layer linear corrections $\beta_\ell$.
+\item The same $\Eta_{\text{ref}}$ can be transferred to He-4 under rational locking, reducing drift across the helium ladder without retuning.
+\item DOFT-based fingerprints outperform a simple power-law baseline in metals and remain competitive in unconventional families, all while using a fixed locking grammar and a single global $\Eta_{\text{ref}}$.
+\end{itemize}
+
+These results do not claim that DOFT is the fundamental theory underlying superconductivity or superfluidity. They do suggest, however, that DOFT provides a compact, physically motivated language in which a diverse set of materials can be described by a small set of global parameters and a shared correction law. In that sense, DOFT functions as a ``compression code'' for resonant structures in condensed matter, pointing to deeper coherence between seemingly disparate systems.
+
+Future work will extend this analysis to more families (He-3, BECs, cuprates, fullerides), incorporate additional anchors and locking channels, and explore whether the same $\Eta_{\text{ref}}$ and prime grammar can continue to serve as a universal backbone for frequency fingerprints across the broader landscape of coherent quantum materials.
+
+
+\subsection{9. Numerical Implementation Notes}
+
+For researchers wishing to reproduce or extend this work, the following implementation notes summarize the pipeline:
+
+\begin{itemize}
+\item The raw material data is stored in \texttt{materials\_clusters\_real\_v5.csv}, with columns for $T_c$, $\Theta_D$, $E_F$, gaps, and categorical labels (\texttt{SC\_TypeI}, \texttt{SC\_TypeII}, \texttt{SC\_HighPressure}, \texttt{SC\_IronBased}, \texttt{SC\_Oxide}, \texttt{Superfluid}, etc.).
+\item The fingerprint construction code computes $X = \Theta_D/T_c$, layer distances $d$, locking values $L^\ast$, and errors $\varepsilon$, then writes \texttt{fingerprint\_fp\_kappa\_w800\_p7919\_log\_residual.csv}.
+\item The constrained fit uses \texttt{lsq\_linear} with non-negative bounds on $\Gamma$ and $\Eta$, and multiple bootstrap resamples to estimate confidence intervals.
+\item The final results and comparisons against the baseline are stored in \texttt{results\_calib\_w800\_p7919.csv} and \texttt{results\_cluster\_kappa\_w800\_p7919.csv}.
+\end{itemize}
+
+The codebase is structured so that changes to the locking grammar, family classification, or correction law can be tested by editing a small number of configuration files and rerunning the pipeline.
+
+
+\end{document}

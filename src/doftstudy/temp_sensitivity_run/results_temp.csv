@@ -1,176 +1,176 @@
 name,sub_network,category,lock_family,jump_type,jump_desc,d,X,C_AB,R_obs,chosen_lock,prime_value,err_before,R_corr_eta,err_after_eta,R_corr_kappa,err_after_kappa
-2H-NbSe2,sigma,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,28.7388,1.92293,1.97781,integer,2,0.0112179,1.97461,0.0128602,1.95485,0.0230972
-2H-NbSe2,sigma,SC_Binary,integer,intra,gap(Δ)→Debye,2,28.7388,1.92293,14.5306,integer,15,0.032306,14.5149,0.0334231,14.3697,0.0438622
-2H-NbSe2,sigma,SC_Binary,integer,intra,Debye→electronic(E_F),1,28.7388,1.92293,295.381,integer,294,0.00467615,295.222,0.00413792,292.271,0.00591634
-2H-NbSe2,pi,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,26.8158,1.92293,0.979001,integer,1,0.021449,0.97752,0.0229967,0.96774,0.0333351
-2H-NbSe2,pi,SC_Binary,integer,intra,gap(Δ)→Debye,2,26.8158,1.92293,27.391,integer,27,0.0142749,27.3634,0.0132797,27.0897,0.00331303
-2H-NbSe2,pi,SC_Binary,integer,intra,Debye→electronic(E_F),1,26.8158,1.92293,304.897,integer,300,0.0160617,304.743,0.0155653,301.698,0.00562675
-2H-NbSe2,sigma-vs-pi,SC_Binary,rational,inter,gap(sigma) / gap(pi),,,,1.87546,rational,1.875,0.000246264,1.87546,0.000246264,1.87546,0.000246264
-2H-NbSe2,sigma-vs-pi,SC_Binary,rational,inter,Debye(sigma) / Debye(pi),,,,0.994908,rational,1,0.00511768,0.994908,0.00511768,0.994908,0.00511768
-Ba(Fe0.8Co0.2)2As2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,10.7456,0.506707,3.6658,rational,3.6,0.0179495,3.66358,0.0173537,3.66358,0.0173537
-Ba(Fe0.8Co0.2)2As2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,10.7456,0.506707,2.93131,integer,3,0.0234338,2.93012,0.0238477,2.93012,0.0238477
-Ba(Fe0.8Co0.2)2As2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,10.7456,0.506707,9.27195,rational,9.33333,0.00662066,9.27007,0.00682413,9.27007,0.00682413
-Ba(Fe0.8Co0.2)2As2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,10.2389,0.506707,2.66145,rational,2.66667,0.00195949,2.65991,0.00253862,2.65991,0.00253862
-Ba(Fe0.8Co0.2)2As2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,10.2389,0.506707,3.8471,rational,3.85714,0.00260954,3.84562,0.00299581,3.84562,0.00299581
-Ba(Fe0.8Co0.2)2As2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,10.2389,0.506707,8.62723,rational,8.57143,0.00646826,8.62557,0.00627692,8.62557,0.00627692
-Ba(Fe0.8Co0.2)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.31426,rational,1.33333,0.0145149,1.31426,0.0145149,1.31426,0.0145149
-Ba(Fe0.8Co0.2)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.0014,rational,1,0.00139877,1.0014,0.00139877,1.0014,0.00139877
-Ba(Fe0.9Co0.1)2As2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,11.3554,0.0684124,3.633,rational,3.6,0.00908278,3.63067,0.00844754,3.61534,0.00424347
-Ba(Fe0.9Co0.1)2As2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,11.3554,0.0684124,3.12562,rational,3.125,0.000197292,3.12428,0.00022991,3.11109,0.00446986
-Ba(Fe0.9Co0.1)2As2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,11.3554,0.0684124,9.83476,rational,9.8,0.00353464,9.83266,0.0033218,9.79117,0.000902191
-Ba(Fe0.9Co0.1)2As2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,11.4238,0.0684124,2.83755,rational,2.85714,0.00690452,2.83572,0.0075539,2.82375,0.0118258
-Ba(Fe0.9Co0.1)2As2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,11.4238,0.0684124,4.02593,integer,4,0.00643981,4.0242,0.00601271,4.00721,0.00179922
-Ba(Fe0.9Co0.1)2As2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,11.4238,0.0684124,9.65735,rational,9.6,0.0059388,9.65528,0.00572519,9.61453,0.00151138
-Ba(Fe0.9Co0.1)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.30134,rational,1.28571,0.0120074,1.30134,0.0120074,1.30134,0.0120074
-Ba(Fe0.9Co0.1)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.01032,rational,1,0.0102185,1.01032,0.0102185,1.01032,0.0102185
-Ba0.6K0.4Fe2As2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,6.79493,0.592107,3.37017,rational,3.375,0.00143245,3.36888,0.00181651,3.36888,0.00181651
-Ba0.6K0.4Fe2As2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,6.79493,0.592107,2.0162,integer,2,0.00803307,2.01568,0.00777949,2.01568,0.00777949
-Ba0.6K0.4Fe2As2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,6.79493,0.592107,9.56041,rational,9.6,0.00414089,9.55919,0.00426923,9.55919,0.00426923
-Ba0.6K0.4Fe2As2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,6.20282,0.592107,2.70675,rational,2.66667,0.0148075,2.7058,0.0144626,2.7058,0.0144626
-Ba0.6K0.4Fe2As2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,6.20282,0.592107,2.29162,rational,2.28571,0.00257501,2.29108,0.00234225,2.29108,0.00234225
-Ba0.6K0.4Fe2As2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,6.20282,0.592107,9.61824,rational,9.6,0.00189681,9.61712,0.00178037,9.61712,0.00178037
-Ba0.6K0.4Fe2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.20537,rational,1.2,0.00445252,1.20537,0.00445252,1.20537,0.00445252
-Ba0.6K0.4Fe2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.0605,rational,1,0.0570479,1.0605,0.0570479,1.0605,0.0570479
-BaFe2(As0.7P0.3)2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,8.10138,0.598312,2.28142,rational,2.28571,0.00188433,2.28037,0.00234247,2.2789,0.00299206
-BaFe2(As0.7P0.3)2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,8.10138,0.598312,3.55103,rational,3.57143,0.0057441,3.54995,0.00605065,3.54765,0.00670255
-BaFe2(As0.7P0.3)2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,8.10138,0.598312,9.42758,rational,9.375,0.00557679,9.42614,0.00542526,9.42004,0.00478089
-BaFe2(As0.7P0.3)2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,8.69969,0.598312,1.57887,rational,1.6,0.0133821,1.5781,0.0138798,1.57707,0.0145369
-BaFe2(As0.7P0.3)2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,8.69969,0.598312,5.51007,rational,5.6,0.0163214,5.50827,0.016654,5.5047,0.0173128
-BaFe2(As0.7P0.3)2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,8.69969,0.598312,9.03353,integer,9,0.00371187,9.03205,0.00354884,9.02621,0.00290326
-BaFe2(As0.7P0.3)2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.43274,rational,1.42857,0.00291264,1.43274,0.00291264,1.43274,0.00291264
-BaFe2(As0.7P0.3)2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.92335,rational,0.875,0.0523635,0.92335,0.0523635,0.92335,0.0523635
-BeAu,gap1,SC_TypeI,mixed,intra,thermal@Tc→gap(Δ),3,121.017,0.80948,1.75541,rational,1.75,0.00308084,1.74342,0.00377255,1.74342,0.00377255
-BeAu,gap1,SC_TypeI,mixed,intra,gap(Δ)→Debye,2,121.017,0.80948,68.9395,rational,68.6,0.0049244,68.6257,0.000374349,68.6257,0.000374349
-BeAu,gap1,SC_TypeI,mixed,intra,Debye→electronic(E_F),1,121.017,0.80948,161.995,integer,162,3.23825e-05,161.626,0.00231353,161.626,0.00231353
-BeAu,gap2,SC_TypeI,mixed,intra,thermal@Tc→gap(Δ),3,121.826,0.80948,0.949868,integer,1,0.0527782,0.943339,0.0600643,0.943339,0.0600643
-BeAu,gap2,SC_TypeI,mixed,intra,gap(Δ)→Debye,2,121.826,0.80948,128.256,integer,128,0.00199749,127.668,0.00259661,127.668,0.00259661
-BeAu,gap2,SC_TypeI,mixed,intra,Debye→electronic(E_F),1,121.826,0.80948,174.068,rational,173.571,0.00285487,173.67,0.000565068,173.67,0.000565068
-BeAu,gap1-vs-gap2,SC_TypeI,rational,inter,gap(gap1) / gap(gap2),,,,1.9501,rational,2,0.0255897,1.9501,0.0255897,1.9501,0.0255897
-BeAu,gap1-vs-gap2,SC_TypeI,rational,inter,Debye(gap1) / Debye(gap2),,,,1.0482,rational,1,0.0459877,1.0482,0.0459877,1.0482,0.0459877
-Ca10(Pt3As8)(Fe2As2)5,gap1,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,7.73546,0.159976,1.20483,rational,1.2,0.00400819,1.2043,0.00357333,1.20225,0.0018709
-Ca10(Pt3As8)(Fe2As2)5,gap1,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,7.73546,0.159976,6.42038,rational,6.42857,0.00127579,6.41851,0.0015672,6.40757,0.00327816
-Ca10(Pt3As8)(Fe2As2)5,gap1,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,7.73546,0.159976,8.46553,rational,8.4,0.00774053,8.4643,0.00759616,8.44986,0.0059011
-Ca10(Pt3As8)(Fe2As2)5,gap2,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,7.91766,0.159976,2.07918,rational,2.14286,0.0306263,2.07825,0.0310869,2.07471,0.0328486
-Ca10(Pt3As8)(Fe2As2)5,gap2,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,7.91766,0.159976,3.80807,rational,3.85714,0.0128872,3.80693,0.0131889,3.80044,0.0149198
-Ca10(Pt3As8)(Fe2As2)5,gap2,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,7.91766,0.159976,8.31567,rational,8.33333,0.00212396,8.31443,0.0022732,8.30026,0.00398513
-Ca10(Pt3As8)(Fe2As2)5,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,8.31117,0.159976,1.95521,integer,2,0.0229063,1.9543,0.0233861,1.95096,0.0251347
-Ca10(Pt3As8)(Fe2As2)5,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,8.31117,0.159976,4.25077,rational,4.28571,0.00821953,4.24945,0.0085348,4.2422,0.0102577
-Ca10(Pt3As8)(Fe2As2)5,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,8.31117,0.159976,7.56407,rational,7.5,0.00846971,7.56288,0.00831471,7.54999,0.00662086
-Ca10(Pt3As8)(Fe2As2)5,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,8.47115,0.159976,1.27119,rational,1.28571,0.0114289,1.27058,0.0119125,1.26841,0.0136415
-Ca10(Pt3As8)(Fe2As2)5,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,8.47115,0.159976,6.66397,rational,6.66667,0.00040441,6.66185,0.000723262,6.65049,0.00243283
-Ca10(Pt3As8)(Fe2As2)5,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,8.47115,0.159976,7.77704,rational,7.71429,0.00806884,7.7758,0.00791079,7.76254,0.00621624
-Ca10(Pt3As8)(Fe2As2)5,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.60847,rational,1.6,0.00526791,1.60847,0.00526791,1.60847,0.00526791
-Ca10(Pt3As8)(Fe2As2)5,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.026,rational,1,0.0253444,1.026,0.0253444,1.026,0.0253444
-CaFe0.88Co0.12AsF,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,12.6245,0.884131,2.47647,rational,2.5,0.00950055,2.47471,0.0102201,2.47471,0.0102201
-CaFe0.88Co0.12AsF,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,12.6245,0.884131,5.09777,rational,5.14286,0.00884476,5.09535,0.00932403,5.09535,0.00932403
-CaFe0.88Co0.12AsF,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,12.6245,0.884131,8.80703,rational,8.75,0.00647553,8.80494,0.00623959,8.80494,0.00623959
-CaFe0.88Co0.12AsF,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,11.7404,0.884131,0.449858,rational,0.428571,0.0473191,0.44956,0.0466877,0.44956,0.0466877
-CaFe0.88Co0.12AsF,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,11.7404,0.884131,26.0979,rational,26.25,0.00582866,26.0864,0.00627301,26.0864,0.00627301
-CaFe0.88Co0.12AsF,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,11.7404,0.884131,9.18126,rational,9.14286,0.00418303,9.17924,0.00396312,9.17924,0.00396312
-CaFe0.88Co0.12AsF,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,5.03073,rational,5,0.00610769,5.03073,0.00610769,5.03073,0.00610769
-CaFe0.88Co0.12AsF,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.982665,rational,1,0.0176408,0.982665,0.0176408,0.982665,0.0176408
-FeSe,sigma,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,28.1545,2.45422,1.97172,integer,2,0.0143419,1.96859,0.0159557,1.96859,0.0159557
-FeSe,sigma,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,28.1545,2.45422,14.2791,rational,14.2857,0.000461592,14.264,0.00152217,14.264,0.00152217
-FeSe,sigma,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,28.1545,2.45422,0.48493,rational,0.5,0.0310763,0.484673,0.0316226,0.484673,0.0316226
-FeSe,pi,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,28.5633,2.45422,0.347665,rational,0.333333,0.041224,0.347105,0.0396764,0.347105,0.0396764
-FeSe,pi,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,28.5633,2.45422,82.1574,rational,82.2857,0.00156125,82.0692,0.00263843,82.0692,0.00263843
-FeSe,pi,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,28.5633,2.45422,0.474869,rational,0.5,0.0529228,0.474614,0.0534887,0.474614,0.0534887
-FeSe,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,29.4493,2.45422,2.07437,rational,2.14286,0.0330174,2.07092,0.0347366,2.07092,0.0347366
-FeSe,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,29.4493,2.45422,14.1967,rational,14.2857,0.00626698,14.181,0.00738282,14.181,0.00738282
-FeSe,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,29.4493,2.45422,0.490446,rational,0.5,0.0194795,0.490175,0.0200445,0.490175,0.0200445
-FeSe,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,26.995,2.45422,0.332479,rational,0.333333,0.00256871,0.331973,0.00409798,0.331973,0.00409798
-FeSe,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,26.995,2.45422,81.1931,integer,81,0.00237874,81.1107,0.00136477,81.1107,0.00136477
-FeSe,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,26.995,2.45422,0.523891,rational,0.5,0.0456026,0.523625,0.0451178,0.523625,0.0451178
-FeSe,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,5.88319,rational,5.83333,0.00847479,5.88319,0.00847479,5.88319,0.00847479
-FeSe,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.02869,rational,1,0.0278852,1.02869,0.0278852,1.02869,0.0278852
-Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,1913.45,222.156,1.91625,rational,1.875,0.0215261,1.70938,0.0968883,1.70938,0.0968883
-Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,1913.45,222.156,998.541,rational,1000,0.00146079,926.676,0.0791253,926.676,0.0791253
-Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,1913.45,222.156,0.983874,rational,1,0.0163908,0.948469,0.0543308,0.948469,0.0543308
-Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,1691.3,222.156,1.79241,rational,1.8,0.00423415,1.62138,0.110168,1.62138,0.110168
-Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,1691.3,222.156,943.589,rational,945,0.00149586,883.563,0.0695332,883.563,0.0695332
-Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,1691.3,222.156,0.907453,rational,0.875,0.0357625,0.878589,0.00408543,0.878589,0.00408543
-Helium-3 (He-3) B-phase,0-bar-vs-10-bar,Superfluid,rational,inter,gap(0-bar) / gap(10-bar),,,,0.902842,rational,0.875,0.0308379,0.902842,0.0308379,0.902842,0.0308379
-Helium-3 (He-3) B-phase,0-bar-vs-10-bar,Superfluid,rational,inter,Debye(0-bar) / Debye(10-bar),,,,0.955422,rational,1,0.0466584,0.955422,0.0466584,0.955422,0.0466584
-Helium-4 (He-4),1-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,3.68937,0.395699,3.87427,rational,3.85714,0.00441956,3.87346,0.00421229,3.87346,0.00421229
-Helium-4 (He-4),1-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,3.68937,0.395699,0.952276,rational,1,0.0501153,0.952144,0.0502611,0.952144,0.0502611
-Helium-4 (He-4),1-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,3.68937,0.395699,0.980125,rational,1,0.0202779,0.980057,0.0203487,0.980057,0.0203487
-Helium-4 (He-4),10-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,4.08507,0.395699,3.94025,rational,4,0.0151636,3.93934,0.0153976,3.93934,0.0153976
-Helium-4 (He-4),10-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,4.08507,0.395699,1.03675,rational,1,0.0354508,1.03659,0.0353026,1.03659,0.0353026
-Helium-4 (He-4),10-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,4.08507,0.395699,0.982937,rational,1,0.0173589,0.982862,0.0174371,0.982862,0.0174371
-Helium-4 (He-4),1-bar-vs-10-bar,Superfluid,rational,inter,gap(1-bar) / gap(10-bar),,,,1.01654,rational,1,0.0162691,1.01654,0.0162691,1.01654,0.0162691
-Helium-4 (He-4),1-bar-vs-10-bar,Superfluid,rational,inter,Debye(1-bar) / Debye(10-bar),,,,0.933708,rational,0.875,0.0628762,0.933708,0.0628762,0.933708,0.0628762
-LaB2,sigma,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,13.3778,0.0403498,1.80902,rational,1.8,0.00498852,1.80766,0.00423696,1.80762,0.00421484
-LaB2,sigma,SC_Binary,mixed,intra,gap(Δ)→Debye,2,13.3778,0.0403498,7.39504,rational,7.5,0.0141938,7.39132,0.0147044,7.39115,0.0147269
-LaB2,sigma,SC_Binary,mixed,intra,Debye→electronic(E_F),1,13.3778,0.0403498,150.186,integer,150,0.0012362,150.148,0.000984861,150.145,0.000962676
-LaB2,pi,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,13.4182,0.0403498,1.55227,rational,1.6,0.0307482,1.5511,0.0315291,1.55106,0.031552
-LaB2,pi,SC_Binary,mixed,intra,gap(Δ)→Debye,2,13.4182,0.0403498,8.64421,rational,8.57143,0.00841958,8.63985,0.00791889,8.63965,0.00789685
-LaB2,pi,SC_Binary,mixed,intra,Debye→electronic(E_F),1,13.4182,0.0403498,164.486,rational,164.571,0.000517544,164.445,0.000770084,164.441,0.000792307
-LaB2,sigma-vs-pi,SC_Binary,rational,inter,gap(sigma) / gap(pi),,,,1.23749,rational,1.25,0.010106,1.23749,0.010106,1.23749,0.010106
-LaB2,sigma-vs-pi,SC_Binary,rational,inter,Debye(sigma) / Debye(pi),,,,1.05866,rational,1,0.0554132,1.05866,0.0554132,1.05866,0.0554132
-LaFeAsO0.9F0.1,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,10.6534,0.287023,4.66229,rational,4.66667,0.00093806,4.65949,0.00154004,4.65949,0.00154004
-LaFeAsO0.9F0.1,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,10.6534,0.287023,2.28502,rational,2.28571,0.000306012,2.2841,0.000706998,2.2841,0.000706998
-LaFeAsO0.9F0.1,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,10.6534,0.287023,8.53493,rational,8.57143,0.00427622,8.53322,0.00447747,8.53322,0.00447747
-LaFeAsO0.9F0.1,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,10.9404,0.287023,1.34479,rational,1.33333,0.00851831,1.34396,0.00790595,1.34396,0.00790595
-LaFeAsO0.9F0.1,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,10.9404,0.287023,8.13543,rational,8.16667,0.00383968,8.13208,0.00425293,8.13208,0.00425293
-LaFeAsO0.9F0.1,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,10.9404,0.287023,7.83587,rational,7.875,0.00499408,7.83425,0.0052009,7.83425,0.0052009
-LaFeAsO0.9F0.1,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,3.42713,rational,3.42857,0.000420675,3.42713,0.000420675,3.42713,0.000420675
-LaFeAsO0.9F0.1,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.962585,rational,1,0.0388692,0.962585,0.0388692,0.962585,0.0388692
-LaH10,H1-optic-sigma,SC_HighPressure,integer,intra,thermal@Tc→gap(Δ),3,3.80354,1.5073,0.839132,integer,1,0.191707,0.838952,0.191963,0.838952,0.191963
-LaH10,H1-optic-sigma,SC_HighPressure,integer,intra,gap(Δ)→Debye,2,3.80354,1.5073,4.53271,integer,5,0.103093,4.53206,0.103251,4.53206,0.103251
-LaH10,H1-optic-sigma,SC_HighPressure,integer,intra,Debye→electronic(E_F),1,3.80354,1.5073,79.9864,integer,80,0.000170243,79.9807,0.000241791,79.9807,0.000241791
-LaH10,H2-optic-pi,SC_HighPressure,mixed,intra,thermal@Tc→gap(Δ),3,5.31084,1.5073,1.50239,rational,1.5,0.00159397,1.50194,0.00129473,1.50194,0.00129473
-LaH10,H2-optic-pi,SC_HighPressure,mixed,intra,gap(Δ)→Debye,2,5.31084,1.5073,3.53492,rational,3.5,0.00987807,3.53421,0.00968025,3.53421,0.00968025
-LaH10,H2-optic-pi,SC_HighPressure,mixed,intra,Debye→electronic(E_F),1,5.31084,1.5073,55.6825,integer,56,0.00570156,55.677,0.00580201,55.677,0.00580201
-LaH10,La-acous-sigma,SC_HighPressure,integer,intra,thermal@Tc→gap(Δ),3,1.28533,1.5073,0.367494,integer,1,1.72114,0.367467,1.72133,0.367467,1.72133
-LaH10,La-acous-sigma,SC_HighPressure,integer,intra,gap(Δ)→Debye,2,1.28533,1.5073,3.49755,integer,3,0.142257,3.49738,0.142216,3.49738,0.142216
-LaH10,La-acous-sigma,SC_HighPressure,integer,intra,Debye→electronic(E_F),1,1.28533,1.5073,233.6,integer,240,0.0273966,233.595,0.0274214,233.595,0.0274214
-LaH10,H1-optic-sigma-vs-H2-optic-pi,SC_HighPressure,rational,inter,gap(H1-optic-sigma) / gap(H2-optic-pi),,,,0.550914,rational,0.571429,0.0372371,0.550914,0.0372371,0.550914,0.0372371
-LaH10,H1-optic-sigma-vs-H2-optic-pi,SC_HighPressure,rational,inter,Debye(H1-optic-sigma) / Debye(H2-optic-pi),,,,0.706419,rational,0.714286,0.0111359,0.706419,0.0111359,0.706419,0.0111359
-LaPt2Si2,gap1,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,157.129,4.65935,1.23444,rational,1.25,0.0126038,1.2235,0.0216608,1.2235,0.0216608
-LaPt2Si2,gap1,SC_Binary,mixed,intra,gap(Δ)→Debye,2,157.129,4.65935,127.287,integer,128,0.00560035,126.535,0.0115788,126.535,0.0115788
-LaPt2Si2,gap1,SC_Binary,mixed,intra,Debye→electronic(E_F),1,157.129,4.65935,198.983,integer,200,0.00511119,198.395,0.0080901,198.395,0.0080901
-LaPt2Si2,gap2,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,152.469,4.65935,0.604817,rational,0.6,0.00796429,0.599614,0.000643374,0.599614,0.000643374
-LaPt2Si2,gap2,SC_Binary,mixed,intra,gap(Δ)→Debye,2,152.469,4.65935,252.091,integer,252,0.00036273,250.646,0.00540301,250.646,0.00540301
-LaPt2Si2,gap2,SC_Binary,mixed,intra,Debye→electronic(E_F),1,152.469,4.65935,220.252,rational,220.5,0.00112558,219.621,0.00400444,219.621,0.00400444
-LaPt2Si2,gap1-vs-gap2,SC_Binary,rational,inter,gap(gap1) / gap(gap2),,,,2.07563,rational,2.14286,0.0323909,2.07563,0.0323909,2.07563,0.0323909
-LaPt2Si2,gap1-vs-gap2,SC_Binary,rational,inter,Debye(gap1) / Debye(gap2),,,,1.04803,rational,1,0.0458327,1.04803,0.0458327,1.04803,0.0458327
-LiFeAs,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,15.5002,0.654916,4.1009,rational,4.16667,0.0160375,4.09731,0.0169268,4.09731,0.0169268
-LiFeAs,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,15.5002,0.654916,3.77971,rational,3.75,0.00786094,3.77751,0.00728218,3.77751,0.00728218
-LiFeAs,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,15.5002,0.654916,6.40291,rational,6.4,0.000454876,6.40105,0.000163422,6.40105,0.000163422
-LiFeAs,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,14.8453,0.654916,1.65924,rational,1.66667,0.00447854,1.65785,0.00532056,1.65785,0.00532056
-LiFeAs,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,14.8453,0.654916,8.94707,integer,9,0.00591582,8.94208,0.0064778,8.94208,0.0064778
-LiFeAs,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,14.8453,0.654916,6.2224,rational,6.25,0.00443571,6.22066,0.00471622,6.22066,0.00471622
-LiFeAs,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,2.41955,rational,2.4,0.00807908,2.41955,0.00807908,2.41955,0.00807908
-LiFeAs,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.02214,rational,1,0.0216642,1.02214,0.0216642,1.02214,0.0216642
-MgB2,pi,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,19.1512,3.37466,0.801412,rational,0.8,0.00176238,0.800546,0.000682632,0.800546,0.000682632
-MgB2,pi,SC_Binary,mixed,intra,gap(Δ)→Debye,2,19.1512,3.37466,23.8968,integer,24,0.00431935,23.8796,0.00504331,23.8796,0.00504331
-MgB2,pi,SC_Binary,mixed,intra,Debye→electronic(E_F),1,19.1512,3.37466,96.3121,rational,96.4286,0.00120934,96.2774,0.00157007,96.2774,0.00157007
-MgB2,sigma,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,22.5258,3.37466,2.1545,integer,2,0.0717121,2.15177,0.0705308,2.15177,0.0705308
-MgB2,sigma,SC_Binary,integer,intra,gap(Δ)→Debye,2,22.5258,3.37466,10.4552,integer,10,0.043541,10.4464,0.04273,10.4464,0.04273
-MgB2,sigma,SC_Binary,integer,intra,Debye→electronic(E_F),1,22.5258,3.37466,82.7244,integer,84,0.0154203,82.6893,0.0158506,82.6893,0.0158506
-MgB2,sigma-vs-pi,SC_Binary,rational,inter,gap(sigma) / gap(pi),,,,2.66824,rational,2.66667,0.000589056,2.66824,0.000589056,2.66824,0.000589056
-MgB2,sigma-vs-pi,SC_Binary,rational,inter,Debye(sigma) / Debye(pi),,,,1.1674,rational,1.16667,0.000626295,1.1674,0.000626295,1.1674,0.000626295
-Nb2PdS5,band1,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,46.0487,13.0878,1.77857,rational,1.8,0.0120471,1.77395,0.0146833,1.77395,0.0146833
-Nb2PdS5,band1,SC_Binary,mixed,intra,gap(Δ)→Debye,2,46.0487,13.0878,25.8908,rational,25.7143,0.00681863,25.846,0.00509544,25.846,0.00509544
-Nb2PdS5,band1,SC_Binary,mixed,intra,Debye→electronic(E_F),1,46.0487,13.0878,222.469,integer,224,0.00688095,222.277,0.00775367,222.277,0.00775367
-Nb2PdS5,band2,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,59.1365,13.0878,1.95132,integer,2,0.0249488,1.94481,0.0283799,1.94481,0.0283799
-Nb2PdS5,band2,SC_Binary,mixed,intra,gap(Δ)→Debye,2,59.1365,13.0878,30.306,rational,30.375,0.00227839,30.2385,0.00451271,30.2385,0.00451271
-Nb2PdS5,band2,SC_Binary,mixed,intra,Debye→electronic(E_F),1,59.1365,13.0878,220.761,rational,220.5,0.0011802,220.515,6.81335e-05,220.515,6.81335e-05
-Nb2PdS5,band1-vs-band2,SC_Binary,rational,inter,gap(band1) / gap(band2),,,,1.1289,rational,1.125,0.0034547,1.1289,0.0034547,1.1289,0.0034547
-Nb2PdS5,band1-vs-band2,SC_Binary,rational,inter,Debye(band1) / Debye(band2),,,,0.964436,rational,1,0.0368753,0.964436,0.0368753,0.964436,0.0368753
-TaIr2B2,band1,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,63.3979,2.54132,1.89971,rational,1.875,0.0130091,1.89292,0.00946616,1.89292,0.00946616
-TaIr2B2,band1,SC_Binary,mixed,intra,gap(Δ)→Debye,2,63.3979,2.54132,33.3723,rational,33.3333,0.00116853,33.2928,0.00121893,33.2928,0.00121893
-TaIr2B2,band1,SC_Binary,mixed,intra,Debye→electronic(E_F),1,63.3979,2.54132,172.622,rational,172.8,0.00103375,172.416,0.00222869,172.416,0.00222869
-TaIr2B2,band2,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,60.8566,2.54132,1.90672,rational,1.875,0.0166362,1.90017,0.0132482,1.90017,0.0132482
-TaIr2B2,band2,SC_Binary,mixed,intra,gap(Δ)→Debye,2,60.8566,2.54132,31.9169,integer,32,0.00260454,31.8438,0.00490473,31.8438,0.00490473
-TaIr2B2,band2,SC_Binary,mixed,intra,Debye→electronic(E_F),1,60.8566,2.54132,190.757,integer,192,0.00651699,190.539,0.00767025,190.539,0.00767025
-TaIr2B2,band1-vs-band2,SC_Binary,rational,inter,gap(band1) / gap(band2),,,,1.02532,rational,1,0.0246973,1.02532,0.0246973,1.02532,0.0246973
-TaIr2B2,band1-vs-band2,SC_Binary,rational,inter,Debye(band1) / Debye(band2),,,,1.07208,rational,1.125,0.0493629,1.07208,0.0493629,1.07208,0.0493629
-V3Si,gap1,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,21.2437,0.361493,1.17103,integer,1,0.146047,1.16962,0.145023,1.16795,0.143796
-V3Si,gap1,SC_Binary,integer,intra,gap(Δ)→Debye,2,21.2437,0.361493,18.1411,integer,18,0.00777768,18.1266,0.00698423,18.1006,0.00555961
-V3Si,gap1,SC_Binary,integer,intra,Debye→electronic(E_F),1,21.2437,0.361493,208.081,integer,210,0.0092246,207.997,0.00962796,207.7,0.0110758
-V3Si,gap2,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,21.6052,0.361493,0.49365,integer,1,1.02573,0.493049,1.0282,0.492342,1.03111
-V3Si,gap2,SC_Binary,integer,intra,gap(Δ)→Debye,2,21.6052,0.361493,43.7661,integer,45,0.028192,43.7306,0.0290282,43.6679,0.0305045
-V3Si,gap2,SC_Binary,integer,intra,Debye→electronic(E_F),1,21.6052,0.361493,212.905,integer,210,0.013645,212.819,0.0132441,212.514,0.011829
-V3Si,gap1-vs-gap2,SC_Binary,rational,inter,gap(gap1) / gap(gap2),,,,2.44312,rational,2.4,0.0176479,2.44312,0.0176479,2.44312,0.0176479
-V3Si,gap1-vs-gap2,SC_Binary,rational,inter,Debye(gap1) / Debye(gap2),,,,1.01267,rational,1,0.0125145,1.01267,0.0125145,1.01267,0.0125145
+2H-NbSe2,sigma,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,28.4072,0.798333,1.85197,integer,2,0.0799284,1.84901,0.081662,1.84901,0.081662
+2H-NbSe2,sigma,SC_Binary,integer,intra,gap(Δ)→Debye,2,28.4072,0.798333,15.3389,integer,15,0.0220933,15.3225,0.0210474,15.3225,0.0210474
+2H-NbSe2,sigma,SC_Binary,integer,intra,Debye→electronic(E_F),1,28.4072,0.798333,300.604,integer,300,0.0020087,300.443,0.00147525,300.443,0.00147525
+2H-NbSe2,pi,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,27.6089,0.798333,1.03317,integer,1,0.0321037,1.03156,0.0305937,1.03156,0.0305937
+2H-NbSe2,pi,SC_Binary,integer,intra,gap(Δ)→Debye,2,27.6089,0.798333,26.7225,integer,27,0.0103826,26.6948,0.0114329,26.6948,0.0114329
+2H-NbSe2,pi,SC_Binary,integer,intra,Debye→electronic(E_F),1,27.6089,0.798333,298.877,integer,300,0.00375668,298.722,0.00427812,298.722,0.00427812
+2H-NbSe2,sigma-vs-pi,SC_Binary,rational,inter,gap(sigma) / gap(pi),,,,1.80612,rational,1.8,0.00338603,1.80612,0.00338603,1.80612,0.00338603
+2H-NbSe2,sigma-vs-pi,SC_Binary,rational,inter,Debye(sigma) / Debye(pi),,,,1.03672,rational,1,0.0354194,1.03672,0.0354194,1.03672,0.0354194
+Ba(Fe0.8Co0.2)2As2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,10.2165,0.248382,3.82015,rational,3.85714,0.00968428,3.81795,0.0102666,3.81795,0.0102666
+Ba(Fe0.8Co0.2)2As2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,10.2165,0.248382,2.67436,rational,2.66667,0.00287834,2.67334,0.00249503,2.67334,0.00249503
+Ba(Fe0.8Co0.2)2As2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,10.2165,0.248382,9.07752,rational,9.14286,0.00719781,9.07577,0.00739136,9.07577,0.00739136
+Ba(Fe0.8Co0.2)2As2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,9.96808,0.248382,2.72119,rational,2.66667,0.0200377,2.71966,0.0194863,2.71966,0.0194863
+Ba(Fe0.8Co0.2)2As2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,9.96808,0.248382,3.66313,rational,3.6,0.0172339,3.66176,0.0168653,3.66176,0.0168653
+Ba(Fe0.8Co0.2)2As2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,9.96808,0.248382,9.40907,rational,9.375,0.00362089,9.40731,0.00343407,9.40731,0.00343407
+Ba(Fe0.8Co0.2)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.41073,rational,1.4,0.00760447,1.41073,0.00760447,1.41073,0.00760447
+Ba(Fe0.8Co0.2)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.02994,rational,1,0.0290686,1.02994,0.0290686,1.02994,0.0290686
+Ba(Fe0.9Co0.1)2As2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,11.2435,1.04034,3.82537,rational,3.85714,0.0083047,3.82295,0.00894472,3.82295,0.00894472
+Ba(Fe0.9Co0.1)2As2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,11.2435,1.04034,2.93918,integer,3,0.0206911,2.93794,0.021123,2.93794,0.021123
+Ba(Fe0.9Co0.1)2As2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,11.2435,1.04034,9.51244,rational,9.6,0.0092045,9.51043,0.00941794,9.51043,0.00941794
+Ba(Fe0.9Co0.1)2As2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,12.2838,1.04034,2.75286,rational,2.8,0.0171253,2.75095,0.0178307,2.75095,0.0178307
+Ba(Fe0.9Co0.1)2As2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,12.2838,1.04034,4.46221,rational,4.5,0.00846898,4.46015,0.00893514,4.46015,0.00893514
+Ba(Fe0.9Co0.1)2As2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,12.2838,1.04034,9.11414,rational,9.14286,0.00315084,9.11203,0.00338264,9.11203,0.00338264
+Ba(Fe0.9Co0.1)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.46752,rational,1.5,0.0221302,1.46752,0.0221302,1.46752,0.0221302
+Ba(Fe0.9Co0.1)2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.966634,rational,1,0.0345179,0.966634,0.0345179,0.966634,0.0345179
+Ba0.6K0.4Fe2As2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,6.95037,0.0662224,3.43629,rational,3.42857,0.00224591,3.43494,0.0018545,3.43494,0.0018545
+Ba0.6K0.4Fe2As2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,6.95037,0.0662224,2.02264,integer,2,0.011193,2.02211,0.0109344,2.02211,0.0109344
+Ba0.6K0.4Fe2As2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,6.95037,0.0662224,8.87744,integer,9,0.0138057,8.87628,0.0139382,8.87628,0.0139382
+Ba0.6K0.4Fe2As2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,6.88415,0.0662224,3.00974,integer,3,0.00323647,3.00857,0.00284919,3.00857,0.00284919
+Ba0.6K0.4Fe2As2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,6.88415,0.0662224,2.28729,rational,2.28571,0.000688959,2.2867,0.000430139,2.2867,0.000430139
+Ba0.6K0.4Fe2As2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,6.88415,0.0662224,9.57599,rational,9.6,0.00250735,9.57475,0.00263715,9.57475,0.00263715
+Ba0.6K0.4Fe2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.1552,rational,1.16667,0.00992883,1.1552,0.00992883,1.1552,0.00992883
+Ba0.6K0.4Fe2As2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.02153,rational,1,0.0210809,1.02153,0.0210809,1.02153,0.0210809
+BaFe2(As0.7P0.3)2,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,8.06402,0.576336,2.17509,rational,2.14286,0.0148195,2.1741,0.0143711,2.16907,0.012085
+BaFe2(As0.7P0.3)2,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,8.06402,0.576336,3.70744,rational,3.75,0.0114794,3.70632,0.0117863,3.69774,0.0141327
+BaFe2(As0.7P0.3)2,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,8.06402,0.576336,9.34766,rational,9.33333,0.0015329,9.34624,0.00138146,9.32462,0.000934053
+BaFe2(As0.7P0.3)2,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,8.64036,0.576336,1.61848,rational,1.6,0.011417,1.61769,0.0109349,1.61395,0.00864075
+BaFe2(As0.7P0.3)2,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,8.64036,0.576336,5.33857,rational,5.33333,0.000980732,5.33683,0.000655959,5.32449,0.00166164
+BaFe2(As0.7P0.3)2,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,8.64036,0.576336,9.04923,integer,9,0.00544058,9.04776,0.00527895,9.02683,0.00297245
+BaFe2(As0.7P0.3)2,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.42461,rational,1.42857,0.00277869,1.42461,0.00277869,1.42461,0.00277869
+BaFe2(As0.7P0.3)2,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.989342,rational,1,0.0107733,0.989342,0.0107733,0.989342,0.0107733
+BeAu,gap1,SC_TypeI,mixed,intra,thermal@Tc→gap(Δ),3,116.681,7.80609,1.84496,rational,1.875,0.0162821,1.83281,0.0230166,1.83281,0.0230166
+BeAu,gap1,SC_TypeI,mixed,intra,gap(Δ)→Debye,2,116.681,7.80609,63.2429,integer,63,0.00384007,62.9653,0.000551005,62.9653,0.000551005
+BeAu,gap1,SC_TypeI,mixed,intra,Debye→electronic(E_F),1,116.681,7.80609,176.934,rational,176.4,0.00302074,176.546,0.000828227,176.546,0.000828227
+BeAu,gap2,SC_TypeI,mixed,intra,thermal@Tc→gap(Δ),3,124.487,7.80609,0.915855,rational,0.875,0.044609,0.909423,0.0378515,0.909423,0.0378515
+BeAu,gap2,SC_TypeI,mixed,intra,gap(Δ)→Debye,2,124.487,7.80609,135.924,integer,135,0.00679721,135.287,0.0021249,135.287,0.0021249
+BeAu,gap2,SC_TypeI,mixed,intra,Debye→electronic(E_F),1,124.487,7.80609,173.507,rational,173.571,0.000370211,173.101,0.0027177,173.101,0.0027177
+BeAu,gap1-vs-gap2,SC_TypeI,rational,inter,gap(gap1) / gap(gap2),,,,2.0665,rational,2,0.0321801,2.0665,0.0321801,2.0665,0.0321801
+BeAu,gap1-vs-gap2,SC_TypeI,rational,inter,Debye(gap1) / Debye(gap2),,,,0.961504,rational,1,0.0400373,0.961504,0.0400373,0.961504,0.0400373
+Ca10(Pt3As8)(Fe2As2)5,gap1,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,7.86389,0.480575,1.2158,rational,1.2,0.0129957,1.21526,0.0125576,1.21482,0.0121978
+Ca10(Pt3As8)(Fe2As2)5,gap1,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,7.86389,0.480575,6.46808,rational,6.42857,0.00610839,6.46617,0.00581433,6.46381,0.00545219
+Ca10(Pt3As8)(Fe2As2)5,gap1,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,7.86389,0.480575,8.47302,rational,8.4,0.00861783,8.47177,0.00847119,8.46868,0.00811007
+Ca10(Pt3As8)(Fe2As2)5,gap2,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,7.4967,0.480575,2.0879,rational,2.14286,0.0263213,2.08702,0.0267556,2.08626,0.0271296
+Ca10(Pt3As8)(Fe2As2)5,gap2,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,7.4967,0.480575,3.59054,rational,3.6,0.0026336,3.58953,0.00291639,3.58822,0.0032817
+Ca10(Pt3As8)(Fe2As2)5,gap2,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,7.4967,0.480575,8.40495,rational,8.4,0.000589455,8.40377,0.000448533,8.40071,8.44956e-05
+Ca10(Pt3As8)(Fe2As2)5,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,8.4795,0.480575,2.20813,rational,2.25,0.0189606,2.20708,0.0194483,2.20627,0.0198197
+Ca10(Pt3As8)(Fe2As2)5,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,8.4795,0.480575,3.84012,rational,3.85714,0.00443181,3.8389,0.00475227,3.8375,0.00511826
+Ca10(Pt3As8)(Fe2As2)5,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,8.4795,0.480575,8.26971,rational,8.33333,0.00769358,8.26839,0.0078543,8.26538,0.00822137
+Ca10(Pt3As8)(Fe2As2)5,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,7.99893,0.480575,1.22494,rational,1.2,0.0203614,1.22439,0.0199191,1.22394,0.019562
+Ca10(Pt3As8)(Fe2As2)5,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,7.99893,0.480575,6.53005,rational,6.42857,0.0155401,6.52808,0.0152438,6.52571,0.0148851
+Ca10(Pt3As8)(Fe2As2)5,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,7.99893,0.480575,8.09634,rational,8.16667,0.00868629,8.09512,0.00883805,8.09217,0.00920548
+Ca10(Pt3As8)(Fe2As2)5,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,1.70041,rational,1.71429,0.00815788,1.70041,0.00815788,1.70041,0.00815788
+Ca10(Pt3As8)(Fe2As2)5,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.999962,rational,1,3.80252e-05,0.999962,3.80252e-05,0.999962,3.80252e-05
+CaFe0.88Co0.12AsF,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,11.3806,1.17913,2.43807,rational,2.4,0.0156128,2.4365,0.0149804,2.42086,0.00861547
+CaFe0.88Co0.12AsF,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,11.3806,1.17913,4.66788,rational,4.66667,0.000259507,4.66588,0.000168618,4.63593,0.00663
+CaFe0.88Co0.12AsF,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,11.3806,1.17913,9.38837,rational,9.375,0.00142406,9.38636,0.00121029,9.32612,0.00524079
+CaFe0.88Co0.12AsF,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,12.5597,1.17913,0.508082,rational,0.5,0.0159065,0.507722,0.0152086,0.504462,0.0088448
+CaFe0.88Co0.12AsF,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,12.5597,1.17913,24.7199,rational,24.5,0.00889458,24.7082,0.00842616,24.5496,0.00202002
+CaFe0.88Co0.12AsF,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,12.5597,1.17913,8.73057,rational,8.75,0.00222497,8.72851,0.00246175,8.6725,0.0089367
+CaFe0.88Co0.12AsF,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,5.07908,rational,5.14286,0.0125559,5.07908,0.0125559,5.07908,0.0125559
+CaFe0.88Co0.12AsF,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.959089,rational,1,0.0426565,0.959089,0.0426565,0.959089,0.0426565
+FeSe,sigma,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,28.0807,0.625039,2.07926,rational,2.14286,0.0305871,2.07596,0.0322225,2.07306,0.0336706
+FeSe,sigma,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,28.0807,0.625039,13.5051,rational,13.5,0.000381093,13.4909,0.000675807,13.472,0.00207897
+FeSe,sigma,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,28.0807,0.625039,0.485485,rational,0.5,0.0298981,0.485229,0.0304423,0.484549,0.0318864
+FeSe,pi,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,30.0642,0.625039,0.343137,rational,0.333333,0.028571,0.342555,0.0269204,0.342075,0.0255551
+FeSe,pi,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,30.0642,0.625039,87.6158,rational,87.5,0.00132198,87.5168,0.000191402,87.3942,0.00121065
+FeSe,pi,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,30.0642,0.625039,0.473969,rational,0.5,0.0549205,0.473701,0.0555173,0.473038,0.0569966
+FeSe,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,27.9724,0.625039,2.0887,rational,2.14286,0.0259277,2.08541,0.0275493,2.08248,0.0289909
+FeSe,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,27.9724,0.625039,13.3923,rational,13.3333,0.00439986,13.3782,0.00335127,13.3594,0.00195376
+FeSe,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,27.9724,0.625039,0.463982,rational,0.428571,0.0763186,0.463738,0.0758325,0.463089,0.0745373
+FeSe,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,27.3474,0.625039,0.345894,rational,0.333333,0.0363131,0.34536,0.034824,0.344876,0.0334699
+FeSe,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,27.3474,0.625039,79.063,rational,78.75,0.00395857,78.9817,0.00293299,78.8711,0.00153492
+FeSe,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,27.3474,0.625039,0.492474,rational,0.5,0.0152826,0.49222,0.0158051,0.491532,0.0172287
+FeSe,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,6.1507,rational,6.125,0.004179,6.1507,0.004179,6.1507,0.004179
+FeSe,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.04185,rational,1,0.0401695,1.04185,0.0401695,1.04185,0.0401695
+Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,1852.23,249.961,1.83887,rational,1.875,0.0196454,1.64671,0.138633,1.64671,0.138633
+Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,1852.23,249.961,1007.26,rational,1008,0.000732284,937.089,0.0756711,937.089,0.0756711
+Helium-3 (He-3) B-phase,0-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,1852.23,249.961,1.00974,rational,1,0.00964494,0.974566,0.0260977,0.974566,0.0260977
+Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,1602.27,249.961,1.68485,rational,1.66667,0.0107935,1.53254,0.0875159,1.53254,0.0875159
+Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,1602.27,249.961,950.985,rational,945,0.00629303,893.673,0.0574336,893.673,0.0574336
+Helium-3 (He-3) B-phase,10-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,1602.27,249.961,0.970639,rational,1,0.0302497,0.941391,0.0622584,0.941391,0.0622584
+Helium-3 (He-3) B-phase,0-bar-vs-10-bar,Superfluid,rational,inter,gap(0-bar) / gap(10-bar),,,,0.962411,rational,1,0.0390571,0.962411,0.0390571,0.962411,0.0390571
+Helium-3 (He-3) B-phase,0-bar-vs-10-bar,Superfluid,rational,inter,Debye(0-bar) / Debye(10-bar),,,,1.01937,rational,1,0.0189971,1.01937,0.0189971,1.01937,0.0189971
+Helium-4 (He-4),1-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,4.17741,0.263801,3.96439,rational,4,0.00898174,3.96346,0.0092196,3.95977,0.0101607
+Helium-4 (He-4),1-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,4.17741,0.263801,1.05373,rational,1,0.0509917,1.05357,0.0508426,1.05258,0.0499576
+Helium-4 (He-4),1-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,4.17741,0.263801,0.917973,rational,0.875,0.0468134,0.917901,0.0467385,0.917046,0.0458498
+Helium-4 (He-4),10-bar,Superfluid,rational,intra,thermal@Tc→gap(Δ),3,3.91361,0.263801,4.01773,rational,4,0.00441197,4.01684,0.00419209,4.0131,0.00326354
+Helium-4 (He-4),10-bar,Superfluid,rational,intra,gap(Δ)→Debye,2,3.91361,0.263801,0.974085,rational,1,0.0266049,0.973941,0.026756,0.973034,0.0277134
+Helium-4 (He-4),10-bar,Superfluid,rational,intra,Debye→electronic(E_F),1,3.91361,0.263801,1.03873,rational,1,0.0372836,1.03865,0.0372128,1.03768,0.0363151
+Helium-4 (He-4),1-bar-vs-10-bar,Superfluid,rational,inter,gap(1-bar) / gap(10-bar),,,,1.01546,rational,1,0.0152271,1.01546,0.0152271,1.01546,0.0152271
+Helium-4 (He-4),1-bar-vs-10-bar,Superfluid,rational,inter,Debye(1-bar) / Debye(10-bar),,,,1.09849,rational,1.125,0.0241305,1.09849,0.0241305,1.09849,0.0241305
+LaB2,sigma,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,14.2727,0.698292,2.11314,rational,2.14286,0.014064,2.11144,0.0148812,2.0992,0.0207972
+LaB2,sigma,SC_Binary,mixed,intra,gap(Δ)→Debye,2,14.2727,0.698292,6.75425,rational,6.75,0.000629556,6.75063,9.27747e-05,6.71151,0.00573435
+LaB2,sigma,SC_Binary,mixed,intra,Debye→electronic(E_F),1,14.2727,0.698292,147.692,integer,147,0.00468752,147.653,0.00442029,146.797,0.00138005
+LaB2,pi,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,13.5744,0.698292,1.53607,rational,1.5,0.0234795,1.53489,0.0227311,1.52599,0.0170345
+LaB2,pi,SC_Binary,mixed,intra,gap(Δ)→Debye,2,13.5744,0.698292,8.8371,rational,8.75,0.00985661,8.83259,0.00935082,8.78142,0.0035778
+LaB2,pi,SC_Binary,mixed,intra,Debye→electronic(E_F),1,13.5744,0.698292,158.648,rational,157.5,0.00723623,158.608,0.00698273,157.689,0.0011974
+LaB2,sigma-vs-pi,SC_Binary,rational,inter,gap(sigma) / gap(pi),,,,1.38561,rational,1.4,0.0103848,1.38561,0.0103848,1.38561,0.0103848
+LaB2,sigma-vs-pi,SC_Binary,rational,inter,Debye(sigma) / Debye(pi),,,,1.05903,rational,1,0.0557403,1.05903,0.0557403,1.05903,0.0557403
+LaFeAsO0.9F0.1,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,11.2299,0.270962,4.43891,rational,4.5,0.0137623,4.4361,0.014405,4.4361,0.014405
+LaFeAsO0.9F0.1,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,11.2299,0.270962,2.52987,rational,2.5,0.0118078,2.5288,0.0113902,2.5288,0.0113902
+LaFeAsO0.9F0.1,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,11.2299,0.270962,8.21508,rational,8.16667,0.00589337,8.21335,0.00568337,8.21335,0.00568337
+LaFeAsO0.9F0.1,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,11.5008,0.270962,1.36977,rational,1.4,0.0220696,1.36888,0.0227332,1.36888,0.0227332
+LaFeAsO0.9F0.1,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,11.5008,0.270962,8.39618,rational,8.4,0.000454592,8.39255,0.000887552,8.39255,0.000887552
+LaFeAsO0.9F0.1,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,11.5008,0.270962,8.25809,rational,8.33333,0.00911095,8.25631,0.00932925,8.25631,0.00932925
+LaFeAsO0.9F0.1,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,3.24092,rational,3.2,0.0126262,3.24092,0.0126262,3.24092,0.0126262
+LaFeAsO0.9F0.1,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,0.976529,rational,1,0.0240353,0.976529,0.0240353,0.976529,0.0240353
+LaH10,H1-optic-sigma,SC_HighPressure,integer,intra,thermal@Tc→gap(Δ),3,4.15271,1.88654,0.862974,integer,1,0.158783,0.862772,0.159055,0.862772,0.159055
+LaH10,H1-optic-sigma,SC_HighPressure,integer,intra,gap(Δ)→Debye,2,4.15271,1.88654,4.81209,integer,5,0.0390499,4.81134,0.0392122,4.81134,0.0392122
+LaH10,H1-optic-sigma,SC_HighPressure,integer,intra,Debye→electronic(E_F),1,4.15271,1.88654,72.459,integer,72,0.00633453,72.4533,0.00625692,72.4533,0.00625692
+LaH10,H2-optic-pi,SC_HighPressure,mixed,intra,thermal@Tc→gap(Δ),3,6.03925,1.88654,1.58329,rational,1.6,0.0105509,1.58276,0.0108953,1.58276,0.0108953
+LaH10,H2-optic-pi,SC_HighPressure,mixed,intra,gap(Δ)→Debye,2,6.03925,1.88654,3.81435,rational,3.85714,0.0112177,3.81349,0.0114474,3.81349,0.0114474
+LaH10,H2-optic-pi,SC_HighPressure,mixed,intra,Debye→electronic(E_F),1,6.03925,1.88654,52.5813,rational,52.5,0.00154708,52.5754,0.00143367,52.5754,0.00143367
+LaH10,La-acous-sigma,SC_HighPressure,integer,intra,thermal@Tc→gap(Δ),3,1.2753,1.88654,0.362724,integer,1,1.75691,0.362698,1.75711,0.362698,1.75711
+LaH10,La-acous-sigma,SC_HighPressure,integer,intra,gap(Δ)→Debye,2,1.2753,1.88654,3.51589,integer,4,0.137692,3.51572,0.137747,3.51572,0.137747
+LaH10,La-acous-sigma,SC_HighPressure,integer,intra,Debye→electronic(E_F),1,1.2753,1.88654,233.358,integer,240,0.0284621,233.353,0.0284867,233.353,0.0284867
+LaH10,H1-optic-sigma-vs-H2-optic-pi,SC_HighPressure,rational,inter,gap(H1-optic-sigma) / gap(H2-optic-pi),,,,0.528143,rational,0.5,0.0532873,0.528143,0.0532873,0.528143,0.0532873
+LaH10,H1-optic-sigma-vs-H2-optic-pi,SC_HighPressure,rational,inter,Debye(H1-optic-sigma) / Debye(H2-optic-pi),,,,0.666292,rational,0.666667,0.00056295,0.666292,0.00056295,0.666292,0.00056295
+LaPt2Si2,gap1,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,156.219,5.57921,1.21817,rational,1.2,0.0149133,1.20743,0.0061538,1.20743,0.0061538
+LaPt2Si2,gap1,SC_Binary,mixed,intra,gap(Δ)→Debye,2,156.219,5.57921,128.241,integer,128,0.00187944,127.488,0.00401998,127.488,0.00401998
+LaPt2Si2,gap1,SC_Binary,mixed,intra,Debye→electronic(E_F),1,156.219,5.57921,200.678,integer,200,0.00337919,200.089,0.000442592,200.089,0.000442592
+LaPt2Si2,gap2,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,161.798,5.57921,0.584579,rational,0.571429,0.0224954,0.579243,0.0134901,0.579243,0.0134901
+LaPt2Si2,gap2,SC_Binary,mixed,intra,gap(Δ)→Debye,2,161.798,5.57921,276.777,rational,277.714,0.00338537,275.093,0.00952901,275.093,0.00952901
+LaPt2Si2,gap2,SC_Binary,mixed,intra,Debye→electronic(E_F),1,161.798,5.57921,212.968,rational,212.625,0.00161082,212.32,0.00143637,212.32,0.00143637
+LaPt2Si2,gap1-vs-gap2,SC_Binary,rational,inter,gap(gap1) / gap(gap2),,,,2.16785,rational,2.14286,0.0115277,2.16785,0.0115277,2.16785,0.0115277
+LaPt2Si2,gap1-vs-gap2,SC_Binary,rational,inter,Debye(gap1) / Debye(gap2),,,,1.00444,rational,1,0.00442319,1.00444,0.00442319,1.00444,0.00442319
+LiFeAs,hole-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,15.0831,1.44244,4.20775,rational,4.2,0.00184077,4.20416,0.000990639,4.20416,0.000990639
+LiFeAs,hole-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,15.0831,1.44244,3.5846,rational,3.57143,0.00367444,3.58257,0.00310889,3.58257,0.00310889
+LiFeAs,hole-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,15.0831,1.44244,6.73721,rational,6.75,0.00189796,6.7353,0.00218223,6.7353,0.00218223
+LiFeAs,electron-band,SC_IronBased,mixed,intra,thermal@Tc→gap(Δ),3,13.6406,1.44244,1.48647,rational,1.5,0.00910237,1.48533,0.00987956,1.48533,0.00987956
+LiFeAs,electron-band,SC_IronBased,mixed,intra,gap(Δ)→Debye,2,13.6406,1.44244,9.17654,rational,9.14286,0.00367004,9.17183,0.0031586,9.17183,0.0031586
+LiFeAs,electron-band,SC_IronBased,mixed,intra,Debye→electronic(E_F),1,13.6406,1.44244,7.08843,rational,7.14286,0.00767877,7.08661,0.00793734,7.08661,0.00793734
+LiFeAs,hole-band-vs-electron-band,SC_IronBased,rational,inter,gap(hole-band) / gap(electron-band),,,,2.64324,rational,2.625,0.00690134,2.64324,0.00690134,2.64324,0.00690134
+LiFeAs,hole-band-vs-electron-band,SC_IronBased,rational,inter,Debye(hole-band) / Debye(electron-band),,,,1.03252,rational,1,0.0314966,1.03252,0.0314966,1.03252,0.0314966
+MgB2,pi,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,18.8484,1.8569,0.818358,rational,0.833333,0.0182996,0.817487,0.0193836,0.817487,0.0193836
+MgB2,pi,SC_Binary,mixed,intra,gap(Δ)→Debye,2,18.8484,1.8569,23.032,rational,23.1429,0.00481403,23.0157,0.00552689,23.0157,0.00552689
+MgB2,pi,SC_Binary,mixed,intra,Debye→electronic(E_F),1,18.8484,1.8569,94.5475,rational,94.5,0.000502532,94.514,0.000148116,94.514,0.000148116
+MgB2,sigma,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,20.7053,1.8569,2.04821,integer,2,0.0235393,2.04582,0.0223972,2.04582,0.0223972
+MgB2,sigma,SC_Binary,integer,intra,gap(Δ)→Debye,2,20.7053,1.8569,10.109,integer,10,0.010778,10.1011,0.010007,10.1011,0.010007
+MgB2,sigma,SC_Binary,integer,intra,Debye→electronic(E_F),1,20.7053,1.8569,89.4032,integer,90,0.00667484,89.3684,0.00706698,89.3684,0.00706698
+MgB2,sigma-vs-pi,SC_Binary,rational,inter,gap(sigma) / gap(pi),,,,2.52985,rational,2.5,0.0118,2.52985,0.0118,2.52985,0.0118
+MgB2,sigma-vs-pi,SC_Binary,rational,inter,Debye(sigma) / Debye(pi),,,,1.11038,rational,1.125,0.0131702,1.11038,0.0131702,1.11038,0.0131702
+Nb2PdS5,band1,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,49.0162,6.79721,1.82346,rational,1.8,0.012864,1.81841,0.0101266,1.81841,0.0101266
+Nb2PdS5,band1,SC_Binary,mixed,intra,gap(Δ)→Debye,2,49.0162,6.79721,26.8809,integer,27,0.00442964,26.8314,0.00628486,26.8314,0.00628486
+Nb2PdS5,band1,SC_Binary,mixed,intra,Debye→electronic(E_F),1,49.0162,6.79721,219.646,rational,219.429,0.000987806,219.443,6.60546e-05,219.443,6.60546e-05
+Nb2PdS5,band2,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,55.8134,6.79721,1.86411,rational,1.875,0.00584214,1.85824,0.00901947,1.85824,0.00901947
+Nb2PdS5,band2,SC_Binary,mixed,intra,gap(Δ)→Debye,2,55.8134,6.79721,29.9411,integer,30,0.00196847,29.8782,0.00407631,29.8782,0.00407631
+Nb2PdS5,band2,SC_Binary,mixed,intra,Debye→electronic(E_F),1,55.8134,6.79721,211.431,rational,212.625,0.00564923,211.209,0.00670591,211.209,0.00670591
+Nb2PdS5,band1-vs-band2,SC_Binary,rational,inter,gap(band1) / gap(band2),,,,1.09662,rational,1.125,0.0258787,1.09662,0.0258787,1.09662,0.0258787
+Nb2PdS5,band1-vs-band2,SC_Binary,rational,inter,Debye(band1) / Debye(band2),,,,0.98454,rational,1,0.0157023,0.98454,0.0157023,0.98454,0.0157023
+TaIr2B2,band1,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,60.7364,2.56464,1.95346,integer,2,0.0238268,1.94676,0.0273472,1.94562,0.0279497
+TaIr2B2,band1,SC_Binary,mixed,intra,gap(Δ)→Debye,2,60.7364,2.56464,31.0918,rational,31.25,0.00508863,31.0208,0.00738996,31.0026,0.00798011
+TaIr2B2,band1,SC_Binary,mixed,intra,Debye→electronic(E_F),1,60.7364,2.56464,178.516,rational,178.571,0.000310774,178.312,0.00145466,178.208,0.00204066
+TaIr2B2,band2,SC_Binary,mixed,intra,thermal@Tc→gap(Δ),3,58.1718,2.56464,1.85784,rational,1.875,0.00923622,1.85174,0.0125594,1.85066,0.0131532
+TaIr2B2,band2,SC_Binary,mixed,intra,gap(Δ)→Debye,2,58.1718,2.56464,31.3115,rational,31.25,0.00196406,31.243,0.00022442,31.2247,0.000810313
+TaIr2B2,band2,SC_Binary,mixed,intra,Debye→electronic(E_F),1,58.1718,2.56464,177.113,rational,176.4,0.00402298,176.919,0.0029322,176.815,0.00234879
+TaIr2B2,band1-vs-band2,SC_Binary,rational,inter,gap(band1) / gap(band2),,,,0.99428,rational,1,0.00575305,0.99428,0.00575305,0.99428,0.00575305
+TaIr2B2,band1-vs-band2,SC_Binary,rational,inter,Debye(band1) / Debye(band2),,,,0.987303,rational,1,0.0128603,0.987303,0.0128603,0.987303,0.0128603
+V3Si,gap1,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,21.1442,0.711615,1.25098,integer,1,0.200629,1.24949,0.199674,1.24828,0.198898
+V3Si,gap1,SC_Binary,integer,intra,gap(Δ)→Debye,2,21.1442,0.711615,16.9021,integer,16,0.0533706,16.8886,0.0526171,16.8723,0.0516997
+V3Si,gap1,SC_Binary,integer,intra,Debye→electronic(E_F),1,21.1442,0.711615,210.492,integer,210,0.00233718,210.408,0.00194031,210.205,0.000974217
+V3Si,gap2,SC_Binary,integer,intra,thermal@Tc→gap(Δ),3,20.4326,0.711615,0.512334,integer,1,0.951853,0.511743,0.954105,0.511248,0.955998
+V3Si,gap2,SC_Binary,integer,intra,gap(Δ)→Debye,2,20.4326,0.711615,39.8814,integer,40,0.00297368,39.8508,0.00374508,39.8122,0.00471704
+V3Si,gap2,SC_Binary,integer,intra,Debye→electronic(E_F),1,20.4326,0.711615,216.059,integer,216,0.000270828,215.975,0.000113477,215.767,0.00108155
+V3Si,gap1-vs-gap2,SC_Binary,rational,inter,gap(gap1) / gap(gap2),,,,2.45456,rational,2.5,0.0185128,2.45456,0.0185128,2.45456,0.0185128
+V3Si,gap1-vs-gap2,SC_Binary,rational,inter,Debye(gap1) / Debye(gap2),,,,1.04026,rational,1,0.0387044,1.04026,0.0387044,1.04026,0.0387044
