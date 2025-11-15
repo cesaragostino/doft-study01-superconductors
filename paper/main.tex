@@ -1,0 +1,375 @@
+\documentclass[aps,prb,reprint,superscriptaddress,nofootinbib]{revtex4--2}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Math and symbols
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{siunitx}
+
+% Figures, tables, hyperlinks
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MidnightBlue,
+  citecolor=MidnightBlue,
+  urlcolor=MidnightBlue
+}
+
+% Convenience macros
+\newcommand{\DOFT}{\textsc{doft}}
+\newcommand{\Tc}{T_{\mathrm{c}}}
+\newcommand{\EF}{E_{\mathrm{F}}}
+\newcommand{\Debye}{\Theta_{\mathrm{D}}}
+\newcommand{\GammaDOFT}{\Gamma}
+\newcommand{\etaDOFT}{\eta}
+\newcommand{\qDOFT}{q}
+\newcommand{\Robs}{R_{\mathrm{obs}}}
+\newcommand{\Rcorr}{R_{\mathrm{corr}}}
+\newcommand{\logres}{\ell_{\eta}} % log_residual_eta
+
+\begin{document}
+
+\title{Prime-space fingerprints of superconductors and superfluid helium\\
+from a delayed-oscillator locking grammar}
+
+\author{C.~Agostino}
+\email{[cesar.agostino@gmail.com]}
+\affiliation{[Independent Researcher, Buenos Aires, Argentina]}
+% \affiliation{[Add a formal affiliation here if appropriate]}
+
+\date{\today}
+
+\begin{abstract}
+Delayed-oscillator field theory (\DOFT) is a speculative framework in which
+matter and geometry emerge from a dense network of coupled oscillators with
+finite memory. In this work we do not attempt to justify \DOFT{} as a
+fundamental description of Nature. Instead we ask a narrower, more practical
+question: given a \DOFT{}-inspired locking grammar and a minimal correction
+law, can we describe a heterogeneous collection of superconductors and
+superfluid helium using a small, fixed set of parameters?
+
+Each material is mapped to an “integer fingerprint’’ or a “rational
+fingerprint’’ whose exponents are fixed by the locking rules and not tuned
+per material. A universal correction law with parameters
+$(\GammaDOFT,\etaDOFT)$ is calibrated once on classical superconducting
+elements and then reused across families. On an extended dataset including
+binary, molecular, iron-based and high-pressure superconductors, as well as
+superfluid $^4$He, we find that the same $(\GammaDOFT,\etaDOFT)$ values
+produce logarithmic residuals with mean $\approx 0$ and modest variance
+within most families. Integer fingerprints show stable prime exponents by
+family, while rational fingerprints yield narrow, family-specific
+distributions of denominators $\qDOFT$ in the range $q\sim 2$--$8$.
+High-pressure superconductors and superfluid helium separate cleanly in
+$\qDOFT$, providing a quantitative “prime-space signature’’ of their
+macroscopic behaviour within this grammar. A weak next-neighbour coupling
+parameter $\kappa$ produces only small, localized improvements concentrated
+in MgB$_2$, and leaves the global fingerprints essentially unchanged.
+
+We interpret these patterns as empirical constraints on any delayed-oscillator
+model that attempts to use a small set of locks to organize the superconducting
+landscape, rather than as proof of \DOFT{} itself. All code and data required
+to reproduce the analysis are provided in an open repository.
+\end{abstract}
+
+\maketitle
+
+%------------------------------------------------------------
+\section{Introduction}\label{sec:intro}
+
+The delayed-oscillator field theory (\DOFT) program starts from a simple but
+aggressive hypothesis: at sufficiently small scales the relevant degrees of
+freedom are not point particles on a fixed spacetime, but a dense network of
+coupled oscillators with finite-range delays and memory kernels. In this
+picture, what we call “space’’ and “time’’ emerge from patterns of coherence
+and decoherence inside that network, and material properties reflect how
+different collectives lock into a small set of preferred frequency ratios.
+
+In this work we take a deliberately conservative stance: we do not attempt to
+prove \DOFT{} as a fundamental theory. Instead, we ask a narrower and more
+practical question: \emph{given a \DOFT{}-inspired locking grammar and a
+minimal correction law, can we describe a heterogeneous collection of
+superconductors and superfluid helium with a small, fixed set of
+parameters?} Concretely, each material is mapped to either an integer
+fingerprint or a rational fingerprint $\qDOFT$, whose exponents are fixed by
+the locking rules and not adjusted per material. A universal correction law
+with parameters $(\GammaDOFT,\etaDOFT)$ is then calibrated on classical
+metals under weak constraints $(\GammaDOFT \ge 0, \etaDOFT \ge 0)$ and reused
+across families.
+
+From the point of view of conventional condensed-matter theory, this is an
+unusual modelling choice. Standard approaches start from microscopics
+(electronic structure, phonon spectra, pairing mechanisms) and build upwards.
+Here we go the other way: we start from a simple locking grammar in
+prime-space and ask whether it can describe a curated cross-section of the
+superconducting landscape without material-by-material tuning. The resulting
+fingerprints are not proposed as replacements for microscopic theories, but
+as a coarse, “spectral’’ summary of how different macroscopic families sit
+relative to the same discrete lattice of ratios.
+
+%Optionally: a brief paragraph connecting to delays/memory literature.
+Delayed and memoryful dynamics are ubiquitous in climate models,
+physiological control and nonequilibrium statistical mechanics\cite{Hale1993,
+West1997,Mori1965,Zwanzig2001}.  The\DOFT{} program borrows 
+mathematical tools from that literature but applies them in a different 
+regime: as organizing principles rather than detailed time-domain predictions.
+
+%------------------------------------------------------------
+\section{Methods}\label{sec:methods}
+
+\subsection{Dataset and macroscopic jumps}
+
+Our dataset aggregates superconductors and superfluid helium into a common
+format. Each row corresponds to a material and a macroscopic “sub-network’’
+(single band, $\sigma$, $\pi$, or specific vibrational modes under pressure),
+and includes:
+critical temperature $\Tc$, superconducting gap $\Delta$, Debye temperature
+$\Debye$, and Fermi energy $\EF$ when available. From these we construct a
+small set of dimensionless ratios $R$ (“jumps’’) such as
+$\Tc\to\Delta$, $\Delta\to\Debye$, $\Debye\to\EF$, and inter-band
+$\sigma$–$\pi$ jumps for MgB$_2$ and related systems.
+
+The v6 dataset used here extends a previous run by adding $\mathcal{O}(50)$
+additional superconductors, especially in the iron-based and high-pressure
+families. Classical superconducting elements are used exclusively for
+calibrating $(\GammaDOFT,\etaDOFT)$; all other families are held out for
+testing.
+
+\subsection{DOFT-inspired locking grammar}
+
+Each macroscopic jump is assigned to a “lock’’ on a discrete lattice generated
+by the first primes $\{2,3,5,7\}$. In the integer case we write
+%
+\begin{equation}
+  R_{\mathrm{lock}} = 2^{a} 3^{b} 5^{c} 7^{d},
+\end{equation}
+%
+with nonnegative integer exponents $(a,b,c,d)$ constrained by a small set of
+rules (e.g.\ maximum total exponent, allowed patterns per family). In the
+rational case we further write
+%
+\begin{equation}
+  R_{\mathrm{lock}} = p/q,
+\end{equation}
+%
+with $p,q$ co-prime and $q$ restricted to a small range ($q \le 8$ in the
+present study). For each jump we choose the lock that minimizes the
+residual under the correction law described below.
+
+The resulting exponent vectors $(a,b,c,d)$ define the
+\emph{integer fingerprint} of a family, while the distribution of $q$
+defines its \emph{rational fingerprint}. We refer to these collectively as
+“prime-space fingerprints’’.
+
+\subsection{Universal correction law and calibration}\label{subsec:calibration}
+
+To account for systematic deviations between the ideal locks and the observed
+ratios, we introduce a simple correction law parametrized by
+$\GammaDOFT$ and $\etaDOFT$. For each observed jump $\Robs$ and chosen lock
+$R_{\mathrm{lock}}$ we define a corrected value $\Rcorr$ and a
+logarithmic residual
+%
+\begin{equation}
+  \logres = \log_{10}\left( \frac{\Robs}{\Rcorr} \right),
+\end{equation}
+%
+constructed so that $\logres = 0$ corresponds to perfect agreement with the
+ideal lock plus universal correction.
+
+The parameters $(\GammaDOFT,\etaDOFT)$ are calibrated using only classical
+superconducting elements, with bootstrap resampling and
+leave-one-out (LOO) influence diagnostics to quantify uncertainty and
+stability. In the baseline configuration ($w=800$, prime cutoff $p=7919$) we
+obtain
+%
+\begin{equation}
+  \GammaDOFT \sim \mathcal{O}(10^{-17}), \qquad
+  \etaDOFT \approx 4\times 10^{-5},
+\end{equation}
+%
+with narrow bootstrap confidence intervals and modest LOO sensitivity.
+These values are then \emph{frozen} and reused for all other families.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig01_calibration}
+  \caption{%
+    Calibration of the universal correction parameters
+    $(\GammaDOFT,\etaDOFT)$ on classical superconducting elements.
+    Left: bootstrap distribution of $\etaDOFT$.
+    Middle: bootstrap distribution of $\GammaDOFT$.
+    Right: leave-one-out (LOO) influence of each element on $\etaDOFT$,
+    expressed as a percentage shift relative to the full fit.}\label{fig:calibration}
+\end{figure*}
+
+\subsection{Cluster coupling parameter \texorpdfstring{$\kappa$}{kappa}}
+
+We also explore a weak coupling parameter $\kappa$ designed to capture
+inter-jump correlations inside a material or sub-network. Setting
+$\kappa=0$ corresponds to treating each jump independently under the
+universal correction law, while $\kappa>0$ allows small shifts in the
+effective locks driven by neighbouring jumps. In practice, we find that
+nonzero $\kappa$ only produces noticeable changes in MgB$_2$, and leaves both
+the global residual statistics and the prime-space fingerprints almost
+unchanged.
+
+%------------------------------------------------------------
+\section{Results}\label{sec:results}
+
+\subsection{Integer fingerprints by family}
+
+Using the baseline configuration $(w=800,p=7919)$ with $\kappa=0$, we obtain
+integer fingerprints for each family by aggregating the exponents
+$(a,b,c,d)$ across all factorized jumps. Figure~\ref{fig:integer_fp} shows
+violin plots of the distributions of $a$ (prime $2$) and $d$ (prime $7$) for
+selected families.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig02_integer_fingerprint}
+  \caption{%
+    Integer fingerprints by family. Left: distribution of exponents on prime
+    $7$ ($d=\mathrm{\exp\_d\_7}$). Right: distribution of exponents on prime
+    $2$ ($a=\mathrm{\exp\_a\_2}$). Each violin summarizes the factorized jumps
+    in that family under the baseline configuration.}\label{fig:integer_fp}
+\end{figure*}
+
+Type-I and Type-II superconductors exhibit remarkably stable mean exponent
+vectors across bootstrap resamples, with typical values
+$(\langle a\rangle,\langle b\rangle,\langle c\rangle,\langle d\rangle)$
+close to $(1.5,0.8,0.5,0.4)$ and $(1.9,0.6,0.5,0.4)$ respectively.
+High-pressure and iron-based families show distinct patterns, including a
+nearly pure $2\times 7$ structure in certain iron-based $\sigma$ subnetworks.
+We interpret these as “chords’’ in the prime lattice that characterize each
+macroscopic family.
+
+\subsection{Rational fingerprints and separation of families}
+
+The rational fingerprints focus on the denominators $\qDOFT$ of the locks
+chosen at the factorization stage. Figure~\ref{fig:rational_q} shows the
+distribution of $\qDOFT$ for superfluid helium, high-pressure
+superconductors, and iron-based superconductors.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{fig03_rational_q}
+  \caption{%
+    Rational fingerprints: distribution of denominators $q$ by family
+    (superfluid, high-pressure superconductors, iron-based superconductors).
+    The superfluid cluster sits at low $q\sim 2$--$2.3$ with a narrow
+    spread, while high-pressure superconductors favour $q\sim 3$--$7$ and
+    iron-based systems cluster near $q=1$.}\label{fig:rational_q}
+\end{figure}
+
+Superfluid $^4$He is clearly distinct: its $\qDOFT$ distribution is narrow
+and centred at low values ($q\sim 2$--$2.3$). High-pressure superconductors
+occupy a broader band around $q\sim 3$--$7$, while iron-based superconductors
+are concentrated near $q=1$. A Mann-Whitney test on $q$ or on selected
+exponent components identifies a statistically significant separation between
+high-pressure superconductors and the classical/iron-based families, with a
+moderate effect size.
+
+\subsection{Residual structure and family-level fingerprints}
+
+Figure~\ref{fig:residuals} summarizes the logarithmic residuals $\logres$ by
+family and sub-network. The mean residuals are close to zero in most groups,
+with standard deviations at the level expected from the calibration set.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig04_residuals}
+  \caption{%
+    Logarithmic residuals by family. Left: mean $\pm$ standard deviation of
+    $\logres$ for each (category, sub-network) pair. Bars in blue indicate
+    groups with $N\ge 5$; orange bars correspond to small-$N$ groups.
+    Right: scatter of $\logres$ versus effective dimension $d$ for
+    high-pressure, iron-based, and superfluid families.}\label{fig:residuals}
+\end{figure*}
+
+Certain groups, notably superfluid helium and a subset of high-pressure
+modes (e.g.\ La acoustic $\sigma$, H1 optic $\sigma$), show systematically
+negative mean residuals, indicating that the observed ratios sit slightly
+below the ideal locks plus universal correction. Others, such as binary
+$\pi$-band superconductors and molecular superconductors, show extremely
+tight residuals around zero. This supports the interpretation that
+$(\GammaDOFT,\etaDOFT)$ act as a genuinely universal correction across
+families, with family-specific structure encoded primarily in the prime-space
+fingerprints.
+
+\subsection{Effect of the coupling parameter \texorpdfstring{$\kappa$}{kappa}}
+
+Finally, we compare the baseline $\kappa=0$ run to a run with small but
+nonzero $\kappa$, using the same $w=800$ and $p=7919$.
+Figure~\ref{fig:kappa} shows the difference in post-correction error
+($\Delta\mathrm{error} = \mathrm{err\_after\_kappa}-\mathrm{err\_after\_eta}$)
+for all jumps in the cluster core and for the most affected cases.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig05_kappa_vs_no_kappa}
+  \caption{%
+    Impact of the coupling parameter $\kappa$. Left: change in residual error
+    for all cluster-core jumps when turning on $\kappa$ at the baseline
+    configuration. Right: zoom on the few cases with the largest absolute
+    change. Significant shifts are concentrated in MgB$_2$; most other
+    materials are essentially unaffected.}\label{fig:kappa}
+\end{figure*}
+
+Out of the full set of factorized jumps, only a handful---all in MgB$_2$
+$\sigma$ and $\pi$ subnetworks---show noticeable changes in the corrected
+ratios or residuals. For the remaining materials, the choice of $\kappa$
+within the tested range has negligible effect on both the residual statistics
+and the prime-space fingerprints. Within this grammar, there is therefore no
+evidence for strong cluster-level couplings beyond the universal correction
+already captured by $(\GammaDOFT,\etaDOFT)$.
+
+%------------------------------------------------------------
+\section{Discussion and outlook}\label{sec:discussion}
+
+The main outcome of this study is not a new microscopic model of
+superconductivity, but an empirical statement: a simple locking grammar on
+the primes $\{2,3,5,7\}$, combined with a universal two-parameter correction
+law calibrated on classical metals, is sufficient to organize a heterogeneous
+set of superconductors and superfluid helium into stable prime-space
+fingerprints. These fingerprints are robust under changes in the dataset
+(v6 vs.\ earlier runs), under variation of technical parameters
+($w$ and prime cutoff), and under the inclusion of a weak coupling
+$\kappa$.
+
+From a \DOFT{} perspective, this suggests that if a delayed-oscillator
+network underlies these systems, it may operate with a small, discrete set
+of preferred ratios and a universal correction that is largely insensitive to
+microscopic details. From a more conventional perspective, the fingerprints
+can be viewed as a compact, phenomenological summary of how different
+families sit relative to the same discrete lattice of scales.
+
+We interpret these patterns as the prime-space signature of each macroscopic
+family under the \DOFT{}-inspired grammar. Whether this signature points to a
+deeper delayed-oscillator structure, or simply reflects hidden regularities
+in the curated dataset, is an open question for future work.
+
+%------------------------------------------------------------
+\section*{Acknowledgements}
+
+The author thanks colleagues and online communities for discussions and for
+making high-quality superconductivity and superfluid datasets publicly
+available. This project made extensive use of open-source software, including
+Python, NumPy, SciPy, pandas, Matplotlib, and Jupyter.
+
+AI tools were used as assistants in the development of the code and this
+manuscript. In particular, OpenAI GPT-5.1~Thinking, Google Gemini~Pro, and
+Anthropic Claude were employed for drafting text, refactoring analysis
+pipelines, and checking statistical procedures. All modelling decisions,
+dataset curation and interpretations presented here were made and verified by
+the human author.
+
+%------------------------------------------------------------
+\bibliographystyle{apsrev4--2}
+\bibliography{bib/doft_sc_refs}
+
+\end{document}
