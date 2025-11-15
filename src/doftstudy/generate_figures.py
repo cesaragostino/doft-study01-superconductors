@@ -361,25 +361,56 @@ def fig4_residuals(fingerprint_df: pd.DataFrame, out_path: Path):
     plt.close(fig)
 
 
-def fig5_kappa_vs_no(fingerprint_cluster_df: pd.DataFrame, out_path: Path):
+def fig5_kappa_delta_hist(fingerprint_cluster_df: pd.DataFrame, out_path: Path):
     df = fingerprint_cluster_df.copy()
-    df["delta_error"] = df["err_after_kappa"].fillna(0) - df["err_after_eta"].fillna(0)
-    df["label"] = df["name"] + " | " + df["jump_desc"]
-    df_sorted = df.sort_values("delta_error")
+    if {"err_after_kappa", "err_after_eta"}.issubset(df.columns):
+        df["delta_error"] = df["err_after_kappa"].fillna(0) - df["err_after_eta"].fillna(0)
+    else:
+        df["delta_error"] = np.nan
+    delta = df["delta_error"].dropna()
+    if delta.empty:
+        print("ADVERTENCIA: No se pudieron calcular delta_error para la figura 5.")
+        return
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.hist(delta, bins=40, color="#4C6EF5", alpha=0.75, edgecolor="white")
+    ax.axvline(0, color="black", linestyle="--", linewidth=1)
+    ax.set_title("Fig. 5 – Distribución de Δerror (κ − no κ)")
+    ax.set_xlabel("Δerror = err_after_kappa − err_after_eta")
+    ax.set_ylabel("Número de jumps")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=300)
+    plt.close(fig)
 
-    fig, axes = plt.subplots(1, 2, figsize=(18, 6), sharey=True)
 
-    axes[0].barh(df_sorted["label"], df_sorted["delta_error"], color="#51CF66")
-    axes[0].set_title("Fig. 5a – Δerror (κ - no κ)")
-    axes[0].set_xlabel("Δerror = err_after_kappa - err_after_eta")
-    axes[0].invert_yaxis()
-
-    top = df.sort_values("delta_error", key=np.abs, ascending=False).head(6)
-    axes[1].barh(top["label"], top["delta_error"], color="#FF6B6B")
-    axes[1].set_title("Fig. 5b – Casos con mayor impacto")
-    axes[1].set_xlabel("Δerror = err_after_kappa - err_after_eta")
-    axes[1].invert_yaxis()
-
+def fig6_kappa_topdelta(fingerprint_cluster_df: pd.DataFrame, out_path: Path):
+    df = fingerprint_cluster_df.copy()
+    if {"err_after_kappa", "err_after_eta"}.issubset(df.columns):
+        df["delta_error"] = df["err_after_kappa"].fillna(0) - df["err_after_eta"].fillna(0)
+    else:
+        df["delta_error"] = np.nan
+    df = df.dropna(subset=["delta_error"])
+    if df.empty:
+        print("ADVERTENCIA: No se pudieron calcular delta_error para la figura 6.")
+        return
+    df["abs_delta"] = df["delta_error"].abs()
+    top = df.sort_values("abs_delta", ascending=False).head(10).copy()
+    def short_label(row):
+        base = f"{row['name']} ({row['sub_network']})"
+        if isinstance(row["jump_desc"], str) and len(row["jump_desc"]) > 0:
+            return f"{base}: {row['jump_desc'].split('→')[-1]}"
+        return base
+    top["is_mgb2"] = top["name"].str.contains("MgB2", case=False, na=False)
+    top["label"] = top.apply(
+        lambda r: f"{r['name']} | {r['sub_network']} | {r['jump_desc']}" if r["is_mgb2"] else short_label(r),
+        axis=1,
+    )
+    colors = ["#FF6B6B" if flag else "#8D99AE" for flag in top["is_mgb2"]]
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.barh(top["label"], top["delta_error"], color=colors)
+    ax.axvline(0, color="black", linestyle="--", linewidth=1)
+    ax.set_xlabel("Δerror = err_after_kappa − err_after_eta")
+    ax.set_title("Fig. 6 – Top 10 |Δerror| (κ vs. no κ)")
+    ax.invert_yaxis()
     fig.tight_layout()
     fig.savefig(out_path, dpi=300)
     plt.close(fig)
@@ -469,9 +500,13 @@ def main() -> None:
         fingerprint_df,
         figures_dir / "fig04_residuals.png",
     )
-    fig5_kappa_vs_no(
+    fig5_kappa_delta_hist(
         cluster_df,
-        figures_dir / "fig05_kappa_vs_no_kappa.png",
+        figures_dir / "fig05_kappa_delta_hist.png",
+    )
+    fig6_kappa_topdelta(
+        cluster_df,
+        figures_dir / "fig06_kappa_topdelta.png",
     )
 
     print(f"Figuras guardadas en: {figures_dir}")

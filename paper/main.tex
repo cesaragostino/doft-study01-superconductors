@@ -1,4 +1,4 @@
-\documentclass[aps,prb,reprint,superscriptaddress,nofootinbib]{revtex4--2}
+\documentclass[aps,prb,reprint,superscriptaddress,nofootinbib,floatfix]{revtex4-2}
 
 % Encoding and fonts
 \usepackage[utf8]{inputenc}
@@ -10,6 +10,7 @@
 
 % Figures, tables, hyperlinks
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage[dvipsnames]{xcolor}
@@ -40,7 +41,7 @@ from a delayed-oscillator locking grammar}
 
 \author{C.~Agostino}
 \email{[cesar.agostino@gmail.com]}
-\affiliation{[Independent Researcher, Buenos Aires, Argentina]}
+\affiliation{Independent Researcher, Buenos Aires, Argentina}
 % \affiliation{[Add a formal affiliation here if appropriate]}
 
 \date{\today}
@@ -114,8 +115,8 @@ relative to the same discrete lattice of ratios.
 
 %Optionally: a brief paragraph connecting to delays/memory literature.
 Delayed and memoryful dynamics are ubiquitous in climate models,
-physiological control and nonequilibrium statistical mechanics\cite{Hale1993,
-West1997,Mori1965,Zwanzig2001}.  The\DOFT{} program borrows 
+physiological control and nonequilibrium statistical mechanics\cite{BCS1957,
+Tinkham1996,Efron1993,Mori1965,Zwanzig2001}.  The\DOFT{} program borrows 
 mathematical tools from that literature but applies them in a different 
 regime: as organizing principles rather than detailed time-domain predictions.
 
@@ -234,8 +235,8 @@ selected families.
   \includegraphics[width=\textwidth]{fig02_integer_fingerprint}
   \caption{%
     Integer fingerprints by family. Left: distribution of exponents on prime
-    $7$ ($d=\mathrm{\exp\_d\_7}$). Right: distribution of exponents on prime
-    $2$ ($a=\mathrm{\exp\_a\_2}$). Each violin summarizes the factorized jumps
+    $7$ ($d=\mathrm{exp\_d\_7}$). Right: distribution of exponents on prime
+    $2$ ($a=\mathrm{exp\_a\_2}$). Each violin summarizes the factorized jumps
     in that family under the baseline configuration.}\label{fig:integer_fp}
 \end{figure*}
 
@@ -280,16 +281,40 @@ Figure~\ref{fig:residuals} summarizes the logarithmic residuals $\logres$ by
 family and sub-network. The mean residuals are close to zero in most groups,
 with standard deviations at the level expected from the calibration set.
 
-\begin{figure*}[t]
+%\begin{figure*}[t]
+%  \centering
+%  \includegraphics[width=\textwidth]{fig04_residuals}
+%  \caption{%
+%    Logarithmic residuals by family. Left: mean $\pm$ standard deviation of
+%    $\logres$ for each (category, sub-network) pair. Bars in blue indicate
+%    groups with $N\ge 5$; orange bars correspond to small-$N$ groups.
+%    Right: scatter of $\logres$ versus effective dimension $d$ for
+%    high-pressure, iron-based, and superfluid families.}\label{fig:residuals}
+%\end{figure*}
+
+\begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{fig04_residuals}
-  \caption{%
-    Logarithmic residuals by family. Left: mean $\pm$ standard deviation of
-    $\logres$ for each (category, sub-network) pair. Bars in blue indicate
-    groups with $N\ge 5$; orange bars correspond to small-$N$ groups.
-    Right: scatter of $\logres$ versus effective dimension $d$ for
-    high-pressure, iron-based, and superfluid families.}\label{fig:residuals}
-\end{figure*}
+  \includegraphics[width=\columnwidth]{fig04a_residual_means}
+  \caption{Mean and standard deviation of the log-residual
+  \(\log_{10} r_{\mathrm{obs}}/r_{\mathrm{prime}}\) for each family and
+  sub-network. Blue bars correspond to groups with \(N \ge 5\), orange bars
+  to groups with \(N < 5\). Most canonical networks (binary, molecular,
+  iron-based, and high-pressure single) are tightly centered around zero,
+  while superfluid helium and a few high-pressure modes appear systematically
+  compressed (negative mean).}
+  \label{fig:residual_means}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{fig04b_residual_vs_d}
+  \caption{Scatter of log-residuals \(\log_{10} r_{\mathrm{obs}}/r_{\mathrm{prime}}\)
+  versus the effective dimension \(d\) for high-pressure, iron-based, and
+  superfluid networks. The spread remains moderate across \(d = 1,2,3\),
+  with no runaway tails; most deviations stay within a factor of a few in
+  either direction.}
+  \label{fig:residual_vs_d}
+\end{figure}
 
 Certain groups, notably superfluid helium and a subset of high-pressure
 modes (e.g.\ La acoustic $\sigma$, H1 optic $\sigma$), show systematically
@@ -309,16 +334,41 @@ Figure~\ref{fig:kappa} shows the difference in post-correction error
 ($\Delta\mathrm{error} = \mathrm{err\_after\_kappa}-\mathrm{err\_after\_eta}$)
 for all jumps in the cluster core and for the most affected cases.
 
-\begin{figure*}[t]
+%\begin{figure*}[t]
+%  \centering
+%  \includegraphics[width=\textwidth]{fig05_kappa_vs_no_kappa}
+%  \caption{%
+%    Impact of the coupling parameter $\kappa$. Left: change in residual error
+%    for all cluster-core jumps when turning on $\kappa$ at the baseline
+%    configuration. Right: zoom on the few cases with the largest absolute
+%    change. Significant shifts are concentrated in MgB$_2$; most other
+%    materials are essentially unaffected.}\label{fig:kappa}
+%\end{figure*}
+
+\begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{fig05_kappa_vs_no_kappa}
-  \caption{%
-    Impact of the coupling parameter $\kappa$. Left: change in residual error
-    for all cluster-core jumps when turning on $\kappa$ at the baseline
-    configuration. Right: zoom on the few cases with the largest absolute
-    change. Significant shifts are concentrated in MgB$_2$; most other
-    materials are essentially unaffected.}\label{fig:kappa}
-\end{figure*}
+  \includegraphics[width=\columnwidth]{fig05_kappa_delta_hist}
+  \caption{Distribution of the difference in locking error
+  \(\Delta \mathrm{err} = \mathrm{err}_{\kappa} - \mathrm{err}_{\eta}\)
+  across all cluster-core jumps. Almost all values lie extremely close
+  to zero, indicating that the \(\kappa\)-correction has negligible
+  effect on the global fit. Only a few jumps in the tails show visible
+  deviations.}
+  \label{fig:kappa_hist}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{fig06_kappa_topdelta}
+  \caption{Largest \(\kappa\)–0 differences in locking error
+  \(|\Delta \mathrm{err}| = |\mathrm{err}_{\kappa} - \mathrm{err}_{\eta}|\)
+  across cluster-core jumps (top ten). The dominant contributions all come
+  from MgB\(_2\) in its \(\sigma\) and \(\pi\) subnetworks, while only a
+  few non--MgB\(_2\) jumps show much smaller shifts. This confirms that
+  \(\kappa\) mainly refines a handful of multi-gap, strongly coupled
+  cases and leaves the rest of the network essentially unchanged.}
+  \label{fig:kappa_top}
+\end{figure}
 
 Out of the full set of factorized jumps, only a handful---all in MgB$_2$
 $\sigma$ and $\pi$ subnetworks---show noticeable changes in the corrected
@@ -369,7 +419,7 @@ dataset curation and interpretations presented here were made and verified by
 the human author.
 
 %------------------------------------------------------------
-\bibliographystyle{apsrev4--2}
-\bibliography{bib/doft_sc_refs}
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
 
 \end{document}

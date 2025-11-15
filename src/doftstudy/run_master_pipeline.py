@@ -169,7 +169,8 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
         out_dir_figures / "fig02_integer_fingerprint.png",
         out_dir_figures / "fig03_rational_q.png",
         out_dir_figures / "fig04_residuals.png",
-        out_dir_figures / "fig05_kappa_vs_no_kappa.png",
+        out_dir_figures / "fig05_kappa_delta_hist.png",
+        out_dir_figures / "fig06_kappa_topdelta.png",
     ]
 
     existing_outputs = [
