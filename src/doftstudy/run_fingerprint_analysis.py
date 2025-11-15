@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import argparse
+import sys
 from fractions import Fraction
 import os 
 import matplotlib.pyplot as plt
@@ -58,13 +59,13 @@ def analyze_fingerprints(calib_results_file, cluster_results_file, outdir, run_l
         df_calib = pd.read_csv(calib_results_file)
     except FileNotFoundError:
         print(f"ERROR: No se encontró {calib_results_file}. Ejecuta 'run_calibration.py' primero.")
-        return
+        sys.exit(1)
         
     try:
         df_cluster = pd.read_csv(cluster_results_file)
     except FileNotFoundError:
         print(f"ERROR: No se encontró {cluster_results_file}. Ejecuta 'run_cluster_analysis.py' primero.")
-        return
+        sys.exit(1)
         
     df = pd.concat([df_calib, df_cluster], ignore_index=True)
     

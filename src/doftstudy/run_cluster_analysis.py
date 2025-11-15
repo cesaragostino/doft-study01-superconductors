@@ -1,4 +1,4 @@
-import os, math, argparse, json
+import os, math, argparse, json, sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -45,6 +45,15 @@ def best_integer_lock(R, max_exp=9):
 
 SMALL_DENOMINATORS = np.array([1, 2, 3, 4, 5, 6, 7, 8])
 PRIME_VALS = None
+
+
+def read_input_csv(path):
+    """Carga el CSV con fallback de encoding para soportar caracteres especiales."""
+    try:
+        return pd.read_csv(path)
+    except UnicodeDecodeError:
+        print(f"ADVERTENCIA: {path} contiene caracteres no UTF-8. Reintentando con 'latin-1'.")
+        return pd.read_csv(path, encoding='latin-1')
 
 # --- ¡CAMBIO! La función ahora acepta max_val ---
 def generate_prime_products(max_val=10000):
@@ -421,13 +430,13 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print(f"ERROR: No se pudo encontrar el archivo de configuración: {CONFIG_FILE}")
         print("Por favor, ejecuta 'run_calibration.py' primero para generar este archivo.")
-        exit()
+        sys.exit(1)
     except Exception as e:
-        print(f"ERROR: No se pudo leer {CONFIG_FILE}. Error: {e}"); exit()
+        print(f"ERROR: No se pudo leer {CONFIG_FILE}. Error: {e}")
+        sys.exit(1)
 
     try:
-        df = pd.read_csv(args.input_csv)
-        
+        df = read_input_csv(args.input_csv)
         analyze_clusters(df, args.outdir, args.run_label, 
                          CALIBRATED_GAMMA, CALIBRATED_ETA, 
                          args.estimate_kappa,
@@ -436,5 +445,7 @@ if __name__ == "__main__":
             
     except FileNotFoundError:
         print(f"ERROR: No se pudo encontrar el archivo de entrada: {args.input_csv}")
+        sys.exit(1)
     except Exception as e:
         print(f"Ha ocurrido un error inesperado: {e}")
+        sys.exit(1)

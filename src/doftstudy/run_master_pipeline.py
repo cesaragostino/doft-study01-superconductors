@@ -118,15 +118,49 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     out_dir_cluster = out_dir_base / "cluster"
     out_dir_fp = out_dir_base / "fingerprint"
     out_dir_baseline = out_dir_base / "baseline"
+    out_dir_figures = out_dir_base / "figures"
     
     out_dir_calib.mkdir(parents=True, exist_ok=True)
     out_dir_cluster.mkdir(parents=True, exist_ok=True)
     out_dir_fp.mkdir(parents=True, exist_ok=True)
     out_dir_baseline.mkdir(parents=True, exist_ok=True)
 
-    # Paso 1: Calibración
+    # Rutas de salida esperadas
     label_calib = f"calib_{base_tag}"
     csv_calib = out_dir_calib / f"results_{label_calib}.csv"
+    summary_calib = out_dir_calib / f"summary_{label_calib}.csv"
+    label_cluster_nokappa = f"cluster_nokappa_{base_tag}"
+    csv_cluster_nokappa = out_dir_cluster / f"results_{label_cluster_nokappa}.csv"
+    label_cluster_kappa = f"cluster_kappa_{base_tag}"
+    csv_cluster_kappa = out_dir_cluster / f"results_{label_cluster_kappa}.csv"
+    label_fp_nokappa = f"fp_nokappa_{base_tag}"
+    fp_nokappa_csv = out_dir_fp / f"results_{label_fp_nokappa}_full_factorized.csv"
+    label_fp_kappa = f"fp_kappa_{base_tag}"
+    fp_kappa_csv = out_dir_fp / f"results_{label_fp_kappa}_full_factorized.csv"
+    baseline_summary = out_dir_baseline / f"baseline_summary_{base_tag}.csv"
+    figure_targets = [
+        out_dir_figures / "fig01_calibration.png",
+        out_dir_figures / "fig02_integer_fingerprint.png",
+        out_dir_figures / "fig03_rational_q.png",
+        out_dir_figures / "fig04_residuals.png",
+        out_dir_figures / "fig05_kappa_vs_no_kappa.png",
+    ]
+
+    existing_outputs = [
+        csv_calib,
+        summary_calib,
+        csv_cluster_nokappa,
+        csv_cluster_kappa,
+        fp_nokappa_csv,
+        fp_kappa_csv,
+        baseline_summary,
+        *figure_targets,
+    ]
+    if all(path.exists() for path in existing_outputs):
+        print(f"--- Resultados detectados para {base_tag}. Saltando pipeline completo. ---")
+        return
+
+    # Paso 1: Calibración
     cmd1 = [
         python_cmd, str(RUN_CALIBRATION_SCRIPT),
         "-i", input_file, "-o", str(out_dir_calib), "-l", label_calib,
@@ -135,8 +169,6 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     execute_command(cmd1, f"Paso 1: Calibración (W={w_val}, P={p_val})")
     
     # Paso 2a: Cluster (SIN Kappa)
-    label_cluster_nokappa = f"cluster_nokappa_{base_tag}"
-    csv_cluster_nokappa = out_dir_cluster / f"results_{label_cluster_nokappa}.csv"
     cmd2a = [
         python_cmd, str(RUN_CLUSTER_SCRIPT),
         "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_nokappa,
@@ -145,8 +177,6 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     execute_command(cmd2a, f"Paso 2a: Cluster SIN Kappa (W={w_val}, P={p_val})")
 
     # Paso 2b: Cluster (CON Kappa)
-    label_cluster_kappa = f"cluster_kappa_{base_tag}"
-    csv_cluster_kappa = out_dir_cluster / f"results_{label_cluster_kappa}.csv"
     cmd2b = [
         python_cmd, str(RUN_CLUSTER_SCRIPT),
         "-i", input_file, "-o", str(out_dir_cluster), "-l", label_cluster_kappa,
@@ -155,7 +185,6 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     execute_command(cmd2b, f"Paso 2b: Cluster CON Kappa (W={w_val}, P={p_val})")
 
     # Paso 3a: Fingerprint (SIN Kappa)
-    label_fp_nokappa = f"fp_nokappa_{base_tag}"
     cmd3a = [
         python_cmd, str(RUN_FP_SCRIPT),
         "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_nokappa),
@@ -164,7 +193,6 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     execute_command(cmd3a, f"Paso 3a: Fingerprint SIN Kappa (W={w_val}, P={p_val})")
 
     # Paso 3b: Fingerprint (CON Kappa)
-    label_fp_kappa = f"fp_kappa_{base_tag}"
     cmd3b = [
         python_cmd, str(RUN_FP_SCRIPT),
         "-i_calib", str(csv_calib), "-i_cluster", str(csv_cluster_kappa),
@@ -173,21 +201,26 @@ def run_robustness_pipeline(w_val, p_val, input_file, python_cmd, output_root):
     execute_command(cmd3b, f"Paso 3b: Fingerprint CON Kappa (W={w_val}, P={p_val})")
     
     # Paso 4: Comparación Baseline
-    baseline_summary = out_dir_baseline / f"baseline_summary_{base_tag}.csv"
-    cmd4 = [
-        python_cmd, str(RUN_BASELINE_SCRIPT),
-        "--cluster_csv", str(csv_cluster_kappa),
-        "--output", str(baseline_summary)
-    ]
-    execute_command(cmd4, f"Paso 4: Comparación Baseline (W={w_val}, P={p_val})")
+    if csv_cluster_kappa.exists():
+        cmd4 = [
+            python_cmd, str(RUN_BASELINE_SCRIPT),
+            "--cluster_csv", str(csv_cluster_kappa),
+            "--output", str(baseline_summary)
+        ]
+        execute_command(cmd4, f"Paso 4: Comparación Baseline (W={w_val}, P={p_val})")
+    else:
+        print("--- Resultados de cluster (κ) ausentes; saltando comparación baseline. ---")
     
     # Paso 5: Figuras para la corrida actual
-    cmd5 = [
-        python_cmd, str(RUN_FIGURES_SCRIPT),
-        "--base_tag", base_tag,
-        "--results_dir", str(output_root)
-    ]
-    execute_command(cmd5, f"Paso 5: Figuras (W={w_val}, P={p_val})")
+    if fp_kappa_csv.exists():
+        cmd5 = [
+            python_cmd, str(RUN_FIGURES_SCRIPT),
+            "--base_tag", base_tag,
+            "--results_dir", str(output_root)
+        ]
+        execute_command(cmd5, f"Paso 5: Figuras (W={w_val}, P={p_val})")
+    else:
+        print("--- Fingerprint con κ ausente; saltando generación de figuras. ---")
     
     print(f"--- Pipeline Robustez (W={w_val}, P={p_val}) ¡COMPLETADO! ---")
 

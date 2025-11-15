@@ -1,4 +1,4 @@
-name,sub_network,category,Tc_K,Gap_meV,ThetaD_K,EF_eV,lock_family,sub_order,notes
+ï»¿name,sub_network,category,Tc_K,Gap_meV,ThetaD_K,EF_eV,lock_family,sub_order,notes
 (BEDT-TTF)2Cu(NCS)2,single,SC_Molecular,10.4,1.65,150,0.15,rational,0,_-phase organic SC
 (BEDT-TTF)2Cu[N(CN)2]Br,single,SC_Molecular,11.6,1.84,155,0.15,rational,0,_-phase organic SC
 (La0.5Y0.5)H8,single,SC_HighPressure,145,24,940,6.2,mixed,0,Ternary octahydride (140 GPa)
@@ -58,8 +58,8 @@ Ca10(Pt3As8)(Fe2As2)5,hole-band,SC_IronBased,35,6.2,280,0.2,mixed,1,42622-type -
 Ca10(Pt3As8)(Fe2As2)5,electron-band,SC_IronBased,35,3.7,280,0.2,mixed,2,42622-type - electron pocket - smaller gap - interband coupling
 CaAlSi,single,SC_Binary,7.7,1.22,310,3.9,mixed,0,AlB2 structure - anisotropic s-wave - gap anisotropy a'=0.2
 CaC6,single,SC_Binary,11.5,1.75,300,3.8,integer,0,Graphite Intercalation
-CaFe0.88Co0.12AsF,hole-band,SC_IronBased,21.3,4.48,250,0.2,mixed,1,1111-type fluoride - hole pocket - larger gap (26% weight) - s±-wave
-CaFe0.88Co0.12AsF,electron-band,SC_IronBased,21.3,0.86,250,0.2,mixed,2,1111-type fluoride - electron pocket - smaller gap (74% weight) - s±-wave
+CaFe0.88Co0.12AsF,hole-band,SC_IronBased,21.3,4.48,250,0.2,mixed,1,1111-type fluoride - hole pocket - larger gap (26% weight) - sÂ±-wave
+CaFe0.88Co0.12AsF,electron-band,SC_IronBased,21.3,0.86,250,0.2,mixed,2,1111-type fluoride - electron pocket - smaller gap (74% weight) - sÂ±-wave
 CaH10,single,SC_HighPressure,203,32,1020,6.6,integer,0,High Pressure (250 GPa) - predicted clathrate
 CaH6,single,SC_HighPressure,215,35,900,5.5,integer,0,High Pressure (172 GPa) - sodalite Im-3m
 Cd,single,SC_TypeI,0.52,0.078,209,7.46,integer,0,Type I (low Tc)
@@ -109,7 +109,7 @@ La,single,SC_TypeI,4.9,0.74,142,7.7,integer,0,Lanthanum (dhcp)
 La2-xBaxCuO4 (x~0.125),single,SC_Oxide,30,4.8,355,1.5,mixed,0,Ba-doped cuprate
 La2-xSrxCuO4 (LSCO x~0.15),single,SC_Oxide,38,7,360,1.5,mixed,0,cuprate high-Tc
 LaB2,sigma,SC_Binary,30,5.1,420,5.5,mixed,1,_-band (s+pxy orbitals) - large gap - topological weak TI
-LaB2,pi,SC_Binary,30,3.9,400,5.5,mixed,2,¹-band (pz orbitals) - middle gap - enhanced by La-d hybridization
+LaB2,pi,SC_Binary,30,3.9,400,5.5,mixed,2,Ï€-band (pz orbitals) - middle gap - enhanced by La-d hybridization
 LaBeH8,single,SC_HighPressure,185,31,1020,6.8,mixed,0,H-alloy backbone (150 GPa) - synthesized
 LaCeH18,single,SC_HighPressure,178,30,1000,6.5,mixed,0,Ternary (165 GPa) - cage hydride
 LaFeAsO0.9F0.1,hole-band,SC_IronBased,26,10,280,0.2,mixed,1,1111-type - hole pocket - larger gap range 9-11 meV

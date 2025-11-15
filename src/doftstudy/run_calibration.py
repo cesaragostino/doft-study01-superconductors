@@ -1,4 +1,4 @@
-import os, math, argparse, json
+import os, math, argparse, json, sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -139,6 +139,15 @@ def find_best_lock(R, lock_family, category):
 
 
 # --- ¡CAMBIO! Se añadió 'prime_max_val' como argumento ---
+def read_input_csv(path):
+    """Carga el CSV de entrada con fallback de encoding."""
+    try:
+        return pd.read_csv(path)
+    except UnicodeDecodeError:
+        print(f"ADVERTENCIA: {path} contiene caracteres no UTF-8. Reintentando con 'latin-1'.")
+        return pd.read_csv(path, encoding='latin-1')
+
+
 def calibrate_and_run(df, outdir, run_label, fit_categories, winsor_X_cap, prime_max_val=10000):
     records = []
     
@@ -372,13 +381,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     try:
-        df = pd.read_csv(args.input_csv)
+        df = read_input_csv(args.input_csv)
         fit_categories = args.fit_families.split(',')
-        
-        # --- ¡CAMBIO! Se pasa el nuevo argumento ---
         calibrate_and_run(df, args.outdir, args.run_label, fit_categories, args.winsor_X_cap, args.prime_max_val)
-            
     except FileNotFoundError:
         print(f"ERROR: No se pudo encontrar el archivo de entrada: {args.input_csv}")
+        sys.exit(1)
     except Exception as e:
         print(f"Ha ocurrido un error inesperado: {e}")
+        sys.exit(1)

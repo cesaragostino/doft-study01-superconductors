@@ -1,11 +1,11 @@
 {
-    "CALIBRATED_GAMMA": 2.8765619518890285e-17,
-    "CALIBRATED_ETA": 3.112641260857172e-05,
+    "CALIBRATED_GAMMA": 1.914543082953824e-17,
+    "CALIBRATED_ETA": 1.880627769635262e-05,
     "METADATA": {
         "winsor_X_cap": 800.0,
         "eta_95_CI": [
-            4.155508060168261e-06,
-            5.2789899286533314e-05
+            2.5518661539402832e-06,
+            3.338564501653087e-05
         ],
         "fit_families": [
             "SC_TypeI",
