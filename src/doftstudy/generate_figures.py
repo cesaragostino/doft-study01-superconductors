@@ -1,4 +1,4 @@
-"""Script para generar las figuras solicitadas del estudio DOFT."""
+"""Generate DOFT Study figures for the manuscript."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import Iterable, List, Optional, Sequence, Tuple
 
 import matplotlib
 
-matplotlib.use("Agg")  # Generación headless
+matplotlib.use("Agg")  # Headless rendering
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -80,7 +80,7 @@ def _solve_ls(A: np.ndarray, y: np.ndarray, scaler: Optional[StandardScaler]) ->
     bounds = ([-np.inf, 0.0, 0.0], [np.inf, np.inf, np.inf])
     result = lsq_linear(A, y, bounds=bounds)
     if not result.success:
-        raise RuntimeError("No se pudo resolver el sistema lineal con restricciones.")
+        raise RuntimeError("Could not solve constrained linear system.")
     intercept, gamma_coef, eta_coef = result.x
     if scaler is not None:
         if scaler.scale_[0] != 0:
@@ -105,7 +105,7 @@ def compute_bootstrap_calibration(
     ) & calib_df["category"].isin(fit_categories)
     work_df = calib_df.loc[mask].dropna(subset=["X", "d", "err_before"]).copy()
     if len(work_df) < 3:
-        raise ValueError("No hay suficientes datos para recalcular el bootstrap de calibración.")
+        raise ValueError("Not enough data to recompute the calibration bootstrap.")
 
     x_vals = np.minimum(work_df["X"].astype(float).to_numpy(), winsor_cap)
     d_vals = work_df["d"].astype(float).to_numpy()
@@ -140,7 +140,7 @@ def compute_bootstrap_calibration(
             bootstrap_etas.append(eta_coef)
 
     if not bootstrap_gammas or not bootstrap_etas:
-        raise RuntimeError("El bootstrap no generó resultados válidos.")
+        raise RuntimeError("Bootstrap did not produce valid estimates.")
 
     eta_baseline = float(np.mean(bootstrap_etas))
 
@@ -196,8 +196,8 @@ def fig1_calibration(
     )
 
     fig, axes = plt.subplots(1, 3, figsize=(18, 5))
-    _hist_with_kde(axes[0], etas, "#4C6EF5", "Bootstrap de η", "η")
-    _hist_with_kde(axes[1], gammas, "#20C997", "Bootstrap de Γ", "Γ")
+    _hist_with_kde(axes[0], etas, "#4C6EF5", "Bootstrap of η", "η")
+    _hist_with_kde(axes[1], gammas, "#20C997", "Bootstrap of Γ", "Γ")
 
     if not loo_df.empty:
         loo_top = loo_df.copy()
@@ -208,12 +208,12 @@ def fig1_calibration(
         )
         axes[2].invert_yaxis()
         axes[2].set_xlabel("Δη (%) relative to full fit")
-        axes[2].set_title("Influence LOO en η")
+        axes[2].set_title("LOO influence on η")
     else:
-        axes[2].text(0.5, 0.5, "Sin datos LOO", ha="center", va="center")
+        axes[2].text(0.5, 0.5, "No LOO data", ha="center", va="center")
         axes[2].set_axis_off()
 
-    fig.suptitle("Fig. 1 – Calibración de Γ y η", fontsize=18)
+    fig.suptitle("Fig. 1 – Calibration of Γ and η", fontsize=18)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     fig.savefig(out_path, dpi=300)
     plt.close(fig)
@@ -232,7 +232,7 @@ def _violin_by_category(
     ]
     prepared = [(cat, values) for cat, values in prepared if len(values) > 0]
     if not prepared:
-        ax.text(0.5, 0.5, "Sin datos", ha="center", va="center")
+        ax.text(0.5, 0.5, "No data", ha="center", va="center")
         ax.set_xticks([])
         return
     categories = [item[0] for item in prepared]
@@ -268,13 +268,13 @@ def fig2_integer_fingerprint(fingerprint_df: pd.DataFrame, out_path: Path):
 
     _violin_by_category(axes[0], subset, cat_pairs, "exp_d_7", palette1)
     axes[0].set_ylabel("exp_d_7")
-    axes[0].set_title("Exponentes de 7 (exp_d_7)")
+    axes[0].set_title("Exponent of 7 (exp_d_7)")
 
     _violin_by_category(axes[1], subset, cat_pairs, "exp_a_2", palette2)
     axes[1].set_ylabel("exp_a_2")
-    axes[1].set_title("Exponentes de 2 (exp_a_2)")
+    axes[1].set_title("Exponent of 2 (exp_a_2)")
 
-    fig.suptitle("Fig. 2 – Integer fingerprint por familia", fontsize=18)
+    fig.suptitle("Fig. 2 – Integer fingerprint by family", fontsize=18)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     fig.savefig(out_path, dpi=300)
     plt.close(fig)
@@ -293,7 +293,7 @@ def fig3_rational_q(fingerprint_df: pd.DataFrame, out_path: Path):
     palette = plt.cm.viridis(np.linspace(0.2, 0.9, len(families)))
     _violin_by_category(ax, subset, cat_pairs, "q", palette)
     ax.set_ylabel("q")
-    ax.set_title("Fig. 3 – Distribución de q por familia")
+    ax.set_title("Fig. 3 – Distribution of q by family")
     fig.tight_layout()
     fig.savefig(out_path, dpi=300)
     plt.close(fig)
@@ -322,8 +322,8 @@ def fig4_residuals(fingerprint_df: pd.DataFrame, out_path: Path):
         color=colors,
         capsize=4,
     )
-    axes[0].set_title("Fig. 4a – Residuales medios (log)")
-    axes[0].set_ylabel("mean ± std log_residual_eta")
+    axes[0].set_title("Fig. 4a – Mean residuals (log)")
+    axes[0].set_ylabel("mean ± std of log_residual_eta")
     axes[0].tick_params(axis="x", rotation=60)
     axes[0].legend(
         handles=[
@@ -351,7 +351,7 @@ def fig4_residuals(fingerprint_df: pd.DataFrame, out_path: Path):
             color=colors.get(cat, None),
             edgecolor="black",
         )
-    axes[1].set_title("Fig. 4b – Residuo vs d")
+    axes[1].set_title("Fig. 4b – Residual vs d")
     axes[1].set_xlabel("d")
     axes[1].set_ylabel("log_residual_eta")
     axes[1].legend()
@@ -369,14 +369,14 @@ def fig5_kappa_delta_hist(fingerprint_cluster_df: pd.DataFrame, out_path: Path):
         df["delta_error"] = np.nan
     delta = df["delta_error"].dropna()
     if delta.empty:
-        print("ADVERTENCIA: No se pudieron calcular delta_error para la figura 5.")
+        print("WARNING: Could not compute delta_error for Figure 5.")
         return
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.hist(delta, bins=40, color="#4C6EF5", alpha=0.75, edgecolor="white")
     ax.axvline(0, color="black", linestyle="--", linewidth=1)
-    ax.set_title("Fig. 5 – Distribución de Δerror (κ − no κ)")
+    ax.set_title("Fig. 5 – Distribution of Δerror (κ − no κ)")
     ax.set_xlabel("Δerror = err_after_kappa − err_after_eta")
-    ax.set_ylabel("Número de jumps")
+    ax.set_ylabel("Number of jumps")
     fig.tight_layout()
     fig.savefig(out_path, dpi=300)
     plt.close(fig)
@@ -390,7 +390,7 @@ def fig6_kappa_topdelta(fingerprint_cluster_df: pd.DataFrame, out_path: Path):
         df["delta_error"] = np.nan
     df = df.dropna(subset=["delta_error"])
     if df.empty:
-        print("ADVERTENCIA: No se pudieron calcular delta_error para la figura 6.")
+        print("WARNING: Could not compute delta_error for Figure 6.")
         return
     df["abs_delta"] = df["delta_error"].abs()
     top = df.sort_values("abs_delta", ascending=False).head(10).copy()
@@ -418,42 +418,42 @@ def fig6_kappa_topdelta(fingerprint_cluster_df: pd.DataFrame, out_path: Path):
 
 def load_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
-        raise FileNotFoundError(f"No se encontró el archivo requerido: {path}")
+        raise FileNotFoundError(f"Required file not found: {path}")
     return pd.read_csv(path)
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Genera las figuras principales del estudio DOFT")
-    parser.add_argument("--base_tag", default=DEFAULT_BASE_TAG, help="Etiqueta base (ej. w600_p10000)")
+    parser = argparse.ArgumentParser(description="Generate the main DOFT Study figures.")
+    parser.add_argument("--base_tag", default=DEFAULT_BASE_TAG, help="Base tag (e.g., w600_p10000)")
     parser.add_argument(
         "--results_dir",
         type=str,
         default=str(DATA_PROCESSED),
-        help="Directorio con los resultados procesados",
+        help="Directory containing processed results",
     )
     parser.add_argument(
         "--figures_dir",
         type=str,
         default=None,
-        help="Directorio donde guardar las figuras (default: results_<tag>/figures)",
+        help="Directory to store the figures (default: results_<tag>/figures)",
     )
     parser.add_argument(
         "--winsor_cap",
         type=float,
         default=600.0,
-        help="Límite superior de Winsor para la calibración",
+        help="Upper Winsor cap used for calibration",
     )
     parser.add_argument(
         "--fit_categories",
         type=str,
         default=",".join(DEFAULT_FIT_CATEGORIES),
-        help="Categorías usadas para calibración (separadas por coma)",
+        help="Comma-separated list of categories used for calibration",
     )
     parser.add_argument(
         "--n_bootstrap",
         type=int,
         default=500,
-        help="Número de iteraciones para el bootstrap",
+        help="Number of bootstrap iterations",
     )
     return parser.parse_args()
 
@@ -509,7 +509,7 @@ def main() -> None:
         figures_dir / "fig06_kappa_topdelta.png",
     )
 
-    print(f"Figuras guardadas en: {figures_dir}")
+    print(f"Figures saved to: {figures_dir}")
 
 
 if __name__ == "__main__":
