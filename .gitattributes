@@ -8,7 +8,7 @@
 *.yml text
 *.toml text
 *.txt text
-*.csv text
+*.csv binary
 
 *.png binary
 *.jpg binary
@@ -50,3 +50,6 @@
 *.bash text eol=lf
 
 .DS_Store binary
+
+data/raw/*.csv binary
+data/processed/*.csv binary
