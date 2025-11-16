@@ -7,9 +7,8 @@ authors:
     given-names: Cesar
 repository-code: "https://github.com/cesaragostino/doft-study01-superconductors"
 version: "v0.1.0"
-date-released: 2025-11-14
-# Add a DOI here once a Zenodo (or similar) record is minted.
-# doi: 10.5281/zenodo.xxxxxxx
+date-released: 2025-11-16
+doi: 10.5281/zenodo.17620713
 preferred-citation:
   type: article
   title: "DOFT Study 01: Constrained Fingerprints for Superconductors and Superfluid Helium"
